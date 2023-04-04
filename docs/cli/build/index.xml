@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>build on Packit</title>
+    <link>https://packit.dev/docs/cli/build/</link>
+    <description>Recent content in build on Packit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://packit.dev/docs/cli/build/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>in-koji</title>
+      <link>https://packit.dev/docs/cli/build/koji/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/build/koji/</guid>
+      <description>packit build in-koji #  Submit a Koji build for the selected branch in Fedora dist-git.
+Requirements #   Upstream git repository on GitHub. Packit config file placed in the upstream repository. Valid Fedora Kerberos ticket.  Tutorial #    Place a config file for packit in the root of your upstream repository.
+  The command below would perform fedpkg build in the Fedora dist-git main branch.</description>
+    </item>
+    
+    <item>
+      <title>in-image-builder</title>
+      <link>https://packit.dev/docs/cli/build/in-image-builder/</link>
+      <pubDate>Thu, 20 Oct 2022 00:00:00 +0100</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/build/in-image-builder/</guid>
+      <description>packit build in-image-builder #  Create a VM image in Image Builder defined in your &amp;ldquo;packit.yaml&amp;rdquo; using your Copr builds.
+Requirements #   Be familiar with Red Hat Image Builder:  https://www.redhat.com/en/blog/using-hosted-image-builder-its-api https://console.redhat.com/docs/api/image-builder https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/composing_a_customized_rhel_system_image/index   Red Hat API token set as redhat_api_refresh_token in ~/.config/packit.yaml; the token can be obtained here Packit config with a vm_image_build job defined  Tutorial #    Place a config file for packit in the root of your upstream repository.</description>
+    </item>
+    
+    <item>
+      <title>in-mock</title>
+      <link>https://packit.dev/docs/cli/build/mock/</link>
+      <pubDate>Mon, 25 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/build/mock/</guid>
+      <description>packit build in-mock #  Create RPMs in mock using content of the upstream repository.
+Help #  Usage: packit build in-mock [OPTIONS] [PATH_OR_URL] Build RPMs in mock using content of the upstream repository. PATH_OR_URL argument is a local path or a URL to the upstream git repository, it defaults to the current working directory. Options: --upstream-ref TEXT Git ref of the last upstream commit in the current branch from which packit should generate patches (this option implies the repository is source- git).</description>
+    </item>
+    
+    <item>
+      <title>locally</title>
+      <link>https://packit.dev/docs/cli/build/local/</link>
+      <pubDate>Thu, 18 Mar 2021 08:52:33 +0100</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/build/local/</guid>
+      <description>packit build locally #  Create RPMs using content of the upstream repository.
+Help #  Usage: packit build locally [OPTIONS] [PATH_OR_URL] Create RPMs using content of the upstream repository. PATH_OR_URL argument is a local path or a URL to the upstream git repository, it defaults to the current working directory Options: --upstream-ref TEXT Git ref of the last upstream commit in the current branch from which packit should generate patches (this option implies the repository is source- git).</description>
+    </item>
+    
+    <item>
+      <title>in-copr</title>
+      <link>https://packit.dev/docs/cli/build/copr/</link>
+      <pubDate>Tue, 16 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/build/copr/</guid>
+      <description>packit build in-copr #  Submit a Copr build of the present content in the upstream repository.
+Requirements #   Upstream git repository on GitHub. Packit config file placed in the upstream repository. ~/.config/copr  A minimum copr configure file is:
+[copr-cli] copr_url = https://copr.fedorainfracloud.org gssapi = true This uses GSSAPI (see fkinit for more details). Alternatively you can use copr API token available here.
+Tutorial #    Place a config file for packit in the root of your upstream repository.</description>
+    </item>
+    
+  </channel>
+</rss>

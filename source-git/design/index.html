@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.98.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Source-git design #  This document serves as a detailed description of source-git. Please bear in mind that some things are a subject to change. Paragraphs marked with &ldquo;‼️💣️&rdquo; are known to require further work to be better defined.
+What is source-git? #  Source-git is a repository format and the related processes, tooling and bots, that are intended to enable using forks of the upstream projects to maintain, update and build packages in a distribution.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Source-git design" />
+<meta property="og:description" content="Source-git design #  This document serves as a detailed description of source-git. Please bear in mind that some things are a subject to change. Paragraphs marked with &ldquo;‼️💣️&rdquo; are known to require further work to be better defined.
+What is source-git? #  Source-git is a repository format and the related processes, tooling and bots, that are intended to enable using forks of the upstream projects to maintain, update and build packages in a distribution." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://packit.dev/source-git/design/" /><meta property="article:section" content="source-git" />
+<meta property="article:published_time" content="2018-12-31T23:59:59+01:00" />
+<meta property="article:modified_time" content="2018-12-31T23:59:59+01:00" />
+
+<title>Source-git design | Packit</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.ece3f56fc3f716f87ccd4e6f3ea44ba1fa6757114261dadfbf861fde7d4e6203.css" integrity="sha256-7OP1b8P3Fvh8zU5vPqRLofpnVxFCYdrfv4Yf3n1OYgM=">
+<script defer src="/en.search.min.2d116d6280cc21c4d2dcffda82bc8e64969fd4aaddf4d7a55afd4e980c891d79.js" integrity="sha256-LRFtYoDMIcTS3P/agryOZJaf1Krd9NelWv1OmAyJHXk="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/packit_logo.png" alt="Logo" /><span>Packit</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://dashboard.packit.dev" target="_blank" rel="noopener">
+        Dashboard
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2f67fdc9a362fd86f1cfd4450ed56551" class="toggle"  />
+    <label for="section-2f67fdc9a362fd86f1cfd4450ed56551" class="flex justify-between">
+      <a href="https://packit.dev/docs/" class="">User Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/about/" class="">About Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/guide/" class="">Packit Onboarding Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/testing-farm/" class="">Testing Farm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/faq/" class="">FAQ</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/" class="">Configuration</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/examples/" class="">Examples</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-17ea62a3fa80e270b55a640146bc89e1" class="toggle"  />
+    <label for="section-17ea62a3fa80e270b55a640146bc89e1" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/" class="">Packit CLI</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/create-update/" class="">create-update</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/propose-downstream/" class="">propose-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/srpm/" class="">srpm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/prepare-sources/" class="">prepare-sources</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/sync-from-downstream/" class="">sync-from-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/push-updates/" class="">push-updates</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/validate-config/" class="">validate-config</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="toggle"  />
+    <label for="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/build/" class="">build</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/koji/" class="">in-koji</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/in-image-builder/" class="">in-image-builder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/mock/" class="">in-mock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/local/" class="">locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/copr/" class="">in-copr</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a024048a4317a88a547d3a91b2359da1" class="toggle"  />
+    <label for="section-a024048a4317a88a547d3a91b2359da1" class="flex justify-between">
+      <a  class="">source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-dist-git/" class="">update-dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-source-git/" class="">update-source-git</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/actions/" class="">Actions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/fedora-releases-guide/" class="">How to do Fedora releases with Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/service-level-objectives/" class="">Service Level Objectives</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/reproduce-locally/" class="">Reproduce CI environment locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/archive-not-matching-git/" class="">Generated code in upstream archives</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de9f4fbe058a823cefbf9e39a42e3770" class="toggle" checked />
+    <label for="section-de9f4fbe058a823cefbf9e39a42e3770" class="flex justify-between">
+      <a href="https://packit.dev/source-git/" class="">Source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/design/" class=" active">Source-git design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="toggle"  />
+    <label for="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="flex justify-between">
+      <a href="https://packit.dev/source-git/work-with-source-git/" class="">Working with source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/create-source-git/" class="">Create a source-git repo</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/update-spec/" class="">Update a spec file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/pull-upstream-fixes/" class="">Pull fixes from the upstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/control-patch-generation/" class="">Controlling patch generation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/build-locally/" class="">Build current checkout locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/propose-to-dist-git/" class="">Propose your source-git content to dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/sync-from-dist-git/" class="">Sync back changes made in dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/fix-diverged-history/" class="">Diverged history</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a07783f405300745807d39eacf150420" class="toggle"  />
+    <label for="section-a07783f405300745807d39eacf150420" class="flex justify-between">
+      <a  class="">Blog Posts</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="toggle"  />
+    <label for="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="flex justify-between">
+      <a  class="">Weekly Status</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/march-2023/" class="">Packit March 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/february-2023/" class="">Packit February 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/january-2023/" class="">Packit January 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2022/" class="">2022</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2021/" class="">2021</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2020/" class="">2020</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2019/" class="">2019</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2022-features/" class="">2022 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/pull-from-upstream/" class="">Automatic pulling of upstream releases to Fedora</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/testing-farm-triggering/" class="">Running tests with builds from another PR</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fas-verification-automation/" class="">Automation of FAS verification in Packit Service</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/downstream-automation/" class="">Downstream automation is here</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/copr-srpms/" class="">Building SRPMs in Copr</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-features/" class="">2021 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-in-numbers/" class="">2021 in Numbers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fedora-eln/" class="">Working on the next major RHEL release, in your upstream repo</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03ded75136420a051aef84f84237f006" class="toggle"  />
+    <label for="section-03ded75136420a051aef84f84237f006" class="flex justify-between">
+      <a href="https://packit.dev/development-docs/" class="">Development Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/creating-stream-9-repos/" class="">Creating CentOS Stream 9 source-git repositories</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/patch-metadata/" class="">Source-git patch metadata</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://status.packit.dev" target="_blank" rel="noopener">
+        Status page
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Source-git design</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-source-git">What is source-git?</a></li>
+    <li><a href="#motivation">Motivation</a></li>
+    <li><a href="#premises">Premises</a></li>
+    <li><a href="#an-addon-to-dist-git">An addon to dist-git</a></li>
+    <li><a href="#repository-location">Repository location</a></li>
+    <li><a href="#layout">Layout</a></li>
+    <li><a href="#history-and-branching">History and branching</a></li>
+    <li><a href="#configuration">Configuration</a></li>
+    <li><a href="#workflows">Workflows</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="source-git-design">
+  Source-git design
+  <a class="anchor" href="#source-git-design">#</a>
+</h1>
+<p>This document serves as a detailed description of source-git. Please bear in
+mind that some things are a subject to change. Paragraphs marked with &ldquo;‼️💣️&rdquo;
+are known to require further work to be better defined.</p>
+<h2 id="what-is-source-git">
+  What is source-git?
+  <a class="anchor" href="#what-is-source-git">#</a>
+</h2>
+<p>Source-git is a repository format and the related processes, tooling and bots,
+that are intended to enable using forks of the upstream projects to maintain,
+update and build packages in a distribution. By &ldquo;distribution&rdquo; we mean
+distributions in the RHEL ecosystem (Fedora Linux, CentOS Stream and RHEL),
+but the tools and processes probably could be applied to any RPM based
+distribution.</p>
+<h2 id="motivation">
+  Motivation
+  <a class="anchor" href="#motivation">#</a>
+</h2>
+<p>Traditionally dist-git is the format used to maintain, develop and release
+software in these distributions. In dist-git the source archive of an upstream
+release is stored in the lookaside cache, while downstream (distribution
+specific) changes are checked-in as patch files in Git. This layout resembles
+SRPMs, and so it&rsquo;s easily consumed by build systems, but it makes it somewhat
+difficult for humans to make sense of the content. Additionally, transforming
+upstream content (which most of the time originates from a Git repo) to
+dist-git has become a tedious activity, with a plethora of tooling available
+to do very similar things.</p>
+<p>The dist-git format also has the side effect of making the adoption of modern
+Git-workflows somewhat more difficult (reviewing changes in patch-files
+requires a higher cognitive effort) and raising the bar for new contributors,
+who know how to contribute using Git, but need to learn about dist-git before
+touching any package.</p>
+<p>With source-git the goal is to:</p>
+<ul>
+<li>Enable using these well-known Git-workflows in packaging activities.</li>
+<li>Automate and standardize the tedious task of converting from one repository
+format to the other.</li>
+</ul>
+<p>If you think about it, &ldquo;source-git&rdquo; is really just good old plain &ldquo;Git&rdquo;, used
+as it meant to be used by Linus.</p>
+<h2 id="premises">
+  Premises
+  <a class="anchor" href="#premises">#</a>
+</h2>
+<p>One of the fundamentally useless manual activities when maintaining a package
+in Fedora is transforming source code from one Git repository format to
+another.  Git is distributed. Dist-git content is mostly boilerplate or
+regurgitated data.</p>
+<p>Using an upstream format during packaging makes collaboration easier, and
+lowers the entry barrier for new contributors by enabling a development
+workflow which they are already familiar with.</p>
+<p>Linux distributions gain an advantage from having patches incorporated
+upstream and not carrying them downstream.</p>
+<p>Human effort should not be focused on repetitive, automatable tasks related to
+churn and moving code around.</p>
+<p>Dist-git is used as a store of state for build tools (like Koji). Reinventing
+dist-git itself fundamentally, would mean reinventing a lot of tooling.</p>
+<h2 id="an-addon-to-dist-git">
+  An addon to dist-git
+  <a class="anchor" href="#an-addon-to-dist-git">#</a>
+</h2>
+<p>We recognize, that an extensive ecosystem of tooling and services was
+developed to work with dist-git, and because of this replacing dist-git in the
+immediate future is not feasible. On the long run though, once source-git
+proved itself, this can become possible.</p>
+<p>This is why we think about source-git as <em>an addon to dist-git</em>.</p>
+<p>Content of source-git repository is equivalent to dist-git, but uses upstream
+format: source files instead of tarballs, Git commits instead of patches.</p>
+<p>Bots are responsible to transform and maintain content in dist-git, so that
+humans can do all the work in source-git. If bots fail, humans can still step
+in and do the work. Bots and humans use the same tools to do the
+transformation.</p>
+<p>All tooling already in place that interacts with dist-git continues to
+interact with dist-git. Bots are responsible to bring CI results from dist-git
+to source-git for convenience.</p>
+<p>This means that using source-git to maintain a package adds an overhead
+compared to directly working in dist-git. Though on the positive side, enables
+packagers and contributors to use a Git workflow they are already familiar
+with from upstream projects.</p>
+<p>Source-git might not be a solution for many packages at the early stages, and
+might not be a solution at all for some packages. This is why, <em>source-git is
+opt-in</em>, and can be opted out at any point in time if so decided.</p>
+<h2 id="repository-location">
+  Repository location
+  <a class="anchor" href="#repository-location">#</a>
+</h2>
+<p>Source-git repositories are hosted and shared in a Git forge chosen by the
+distribution. This helps the community developing the distribution to be in
+control of these repositories.</p>
+<p>Teams of developers maintaining packages in multiple distributions can choose
+to have a single repository at a location of their choice, have dedicated
+branches for each distribution, and sync these branches to the source-git
+repositories of each distribution.</p>
+<h2 id="layout">
+  Layout
+  <a class="anchor" href="#layout">#</a>
+</h2>
+<p>A source-git repository is based on a fork of the upstream project.</p>
+<p>The files required to create the package for the distribution are stored in
+the <code>.distro</code> directory.</p>
+<p>This includes:</p>
+<ul>
+<li>the spec file,</li>
+<li>other files required to be present in dist-git (test files, scripts used in
+building the package, package configuration etc.),</li>
+<li>a <code>source-git.yaml</code> file to configure how the content of the repo should be
+transformed to dist-git.</li>
+</ul>
+<h2 id="history-and-branching">
+  History and branching
+  <a class="anchor" href="#history-and-branching">#</a>
+</h2>
+<p>By default, branching in source-git mirrors branching in dist-git. In a
+source-git context, let&rsquo;s call these branches &ldquo;downstream branches&rdquo;.</p>
+<p>Downstream branches share their history with the upstream release they are
+based upon, and contain additional commits to add the <code>.distro</code> directory and
+its content, and to introduce downstream changes to the upstream source code.</p>
+<p><img src="/source-git-diagram.png" alt="Source-git example" /></p>
+<p>When transforming content to dist-git, tooling</p>
+<ul>
+<li>prepares and uploads the source archive to dist-git&rsquo;s lookaside cache;</li>
+<li>generates patch files for downstream changes, if any, and updates the spec
+file accordingly (changes to <code>.distro</code> are filtered out);</li>
+<li>updates other files in dist-git with the content of <code>.distro</code> (except
+<code>source-git.yaml</code>).</li>
+</ul>
+<p>The way patch files are generated and included in the spec file is controlled
+by Git-trailers in the commit messages of downstream commits.</p>
+<h2 id="configuration">
+  Configuration
+  <a class="anchor" href="#configuration">#</a>
+</h2>
+<p><code>.distro/source-git.yaml</code> tells tooling how to interact with the source-git
+repo, including:</p>
+<ul>
+<li>where to pull upstream changes from;</li>
+<li>how the content of the source-git repo should be transformed to dist-git;
+<ul>
+<li>how to generate or get the source archive to be uploaded to the lookaside
+cache;</li>
+<li>how to generate patches from downstream commits;</li>
+</ul>
+</li>
+<li>the dist-git repo and branch tracked.</li>
+</ul>
+<p>The configuration format is based on the <a href="https://packit.dev/docs/configuration/">Packit configuration</a>.</p>
+<p>Placing this configuration file in a branch in source-git indicates that the
+source-git branch should be auto-maintained. The configuration file may be
+removed to turn off auto-maintenance of the branch.</p>
+<p>For an example see <a href="https://packit.dev/source-git/work-with-source-git/create-source-git/#configure-syncing-to-dist-git">Configure syncing to distgit</a>.</p>
+<p>‼️💣️ Content from a source-git repository can be committed to a dist-git
+repository only if the target dist-git branch makes a reference to the
+source-git repo and branch from which the update originates.</p>
+<blockquote>
+<p>TODO: have an explicit documentation of <code>source-git.yaml</code>.</p>
+</blockquote>
+<h2 id="workflows">
+  Workflows
+  <a class="anchor" href="#workflows">#</a>
+</h2>
+<p>Contribution to source-git happens through pull requests (aka. merge
+requests).</p>
+<p>Bots create mirror PRs in dist-git for each source-git PR opened, and make CI
+results of those mirror PRs available in source-git.</p>
+<p>‼️💣️ Changes merged in source-git are synced to dist-git.</p>
+<p>Updates created in dist-git are synced back to source-git via pull requests
+opened by bots. This functionality serves to accommodate changes done by
+provenpackagers across multiple repositories.</p>
+<p>Commits need to be signed in order to be transformed to dist-git.</p>
+<p>Bots sign the commits they create.</p>
+<blockquote>
+<p>TODO: Rebase or merge?</p>
+</blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-source-git">What is source-git?</a></li>
+    <li><a href="#motivation">Motivation</a></li>
+    <li><a href="#premises">Premises</a></li>
+    <li><a href="#an-addon-to-dist-git">An addon to dist-git</a></li>
+    <li><a href="#repository-location">Repository location</a></li>
+    <li><a href="#layout">Layout</a></li>
+    <li><a href="#history-and-branching">History and branching</a></li>
+    <li><a href="#configuration">Configuration</a></li>
+    <li><a href="#workflows">Workflows</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

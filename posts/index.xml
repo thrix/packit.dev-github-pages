@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog Posts on Packit</title>
+    <link>https://packit.dev/posts/</link>
+    <description>Recent content in Blog Posts on Packit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Mar 2023 15:00:00 +0100</lastBuildDate><atom:link href="https://packit.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2022 for Packit</title>
+      <link>https://packit.dev/posts/2022-features/</link>
+      <pubDate>Sat, 28 Jan 2023 11:58:50 +0100</pubDate>
+      
+      <guid>https://packit.dev/posts/2022-features/</guid>
+      <description>Packit project in 2022 #  As you will see in the following paragraphs, the year 2022 was really fruitful for the Packit project. Without further ado, let’s take a look at what the Packit team accomplished last year:
+Fedora automation #  We have made a huge improvement in downstream automation. At the beginning of the year, we finished the workflow and you are now able to use Packit to get your release from upstream via dist-git and Koji to Bodhi.</description>
+    </item>
+    
+    <item>
+      <title>Automatic pulling of upstream releases to Fedora</title>
+      <link>https://packit.dev/posts/pull-from-upstream/</link>
+      <pubDate>Mon, 23 Jan 2023 09:23:44 +0100</pubDate>
+      
+      <guid>https://packit.dev/posts/pull-from-upstream/</guid>
+      <description>In the previous year, we automated the Fedora downstream release process in Packit. The first step of the release process, propagating the upstream release to Fedora, is covered by the propose_downstream job. This job updates the sources in Fedora, the spec file, and other needed files and creates pull requests with the changes in the dist-git repository.
+The downside of this job is that for its execution, users need to install Packit Service GitHub/GitLab app since this job reacts only to GitHub/GitLab release webhooks.</description>
+    </item>
+    
+    <item>
+      <title>Running tests with builds from another PR</title>
+      <link>https://packit.dev/posts/testing-farm-triggering/</link>
+      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/testing-farm-triggering/</guid>
+      <description>Do you contribute to projects which depend on each other? Would you like to test changes spanning multiple repositories together before merging them to the main branch? Then look no further, Packit&amp;rsquo;s new feature of the Testing Farm integration is what you are looking for!
+How it works #  To enable such testing, there is no additional configuration required in your packit.yaml, the typical Testing Farm configuration is sufficient. Once you open a pull request with some changes, tests are going to run as usual with all dependencies being installed based on the test definition, e.</description>
+    </item>
+    
+    <item>
+      <title>Automation of FAS verification in Packit Service</title>
+      <link>https://packit.dev/posts/fas-verification-automation/</link>
+      <pubDate>Tue, 24 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/fas-verification-automation/</guid>
+      <description>As you may already know, for using Packit Service GitHub App we require our users to have a valid Fedora Account System account. We were verifying the newcomers until now manually, but in recent weeks, we have implemented an automated solution for it. Let&amp;rsquo;s take a closer look at how it is done currently and what have we improved!
+Formerly, the process of verification by us started by waiting for the users to provide us their FAS username, then checking whether the provided FAS account exists and matches, and finally, manually adding the account to our allowlist in the database.</description>
+    </item>
+    
+    <item>
+      <title>Downstream automation is here</title>
+      <link>https://packit.dev/posts/downstream-automation/</link>
+      <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/downstream-automation/</guid>
+      <description>Downstream automation is here #  Finally, it&amp;rsquo;s here. Now, you can do the whole Fedora release with the help of Packit. Let&amp;rsquo;s take a look at how it works on an example of OGR, the Python library we develop.
+Upstream #  The process of releasing a new version starts in the upstream repository. Here, we can see an upstream release:
+Propose downstream #  As the first step on our way to Fedora users, we need to get the new upstream release to the Fedora dist-git.</description>
+    </item>
+    
+    <item>
+      <title>Building SRPMs in Copr</title>
+      <link>https://packit.dev/posts/copr-srpms/</link>
+      <pubDate>Mon, 07 Mar 2022 12:57:40 +0100</pubDate>
+      
+      <guid>https://packit.dev/posts/copr-srpms/</guid>
+      <description>Introduction #  If you use Packit to build RPMs for your upstream code changes, likely, you have already read about how does Packit build your SRPMs. If not, then just a short recap: Each time an RPM build is triggered, Packit builds an SRPM and then submits the created SRPM file to Copr where Copr takes care of building the actual RPMs. Since you can modify the behaviour of building SRPMs by defining actions, this process needs to be run in an isolated environment.</description>
+    </item>
+    
+    <item>
+      <title>2021 for Packit</title>
+      <link>https://packit.dev/posts/2021-features/</link>
+      <pubDate>Wed, 12 Jan 2022 09:23:38 +0100</pubDate>
+      
+      <guid>https://packit.dev/posts/2021-features/</guid>
+      <description>Packit project in 2021 #  The previous year 2021 wasn&amp;rsquo;t interesting only because of the increased usage of Packit (you can see more in the previous post). The whole Packit team made a lot of improvements during the year. Some small, some really big. So, let&amp;rsquo;s take a look at the most important ones:
+Dashboard #  The idea of having a dashboard for Packit service started as a Google Summer of Code 2020 project to provide a basic view of our service.</description>
+    </item>
+    
+    <item>
+      <title>2021 in Numbers</title>
+      <link>https://packit.dev/posts/2021-in-numbers/</link>
+      <pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/2021-in-numbers/</guid>
+      <description>2021 for Packit in numbers #  Let&amp;rsquo;s take a look on the year 2021 through some numbers. We would like to show you some interesting statistics and charts that can describe the work of Packit during the year 2021. If you are more interested in new features, let&amp;rsquo;s take a look on our second post.
+GitHub Application #  As of now, we have 169 installations of our GitHub application and 41 of them is from the year 2021.</description>
+    </item>
+    
+    <item>
+      <title>Working on the next major RHEL release, in your upstream repo</title>
+      <link>https://packit.dev/posts/fedora-eln/</link>
+      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/fedora-eln/</guid>
+      <description>Fedora EL Niño (ELN) is such an awesome idea. It enables building rawhide packages in two distinct buildroots:
+ the standard Fedora Rawhide buildroot and a second one, which mimics Red Hat Enterprise Linux  This way you can make sure that your new upstream release builds fine in the next RHEL.
+But this feedback might be a little bit too late: the upstream release already happened and the code was imported in Fedora dist-git, so fixing an issue will require repeating the whole process.</description>
+    </item>
+    
+  </channel>
+</rss>

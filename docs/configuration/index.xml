@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configuration on Packit</title>
+    <link>https://packit.dev/docs/configuration/</link>
+    <description>Recent content in Configuration on Packit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://packit.dev/docs/configuration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Examples</title>
+      <link>https://packit.dev/docs/configuration/examples/</link>
+      <pubDate>Thu, 22 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/configuration/examples/</guid>
+      <description>Configuration examples #  Examples for actions #  You can find detailed documentation for actions here.
+Getting version #  Getting version from specfile get-current-version:  - grep -oP &amp;#39;^Version:\s+\K\S+&amp;#39; my-package.spec or with a command from rpm-build package that will honor the macros:
+get-current-version:  - rpmspec -q --queryformat &amp;#34;%{VERSION}\n&amp;#34; *spec |head -n1    Getting version for Python packages with setup.py get-current-version:  - python3 setup.py --version    Getting version for Ruby packages from the gemspec get-current-version:  - ruby -rrubygems -e &amp;#39;puts Gem::Specification::load(Dir.</description>
+    </item>
+    
+  </channel>
+</rss>

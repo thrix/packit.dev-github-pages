@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Source-git on Packit</title>
+    <link>https://packit.dev/source-git/</link>
+    <description>Recent content in Source-git on Packit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://packit.dev/source-git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Source-git design</title>
+      <link>https://packit.dev/source-git/design/</link>
+      <pubDate>Mon, 31 Dec 2018 23:59:59 +0100</pubDate>
+      
+      <guid>https://packit.dev/source-git/design/</guid>
+      <description>Source-git design #  This document serves as a detailed description of source-git. Please bear in mind that some things are a subject to change. Paragraphs marked with &amp;ldquo;‼️💣️&amp;rdquo; are known to require further work to be better defined.
+What is source-git? #  Source-git is a repository format and the related processes, tooling and bots, that are intended to enable using forks of the upstream projects to maintain, update and build packages in a distribution.</description>
+    </item>
+    
+  </channel>
+</rss>

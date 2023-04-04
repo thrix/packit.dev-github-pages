@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.98.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Packit Onboarding Guide #  Let&rsquo;s take a look on how to start using Packit and how to get the most out of it.
+This guide is focused on the service use-case, but Packit is also available as a CLI tool, so you can always try things locally on your own. Note that running tests in Testing farm infrastructure is not currently supported with the CLI tool. Unlike the service, CLI uses your own identities when connecting to other service like Copr or Fedora dist-git.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Packit Onboarding Guide" />
+<meta property="og:description" content="Packit Onboarding Guide #  Let&rsquo;s take a look on how to start using Packit and how to get the most out of it.
+This guide is focused on the service use-case, but Packit is also available as a CLI tool, so you can always try things locally on your own. Note that running tests in Testing farm infrastructure is not currently supported with the CLI tool. Unlike the service, CLI uses your own identities when connecting to other service like Copr or Fedora dist-git." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://packit.dev/docs/guide/" /><meta property="article:section" content="docs" />
+
+
+
+<title>Packit Onboarding Guide | Packit</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.ece3f56fc3f716f87ccd4e6f3ea44ba1fa6757114261dadfbf861fde7d4e6203.css" integrity="sha256-7OP1b8P3Fvh8zU5vPqRLofpnVxFCYdrfv4Yf3n1OYgM=">
+<script defer src="/en.search.min.2d116d6280cc21c4d2dcffda82bc8e64969fd4aaddf4d7a55afd4e980c891d79.js" integrity="sha256-LRFtYoDMIcTS3P/agryOZJaf1Krd9NelWv1OmAyJHXk="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/packit_logo.png" alt="Logo" /><span>Packit</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://dashboard.packit.dev" target="_blank" rel="noopener">
+        Dashboard
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2f67fdc9a362fd86f1cfd4450ed56551" class="toggle" checked />
+    <label for="section-2f67fdc9a362fd86f1cfd4450ed56551" class="flex justify-between">
+      <a href="https://packit.dev/docs/" class="">User Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/about/" class="">About Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/guide/" class=" active">Packit Onboarding Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/testing-farm/" class="">Testing Farm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/faq/" class="">FAQ</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/" class="">Configuration</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/examples/" class="">Examples</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-17ea62a3fa80e270b55a640146bc89e1" class="toggle"  />
+    <label for="section-17ea62a3fa80e270b55a640146bc89e1" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/" class="">Packit CLI</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/create-update/" class="">create-update</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/propose-downstream/" class="">propose-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/srpm/" class="">srpm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/prepare-sources/" class="">prepare-sources</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/sync-from-downstream/" class="">sync-from-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/push-updates/" class="">push-updates</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/validate-config/" class="">validate-config</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="toggle"  />
+    <label for="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/build/" class="">build</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/koji/" class="">in-koji</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/in-image-builder/" class="">in-image-builder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/mock/" class="">in-mock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/local/" class="">locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/copr/" class="">in-copr</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a024048a4317a88a547d3a91b2359da1" class="toggle"  />
+    <label for="section-a024048a4317a88a547d3a91b2359da1" class="flex justify-between">
+      <a  class="">source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-dist-git/" class="">update-dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-source-git/" class="">update-source-git</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/actions/" class="">Actions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/fedora-releases-guide/" class="">How to do Fedora releases with Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/service-level-objectives/" class="">Service Level Objectives</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/reproduce-locally/" class="">Reproduce CI environment locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/archive-not-matching-git/" class="">Generated code in upstream archives</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de9f4fbe058a823cefbf9e39a42e3770" class="toggle"  />
+    <label for="section-de9f4fbe058a823cefbf9e39a42e3770" class="flex justify-between">
+      <a href="https://packit.dev/source-git/" class="">Source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/design/" class="">Source-git design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="toggle"  />
+    <label for="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="flex justify-between">
+      <a href="https://packit.dev/source-git/work-with-source-git/" class="">Working with source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/create-source-git/" class="">Create a source-git repo</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/update-spec/" class="">Update a spec file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/pull-upstream-fixes/" class="">Pull fixes from the upstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/control-patch-generation/" class="">Controlling patch generation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/build-locally/" class="">Build current checkout locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/propose-to-dist-git/" class="">Propose your source-git content to dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/sync-from-dist-git/" class="">Sync back changes made in dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/fix-diverged-history/" class="">Diverged history</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a07783f405300745807d39eacf150420" class="toggle"  />
+    <label for="section-a07783f405300745807d39eacf150420" class="flex justify-between">
+      <a  class="">Blog Posts</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="toggle"  />
+    <label for="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="flex justify-between">
+      <a  class="">Weekly Status</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/march-2023/" class="">Packit March 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/february-2023/" class="">Packit February 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/january-2023/" class="">Packit January 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2022/" class="">2022</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2021/" class="">2021</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2020/" class="">2020</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2019/" class="">2019</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2022-features/" class="">2022 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/pull-from-upstream/" class="">Automatic pulling of upstream releases to Fedora</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/testing-farm-triggering/" class="">Running tests with builds from another PR</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fas-verification-automation/" class="">Automation of FAS verification in Packit Service</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/downstream-automation/" class="">Downstream automation is here</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/copr-srpms/" class="">Building SRPMs in Copr</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-features/" class="">2021 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-in-numbers/" class="">2021 in Numbers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fedora-eln/" class="">Working on the next major RHEL release, in your upstream repo</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03ded75136420a051aef84f84237f006" class="toggle"  />
+    <label for="section-03ded75136420a051aef84f84237f006" class="flex justify-between">
+      <a href="https://packit.dev/development-docs/" class="">Development Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/creating-stream-9-repos/" class="">Creating CentOS Stream 9 source-git repositories</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/patch-metadata/" class="">Source-git patch metadata</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://status.packit.dev" target="_blank" rel="noopener">
+        Status page
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Packit Onboarding Guide</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-set-up-packit-integration">1. Set up Packit integration</a>
+      <ul>
+        <li><a href="#github">GitHub</a></li>
+        <li><a href="#how-to-set-up-packit-on-github">How to set up Packit on GitHub</a></li>
+        <li><a href="#staging-instance">Staging instance</a></li>
+        <li><a href="#gitlab">GitLab</a></li>
+        <li><a href="#pagure">Pagure</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-approval">2. Approval</a></li>
+    <li><a href="#3-configuration">3. Configuration</a>
+      <ul>
+        <li><a href="#basic-configuration">Basic configuration</a></li>
+        <li><a href="#jobs">Jobs</a></li>
+        <li><a href="#available-jobs">Available jobs</a></li>
+        <li><a href="#actions">Actions</a></li>
+        <li><a href="#users">Users</a></li>
+        <li><a href="#how-to-try-that-for-real">How to try that for real</a></li>
+      </ul>
+    </li>
+    <li><a href="#check-that-packit-works">Check that Packit works</a></li>
+    <li><a href="#how-to-re-trigger-packit-actions-in-your-pull-request">How to re-trigger Packit actions in your pull request?</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="packit-onboarding-guide">
+  Packit Onboarding Guide
+  <a class="anchor" href="#packit-onboarding-guide">#</a>
+</h1>
+<p>Let&rsquo;s take a look on how to start using Packit and how to get the most out of it.</p>
+<p>This guide is focused on the service use-case, but Packit is also available as a <a href="https://github.com/packit/packit/blob/main/README.md">CLI tool</a>,
+so you can always <a href="/docs/cli/">try things locally</a> on your own.
+Note that running tests in Testing farm infrastructure is not currently supported with the CLI tool.
+Unlike the service, CLI uses your own identities when connecting to other service like <a href="https://copr.fedorainfracloud.org/">Copr</a>
+or <a href="https://src.fedoraproject.org/">Fedora dist-git</a>.
+Packit CLI is <strong>NOT</strong> a client of the Packit GitHub app,
+<code>packit</code> command  directly interacts with the services.</p>
+<p>To start using Packit, you need to do three things:</p>
+<ol>
+<li>set up integration (so Packit is notified about your activities and can provide feedback)</li>
+<li>be approved (self-done mapping of your forge identity to FAS identity, so we know who you are)</li>
+<li>configure the wanted features</li>
+</ol>
+<h2 id="1-set-up-packit-integration">
+  1. Set up Packit integration
+  <a class="anchor" href="#1-set-up-packit-integration">#</a>
+</h2>
+<p>The integration is dependent on the service the upstream project is hosted on.
+In case you want to use Packit on your downstream repository for downstream jobs
+(<a href="/docs/configuration/#koji_build">Koji build</a> and <a href="/docs/configuration/#bodhi_update">Bodhi update</a>),
+you don&rsquo;t need to enable anything.
+Just place your config file into the dist-git repository.</p>
+<p>Here are the supported git-forges:</p>
+<h3 id="github">
+  GitHub
+  <a class="anchor" href="#github">#</a>
+</h3>
+<p>The majority of Packit users host their projects on GitHub, therefore we focus mainly on supporting the GitHub App.
+All of our workflows are supported and tested on GitHub.
+We utilize the majority of new GitHub features that can be used in GitHub Apps.</p>
+<h3 id="how-to-set-up-packit-on-github">
+  How to set up Packit on GitHub
+  <a class="anchor" href="#how-to-set-up-packit-on-github">#</a>
+</h3>
+<ol>
+<li>Navigate to the <a href="https://github.com/marketplace/packit-as-a-service">&ldquo;Packit-as-a-Service&rdquo; GitHub
+application</a>.
+<img src="/images/guide/guide_github_app.png" alt="Packit GitHub application" /></li>
+<li>Under &ldquo;Pricing and setup&rdquo;, click &ldquo;Install it for free&rdquo;.
+<img src="/images/guide/guide_github_app_plan.png" alt="Packit GitHub application: Plan" /></li>
+<li>Click &ldquo;Complete order and begin installation&rdquo;.
+<img src="/images/guide/guide_github_app_order.png" alt="Packit GitHub application: Order" /></li>
+<li>Install the &ldquo;Packit-as-a-Service&rdquo; to repositories of your choice.
+<img src="/images/guide/guide_github_app_installation.png" alt="Packit GitHub application: Installation" /></li>
+</ol>
+<p>Once installed, you will see the <a href="https://github.com/marketplace/packit-as-a-service">&ldquo;Packit-as-a-Service&rdquo; GitHub
+application</a> in your
+project settings. In the left sidebar, click &ldquo;Integration &amp; services&rdquo; and you
+will see the application displayed there.</p>
+<h3 id="staging-instance">
+  Staging instance
+  <a class="anchor" href="#staging-instance">#</a>
+</h3>
+<p><a href="https://github.com/apps/packit-as-a-service-stg">Packit-as-a-Service-stg</a> GitHub App
+runs the latest code. It can be used to verify the latest changes until they get
+(every Tuesday) into the <a href="https://github.com/marketplace/packit-as-a-service">production instance</a>.
+If you want to enjoy the freshest features and help us with the development,
+see more details <a href="https://github.com/packit/packit/discussions/1530">here</a>.</p>
+<p><img src="/images/guide/guide_github_app_stg.png" alt="Packit GitHub application: Staging instance" /></p>
+<h3 id="gitlab">
+  GitLab
+  <a class="anchor" href="#gitlab">#</a>
+</h3>
+<p>GitLab support is mainly experimental and is influenced by the presence of CentOS Stream source-git workflow.
+<strong>We do not verify</strong> the functionality of the GitLab support on a day-to-day basis as we do with the GitHub App.
+Most of the code is forge-independent so you can use the very same functionality both on GitHub and GitLab.
+The only difference is the setup and small UI differences because of the limits of the specific forge.
+You can use Packit on any GitLab instance, if:</p>
+<ul>
+<li>The GitLab instance is publically available.</li>
+<li>Packit has an identity for that instance.
+(Currently only <code>gitlab.com</code>, <code>gitlab.freedesktop.org</code> and <code>gitlab.gnome.org</code>,
+but let us know if you need any other instance to be supported.)</li>
+</ul>
+<h4 id="how-to-set-up-packit-on-gitlab">
+  How to set up Packit on GitLab
+  <a class="anchor" href="#how-to-set-up-packit-on-gitlab">#</a>
+</h4>
+<p>GitLab doesn&rsquo;t have an app functionality, and we don&rsquo;t use the
+<a href="https://docs.gitlab.com/ee/user/project/integrations/overview.html">Integrations</a>
+as it doesn&rsquo;t solve authentication.
+To enable Packit, you need to manually configure a webhook.</p>
+<ol>
+<li>Go to <code>Settings → Webhooks</code> and add <a href="https://prod.packit.dev/api/webhooks/gitlab">https://prod.packit.dev/api/webhooks/gitlab</a>
+or <a href="https://stg.packit.dev/api/webhooks/gitlab">https://stg.packit.dev/api/webhooks/gitlab</a> as the <code>URL</code>.
+<img src="/images/gitlab/webhooks.png" alt="GitLab webhooks" /></li>
+<li>Select <code>Push events</code>, <code>Comments</code>, <code>Issues events</code>, <code>Merge request events</code> and <code>Release events</code> as the <code>Triggers</code>.
+Do not provide <code>Secret token</code> yet and click <code>Add webhook</code>.
+You should see the created hook at the bottom of the page now.
+<img src="/images/gitlab/set_up_webhook.png" alt="Setting up webhook" /></li>
+<li>Select <code>Test</code> and for example <code>Push event</code>.
+At the top of the page appears a red <code>Hook executed successfully but returned HTTP 401 &quot;X-Gitlab-Token not in request.headers&quot;</code>.</li>
+<li>Wait a bit and check <code>Issues</code> of the project and after a while there should be
+a new confidential <code>Packit-Service Authentication</code> issue with the instructions how to finish the setup.
+(You need to give Packit user <code>maintainer</code> permissions to the project and attach a provided token to the webhooks.)</li>
+</ol>
+<h5 id="gitlab-pipelines">
+  GitLab Pipelines
+  <a class="anchor" href="#gitlab-pipelines">#</a>
+</h5>
+<p>With some limitations (but tweakability) you can also use Packit as a GitLab pipeline
+using the Packit&rsquo;s <a href="/docs/cli">CLI</a> from the regularly built
+<a href="https://quay.io/repository/packit/packit"><code>quay.io/packit/packit</code> image</a>.
+As you can see in the following example, it&rsquo;s really straightforward and explicit:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">image</span>: <span style="color:#ae81ff">quay.io/packit/packit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">srpm_build</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">stage</span>: <span style="color:#ae81ff">build</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">script</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">packit srpm</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">artifacts</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">paths</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;*.src.rpm&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">expire_in</span>: <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">week</span>
+</span></span></code></pre></div><h3 id="pagure">
+  Pagure
+  <a class="anchor" href="#pagure">#</a>
+</h3>
+<p>We have rudimentary support for the Pagure instances since they are used in the downstream workflow.
+Packit cannot be set up as a CI (in the same sense as on GitHub or GitLab) on Pagure instances,
+since the demand for this feature is not significant.
+The differences between GitHub/GitLab and Pagure APIs would result in many workarounds having to be implemented, if it would be possible at all.
+You can track the progress in the <a href="https://github.com/packit/packit-service/issues/556">related issue</a> on GitHub.</p>
+<h2 id="2-approval">
+  2. Approval
+  <a class="anchor" href="#2-approval">#</a>
+</h2>
+<p>As a next step, you need to have a valid <a href="https://fedoraproject.org/wiki/Account_System">Fedora Account System</a>
+account to be able to start using Packit Service in an upstream project.
+For GitHub, we have an automated way of self-approval,
+for other instances, <a href="/#contact">contact us</a>, and we will approve you manually.
+We require our new users to have <code>GitHub Username</code> field set in the FAS account so that we can automatically
+check for the match between the <code>GitHub Username</code> field in the FAS account and the GitHub account that triggers the verification.
+(If you don&rsquo;t know, where to set this value,
+the URL looks like this: <code>https://accounts.fedoraproject.org/user/&lt;my-fas-username&gt;/settings/profile/#github</code>.)</p>
+<p>During the installation, we try to check the FAS account with the same
+username as the GitHub account that triggers the installation and if the check
+fails, we create a new issue in our
+<a href="https://github.com/packit/notifications/issues/">allowlist tracker</a>.
+(You will be tagged in that issue and should get a GitHub notification about that.)</p>
+<p><img src="/images/guide/guide_approval_issue.png" alt="Packit approval issue" /></p>
+<p>You can provide the FAS account in a comment
+as <code>/packit verify-fas &lt;my-fas-username&gt;</code> in the issue we create
+for your installation. This will trigger the automatic check.
+Until that, you will get a neutral status with <code>Namespace is not allowed!</code>
+message on your commits.</p>
+<p><img src="/images/guide/guide_approval_fas_settings.png" alt="Packit approval issue: add mapping in the FAS settings" />
+<img src="/images/guide/guide_approval_comments.png" alt="Packit approval issue: add mapping by a comment" /></p>
+<p>Besides that:</p>
+<ul>
+<li>If you want to configure builds via Packit,
+your software needs to comply with <a href="https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr">Copr guidelines</a>
+since we use <a href="src.fedoraproject.org/">Fedora Copr</a> for the builds.
+Therefore, please, make sure you read them before configuring the <a href="/docs/configuration/#copr_build">Packit build job</a>.</li>
+<li>If you are interested in using <a href="https://docs.testing-farm.io/general/0.1/services.html#_red_hat_ranch">internal instance of the Testing Farm</a>
+to run your tests in, please, <a href="/#contact">reach out to us</a>, since for this job, an additional approval on our side is needed.</li>
+<li>For retrying the <a href="/docs/configuration/#copr_build">build</a> and <a href="/docs/configuration/#tests">test</a> jobs via <code>/packit build</code> and <code>/packit test</code> pull request comments,
+you need to have write access to the repository or be the author of the pull request.</li>
+<li>Similarly, for retrying the <a href="/docs/configuration/#propose_downstream">propose downstream job</a> via <code>/packit propose-downstream</code> issue comment,
+you need to have write access to the repository.</li>
+</ul>
+<h2 id="3-configuration">
+  3. Configuration
+  <a class="anchor" href="#3-configuration">#</a>
+</h2>
+<p>Packit uses a configuration file to let Packit know what to do, when to do it and how.
+As a format, it uses YAML and here are all the valid names:</p>
+<ul>
+<li><code>.packit.yaml</code></li>
+<li><code>.packit.yml</code></li>
+<li><code>packit.yaml</code></li>
+<li><code>packit.yml</code></li>
+</ul>
+<p>And where do you need to place this config file?
+Whenever you need to use Packit &ndash; the concept is easy:
+Packit loads the config file from the repository and commit related to the event it reacts to.
+E.g. if Packit reacts to a pull request, it takes config from the HEAD commit of the pull request,
+if Packit works with releases, the release commit is used
+and if Packit works with downstream Koji build,
+the respective dist-git commit is used.</p>
+<p>You know how to call this file, where to put it, but what should you fill inside?</p>
+<p>In the following parts, we will cover some basic concepts used in the Packit config file.
+More details can be found on a dedicated <a href="/docs/configuration/">configuration page</a>.</p>
+<h3 id="basic-configuration">
+  Basic configuration
+  <a class="anchor" href="#basic-configuration">#</a>
+</h3>
+<p>You need to provide some basic information to let Packit understand your project and package.
+You can use <code>packit init</code> command (when <a href="/docs/cli/">running Packit locally</a>) to get a basic structure.
+It will look like this (name of the package is guessed from the directory name):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># See the documentation for more information:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># https://packit.dev/docs/configuration/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">specfile_path</span>: <span style="color:#ae81ff">package.spec</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># add or remove files that should be synced</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">files_to_sync</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">package.spec</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">.packit.yaml</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># name in upstream package repository/registry (e.g. in PyPI)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">upstream_package_name</span>: <span style="color:#ae81ff">package</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># downstream (Fedora) RPM package name</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">downstream_package_name</span>: <span style="color:#ae81ff">package</span>
+</span></span></code></pre></div><p>We know that every project is a bit different and Packit can&rsquo;t guess everything
+so you can (re)define various other options.
+The full list can be found <a href="/docs/configuration/#top-level-keys">here</a>.</p>
+<h4 id="version-handling">
+  Version handling
+  <a class="anchor" href="#version-handling">#</a>
+</h4>
+<p>There are a few version-related config options you might need to set:</p>
+<ul>
+<li><a href="/docs/configuration/#upstream_tag_template"><code>upstream_tag_template</code></a>:
+Specifies a format of upstream tags if it doesn&rsquo;t contain just a version.</li>
+<li><a href="/docs/actions/"><code>get-current-version</code> action</a>:
+Command to get a project version in the current state of the project.</li>
+<li><a href="/docs/configuration/#release_suffix"><code>release_suffix</code></a>:
+Used to influence release field of artifacts provided by Packit.</li>
+<li><a href="/docs/configuration/#update_release"><code>update_release</code></a>:
+Whether to modify release when creating SRPM.</li>
+</ul>
+<h3 id="jobs">
+  Jobs
+  <a class="anchor" href="#jobs">#</a>
+</h3>
+<p>Packit&rsquo;s feature set is really wide and does not need to be used as a whole pipeline.
+To let user decide what and when should run, Packit uses concept of so-called <code>jobs</code>.
+Each job represents a feature of Packit. All the jobs are defined under the <code>jobs</code> key.
+For each job you need to specify the following information:</p>
+<ul>
+<li><code>job</code>: the type of the job, the feature you want Packit to do.</li>
+<li><code>trigger</code>: when the job is run (<code>pull_request</code>, <code>commit</code> or <code>release</code>).</li>
+<li>additional information needed for the job (like what targets to build, for what branch to run the job,&hellip;)</li>
+</ul>
+<p>(Note that for each job, not all the triggers are supported.)</p>
+<p>As an example you can take a look at the following config snippet
+(these are also the default jobs used if you don&rsquo;t set the <code>jobs</code> key):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">copr_build</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">pull_request</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>: [<span style="color:#ae81ff">fedora-stable]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">tests</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">pull_request</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>: [<span style="color:#ae81ff">fedora-stable]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">propose_downstream</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">release</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dist_git_branches</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-all</span>
+</span></span></code></pre></div><p>Most of the attributes can be defined both on global level (outside the <code>jobs</code> key)
+or for a single job only (like e.g. <code>targets</code> in the snippet above).
+More about this overriding mechanism can be found <a href="/docs/configuration/#overriding-global-parameters">here</a>.
+Another useful feature are <a href="/docs/configuration/#aliases">aliases</a> used to avoid
+hardcoded values that changes when there is a new distribution release.</p>
+<h3 id="available-jobs">
+  Available jobs
+  <a class="anchor" href="#available-jobs">#</a>
+</h3>
+<ul>
+<li><a href="/docs/configuration/#copr_build"><code>copr_build</code></a>: An RPM build triggered for pull-requests, new branch commits or releases.
+(Can be used to verify that package is buildable,
+to easily install package including the proposed change
+or to provide long-term Copr repositories.)</li>
+<li><a href="/docs/configuration/#tests"><code>tests</code></a>: Test suit using TMT/FMF definition run in the <a href="TBD">Testing Farm</a>
+(Can be used as a next step to Copr build or without build at all.)</li>
+<li><a href="/docs/configuration/#upstream_koji_build"><code>upstream_koji_build</code></a>: A scratch Koji build triggered for the upstream state of project.</li>
+<li><a href="/docs/configuration/#propose_downstream"><code>propose_downstream</code></a>: For upstream release, Packit prepares a Fedora release.
+(Source is saved to the Lookaside Cache and a dist-git pull-request is created for each configured branch.)</li>
+<li><a href="/docs/configuration/#koji_build"><code>koji_build</code></a>: A downstream Koji build triggered when there is a new dist-git commit in a given branch.</li>
+<li><a href="/docs/configuration/#bodhi_update"><code>bodhi_update</code></a>: A Bodhi update created for a successfully finished Koji build.</li>
+</ul>
+<p>More about the jobs and how to tweak them can be found on a <a href="/docs/configuration#jobs">configuration page</a>.</p>
+<h3 id="actions">
+  Actions
+  <a class="anchor" href="#actions">#</a>
+</h3>
+<p>Actions are a way how to redefine or tweak the Packit&rsquo;s workflows.
+These are user-defined commands that can replace a part of Packit&rsquo;s job (e.g. to get version, or to create a tarball)
+or are run in a particular step as a hook (with no action run by default).</p>
+<p>Take a look at the tables <a href="/docs/actions/">here</a> to know what actions are available for each job.</p>
+<h3 id="users">
+  Users
+  <a class="anchor" href="#users">#</a>
+</h3>
+<p>Packit checks if the user has sufficient permissions to complete a job (this depends on the job type).
+For this reason the profile of a Packit user has to be accessible.
+For example, on Github this means that the membership of a user to their team has to be public (see <a href="https://github.com/orgs/[org_name]/people/[user_name]">https://github.com/orgs/[org_name]/people/[user_name]</a> ).</p>
+<h3 id="how-to-try-that-for-real">
+  How to try that for real
+  <a class="anchor" href="#how-to-try-that-for-real">#</a>
+</h3>
+<p>In order to start using Packit, we suggest you <a href="/docs/cli/#installation">install the tooling locally</a>. All
+the logic is baked inside the <code>packit</code> command - so once <code>packit srpm</code> (the command
+to create a source RPM locally from the current snapshot of the project) starts
+passing for you, it should work inside packit service as well.</p>
+<h4 id="rpm-builds-pass-on-your-laptop">
+  RPM builds pass on your laptop
+  <a class="anchor" href="#rpm-builds-pass-on-your-laptop">#</a>
+</h4>
+<p>Packit needs an RPM spec file to build your package. The spec file does not
+need to be included in the upstream repo and can be generated on the fly or
+downloaded (e.g. from Fedora dist-git).
+Please check out our <a href="https://packit.dev/docs/faq/">FAQ</a> to read about some other common questions.</p>
+<p>You can also read more about the SRPM process
+in <a href="https://packit.dev/docs/cli/srpm/">the document</a> dedicated to the <code>srpm</code> command.</p>
+<h5 id="running-from-the-dist-git-repository">
+  Running from the dist-git repository
+  <a class="anchor" href="#running-from-the-dist-git-repository">#</a>
+</h5>
+<p>When you are not allowed or do not want to run packit command from the upstream
+git repository, you can run commands from the cloned dist-git repository in the
+same way as you do from upstream.  Make sure, that you specify the
+<code>upstream_project_url</code> in your configuration.</p>
+<p>Is your <code>packit srpm</code> finally passing? If not, feel free to reach out to us.
+If yes, let&rsquo;s proceed to the next level.</p>
+<h4 id="the-project-has-successful-builds-inside-the-service">
+  The project has successful builds inside the service
+  <a class="anchor" href="#the-project-has-successful-builds-inside-the-service">#</a>
+</h4>
+<p>If a SRPM can be created locally, all should be good in the service as well.
+That&rsquo;s the theory. In practice, your laptop and packit service
+environment are vastly different. In the service you can specify
+the requirements with the
+<a href="https://packit.dev/docs/configuration/#srpm_build_deps"><code>srpm_build_deps</code> option</a>.
+In any case, feel free to reach out to us if you are having troubles,
+and we&rsquo;d be glad to help.</p>
+<p>As described <a href="#jobs">above</a>, Packit supports various functions in form of jobs you can configure.
+Let&rsquo;s try the most favourite one: Copr build.
+In order to get RPM builds for every change in your project, you need to add a
+section <code>jobs</code> inside your .packit.yaml and set up a <code>copr_build</code> job to do RPM builds for
+every change in a PR:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">copr_build</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">pull_request</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">fedora-all</span>
+</span></span></code></pre></div><p><code>fedora-all</code> stands for all currently available Fedora releases.</p>
+<p>Jobs are nicely described over <a href="/docs/configuration/#jobs">here</a>.</p>
+<p>If you are looking for an inspiration for your .packit.yaml, check <a href="https://github.com/packit/packit/blob/main/.packit.yaml">packit&rsquo;s
+config file</a>
+since we try to use all the latest features.</p>
+<h2 id="check-that-packit-works">
+  Check that Packit works
+  <a class="anchor" href="#check-that-packit-works">#</a>
+</h2>
+<p>With the configuration above, Packit will build your changes and provide them as RPMs.
+Once you create a pull request, Packit will:</p>
+<ol>
+<li>Check out the PR.</li>
+<li>Merge it to the target branch (this can be configured by the
+<a href="https://packit.dev/docs/configuration/#merge_pr_in_ci"><code>merge_pr_in_ci</code></a>
+configuration option).</li>
+<li>Submit a build using the code that results from the merge in the Copr build
+system <a href="https://copr.fedorainfracloud.org/coprs/packit/">in Packit&rsquo;s
+namespace</a>.</li>
+<li>Report results about the Copr build status to the pull request.</li>
+</ol>
+<p>An example of Packit&rsquo;s checks in a pull request:</p>
+<p><img src="/images/guide/guide_pr_status.png" alt="Packit pull request" /></p>
+<h2 id="how-to-re-trigger-packit-actions-in-your-pull-request">
+  How to re-trigger Packit actions in your pull request?
+  <a class="anchor" href="#how-to-re-trigger-packit-actions-in-your-pull-request">#</a>
+</h2>
+<p>In general, you can put a <code>/packit &lt;job-you-want-to-trigger&gt;</code> comment
+to trigger the Packit job manually.</p>
+<p>So for <a href="/docs/configuration/#copr_build">Copr builds</a>, Packit is able to trigger new builds based on a pull request comment:</p>
+<pre><code>/packit copr-build
+</code></pre>
+<p>or the shorter version</p>
+<pre><code>/packit build
+</code></pre>
+<p>So whenever you run into a flake or feel like you want to retrigger, just type
+that comment into the PR and enjoy some fine, fresh builds.</p>
+<p>For <a href="/docs/configuration/#propose_downstream"><code>propose_downstream</code></a>, you need to place that comment to any issue.</p>
+<p>The requirements stated <a href="#approval">above</a> apply, so if you see this message</p>
+<pre><code>Only users with write or admin permissions to the repository can trigger
+Packit-as-a-Service
+</code></pre>
+<p>it means the author of the pull request does not have write access to the
+repository so the build cannot be scheduled. This is a perfect case for
+maintainers of the repository to post <code>/packit build</code> in the PR to get a build.</p>
+<p>In GitHub Checks interface, it is also possible to re-trigger a specific task just by clicking on <code>Re-run</code>
+for the particular check:</p>
+<p><img src="/github-check-rerun.png" alt="Re-run GitHub check" /></p>
+<p>Or it is possible to re-trigger every failed task using a pull request comment</p>
+<pre><code>/packit rebuild-failed
+</code></pre>
+<p>which builds only failed builds and similar for testing farm</p>
+<pre><code>/packit retest-failed
+</code></pre>
+<p>to re-trigger every failed test.</p>
+<h4 id="packit-handles-fedora-updates-for-you">
+  Packit handles Fedora updates for you.
+  <a class="anchor" href="#packit-handles-fedora-updates-for-you">#</a>
+</h4>
+<p>So you already have a <code>jobs</code> section in your config. Let&rsquo;s extend it with another
+jobs that will handle the Fedora updates: <code>propose_downstream</code>/<code>pull_from_upstream</code>, <code>koji_build</code> and <code>bodhi_udpate</code>.
+These are explained in detail in our <a href="/docs/fedora-releases-guide">release guide</a>.</p>
+<p>And that&rsquo;s about it. Now you should be able to use the core features of the Packit.
+If you have any questions, feel free to <a href="https://packit.dev/#contact">reach out to us</a>.</p>
+<p>We welcome all kinds of suggestions to this guide, feel free to <a href="https://github.com/packit/packit.dev/issues/new">open a new issue
+here</a>.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-set-up-packit-integration">1. Set up Packit integration</a>
+      <ul>
+        <li><a href="#github">GitHub</a></li>
+        <li><a href="#how-to-set-up-packit-on-github">How to set up Packit on GitHub</a></li>
+        <li><a href="#staging-instance">Staging instance</a></li>
+        <li><a href="#gitlab">GitLab</a></li>
+        <li><a href="#pagure">Pagure</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-approval">2. Approval</a></li>
+    <li><a href="#3-configuration">3. Configuration</a>
+      <ul>
+        <li><a href="#basic-configuration">Basic configuration</a></li>
+        <li><a href="#jobs">Jobs</a></li>
+        <li><a href="#available-jobs">Available jobs</a></li>
+        <li><a href="#actions">Actions</a></li>
+        <li><a href="#users">Users</a></li>
+        <li><a href="#how-to-try-that-for-real">How to try that for real</a></li>
+      </ul>
+    </li>
+    <li><a href="#check-that-packit-works">Check that Packit works</a></li>
+    <li><a href="#how-to-re-trigger-packit-actions-in-your-pull-request">How to re-trigger Packit actions in your pull request?</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

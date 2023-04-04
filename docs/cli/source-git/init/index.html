@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.98.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="packit source-git init #  Initialize a repository to serve as a source-git repo.
+The biggest advantage of this command is the functionality to create source-git repos. Here&rsquo;s a quick rundown what packit does:
+ Fetches specfile and additional sources from Fedora or CentOS dist-git. Apply downstream patches as commits. Add source-git configuration to control future syncing to dist-git.  We have a guide on how to create source-git repos manually if you want to understand the steps performed.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="init" />
+<meta property="og:description" content="packit source-git init #  Initialize a repository to serve as a source-git repo.
+The biggest advantage of this command is the functionality to create source-git repos. Here&rsquo;s a quick rundown what packit does:
+ Fetches specfile and additional sources from Fedora or CentOS dist-git. Apply downstream patches as commits. Add source-git configuration to control future syncing to dist-git.  We have a guide on how to create source-git repos manually if you want to understand the steps performed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://packit.dev/docs/cli/source-git/init/" /><meta property="article:section" content="docs" />
+
+
+
+<title>init | Packit</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.ece3f56fc3f716f87ccd4e6f3ea44ba1fa6757114261dadfbf861fde7d4e6203.css" integrity="sha256-7OP1b8P3Fvh8zU5vPqRLofpnVxFCYdrfv4Yf3n1OYgM=">
+<script defer src="/en.search.min.2d116d6280cc21c4d2dcffda82bc8e64969fd4aaddf4d7a55afd4e980c891d79.js" integrity="sha256-LRFtYoDMIcTS3P/agryOZJaf1Krd9NelWv1OmAyJHXk="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/packit_logo.png" alt="Logo" /><span>Packit</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://dashboard.packit.dev" target="_blank" rel="noopener">
+        Dashboard
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2f67fdc9a362fd86f1cfd4450ed56551" class="toggle" checked />
+    <label for="section-2f67fdc9a362fd86f1cfd4450ed56551" class="flex justify-between">
+      <a href="https://packit.dev/docs/" class="">User Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/about/" class="">About Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/guide/" class="">Packit Onboarding Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/testing-farm/" class="">Testing Farm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/faq/" class="">FAQ</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/" class="">Configuration</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/examples/" class="">Examples</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-17ea62a3fa80e270b55a640146bc89e1" class="toggle" checked />
+    <label for="section-17ea62a3fa80e270b55a640146bc89e1" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/" class="">Packit CLI</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/create-update/" class="">create-update</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/propose-downstream/" class="">propose-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/srpm/" class="">srpm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/prepare-sources/" class="">prepare-sources</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/sync-from-downstream/" class="">sync-from-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/push-updates/" class="">push-updates</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/validate-config/" class="">validate-config</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="toggle"  />
+    <label for="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/build/" class="">build</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/koji/" class="">in-koji</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/in-image-builder/" class="">in-image-builder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/mock/" class="">in-mock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/local/" class="">locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/copr/" class="">in-copr</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a024048a4317a88a547d3a91b2359da1" class="toggle" checked />
+    <label for="section-a024048a4317a88a547d3a91b2359da1" class="flex justify-between">
+      <a  class="">source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/init/" class=" active">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-dist-git/" class="">update-dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-source-git/" class="">update-source-git</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/actions/" class="">Actions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/fedora-releases-guide/" class="">How to do Fedora releases with Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/service-level-objectives/" class="">Service Level Objectives</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/reproduce-locally/" class="">Reproduce CI environment locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/archive-not-matching-git/" class="">Generated code in upstream archives</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de9f4fbe058a823cefbf9e39a42e3770" class="toggle"  />
+    <label for="section-de9f4fbe058a823cefbf9e39a42e3770" class="flex justify-between">
+      <a href="https://packit.dev/source-git/" class="">Source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/design/" class="">Source-git design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="toggle"  />
+    <label for="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="flex justify-between">
+      <a href="https://packit.dev/source-git/work-with-source-git/" class="">Working with source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/create-source-git/" class="">Create a source-git repo</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/update-spec/" class="">Update a spec file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/pull-upstream-fixes/" class="">Pull fixes from the upstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/control-patch-generation/" class="">Controlling patch generation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/build-locally/" class="">Build current checkout locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/propose-to-dist-git/" class="">Propose your source-git content to dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/sync-from-dist-git/" class="">Sync back changes made in dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/fix-diverged-history/" class="">Diverged history</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a07783f405300745807d39eacf150420" class="toggle"  />
+    <label for="section-a07783f405300745807d39eacf150420" class="flex justify-between">
+      <a  class="">Blog Posts</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="toggle"  />
+    <label for="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="flex justify-between">
+      <a  class="">Weekly Status</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/march-2023/" class="">Packit March 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/february-2023/" class="">Packit February 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/january-2023/" class="">Packit January 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2022/" class="">2022</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2021/" class="">2021</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2020/" class="">2020</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2019/" class="">2019</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2022-features/" class="">2022 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/pull-from-upstream/" class="">Automatic pulling of upstream releases to Fedora</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/testing-farm-triggering/" class="">Running tests with builds from another PR</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fas-verification-automation/" class="">Automation of FAS verification in Packit Service</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/downstream-automation/" class="">Downstream automation is here</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/copr-srpms/" class="">Building SRPMs in Copr</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-features/" class="">2021 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-in-numbers/" class="">2021 in Numbers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fedora-eln/" class="">Working on the next major RHEL release, in your upstream repo</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03ded75136420a051aef84f84237f006" class="toggle"  />
+    <label for="section-03ded75136420a051aef84f84237f006" class="flex justify-between">
+      <a href="https://packit.dev/development-docs/" class="">Development Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/creating-stream-9-repos/" class="">Creating CentOS Stream 9 source-git repositories</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/patch-metadata/" class="">Source-git patch metadata</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://status.packit.dev" target="_blank" rel="noopener">
+        Status page
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>init</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#tutorial">Tutorial</a></li>
+    <li><a href="#help">Help</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="packit-source-git-init">
+  <code>packit source-git init</code>
+  <a class="anchor" href="#packit-source-git-init">#</a>
+</h1>
+<p>Initialize a repository to serve as a <a href="https://packit.dev/source-git/">source-git repo</a>.</p>
+<p>The biggest advantage of this command is the functionality to create source-git
+repos. Here&rsquo;s a quick rundown what packit does:</p>
+<ul>
+<li>Fetches specfile and additional sources from Fedora or CentOS dist-git.</li>
+<li>Apply downstream patches as commits.</li>
+<li>Add source-git configuration to control future syncing to dist-git.</li>
+</ul>
+<p>We have <a href="https://packit.dev/source-git/work-with-source-git/create-source-git/">a guide</a> on how to create
+source-git repos manually if you want to understand the steps performed.</p>
+<h2 id="prerequisites">
+  Prerequisites
+  <a class="anchor" href="#prerequisites">#</a>
+</h2>
+<ul>
+<li>A clone of the upstream repo with checked out branch which matches the base ref.</li>
+<li>The git ref of the upstream repo used as a base.</li>
+<li>A clean dist-git repository.</li>
+</ul>
+<h2 id="tutorial">
+  Tutorial
+  <a class="anchor" href="#tutorial">#</a>
+</h2>
+<p>As an example, let&rsquo;s create a source-git repo out of
+<a href="https://github.com/systemd/systemd-stable">systemd</a>. The project uses a
+dedicated repository to provide backports for actively maintained stable
+releases.</p>
+<p>First step is to clone the respective dist-git repo (we&rsquo;ll use Fedora Rawhide
+in our case):</p>
+<pre><code>$ cd $FEDORA_DIST_GIT_REPOS
+$ fedpkg clone systemd
+$ cd systemd
+</code></pre>
+<p>We should now determine the version in the specfile</p>
+<pre><code>$ rpmspec -q --qf &quot;%{version}&quot; ./systemd.spec
+249.4
+</code></pre>
+<p>Since systemd-stable prefixes the backport releases with <code>v</code>, we know that we want to base our source-git repo on the <code>v249.4</code> tag:</p>
+<pre><code>$ cd $FEDORA_SOURCE_GIT_REPOS
+$ git clone https://github.com/systemd/systemd-stable
+$ cd systemd-stable
+$ git checkout 'v249.4'
+</code></pre>
+<p>All the prereqs should be met now! We have the upstream clone with the proper
+tag checked out and the respective dist-git repo. We can now run the <code>source-git init</code>
+command:</p>
+<pre><code>$ packit source-git init v249.4 $FEDORA_SOURCE_GIT_REPOS/systemd-stable $FEDORA_DIST_GIT_REPOS/systemd
+</code></pre>
+<p>Once the command finishes successfully, your source-git repo is available for
+you at <code>$FEDORA_SOURCE_GIT_REPOS/systemd-stable</code>. Please head on to a section
+in this documentation which covers <a href="https://packit.dev/source-git/work-with-source-git/">working with source-git repos</a>.</p>
+<p>By default, using <code>%autosetup</code> in the <code>%prep</code> section of the specfile is required.
+You can use <code>--ignore-missing-autosetup</code> option to enforce running the command
+without using <code>%autosetup</code>, but Packit then cannot guarantee that the patches will be properly applied.
+Therefore, please make sure that running <code>%prep</code> produces a git repository with patches applied on top when using this option.
+It will be the base of your source-git repository.</p>
+<h2 id="help">
+  Help
+  <a class="anchor" href="#help">#</a>
+</h2>
+<pre><code>$ packit source-git init --help
+Usage: packit source-git init [OPTIONS] UPSTREAM_REF SOURCE_GIT DIST_GIT
+
+  Initialize SOURCE_GIT as a source-git repo by applying downstream patches
+  from DIST_GIT as Git commits on top of UPSTREAM_REF.
+
+  SOURCE_GIT needs to be an existing clone of the upstream repository.
+
+  UPSTREAM_REF is a tag, branch or commit from SOURCE_GIT.
+
+  SOURCE_GIT and DIST_GIT are paths to the source-git and dist-git repos.
+  Branch names can be specified, separated by colons.
+
+  If a branch name is specified for SOURCE_GIT, the branch is checked out and
+  reset to UPSTREAM_REF.
+
+  If a branch name is specified for DIST_GIT, the branch is checked out before
+  setting up the source-git repo. This branch is expected to exist.
+
+  Each Git commit created in SOURCE_GIT will have a 'From-dist-git-commit'
+  trailer to mark the hash of the dist-git commit from which it is created.
+
+  To learn more about source-git, please check
+
+      https://packit.dev/docs/source-git/
+
+  Examples:
+
+      $ packit source-git init v2.3.1 src/acl:rawhide rpms/acl:rawhide
+      $ packit source-git init --pkg-tool centpkg v2.3.1 src/acl rpms/acl
+
+Options:
+  --upstream-url TEXT         Git URL of the upstream repository. It is saved
+                              in the source-git configuration if it is
+                              specified.
+  --upstream-remote TEXT      Name of the remote pointing to the upstream
+                              repository. If --upstream-url is not specified,
+                              the fetch URL of this remote is saved in the
+                              source-git configuration as the Git URL of the
+                              upstream project. Defaults to 'origin'.
+  --pkg-tool TEXT             Name or path of the packaging tool used to work
+                              with sources in the dist-git repo. A variant of
+                              'rpkg'. Defaults to 'fedpkg' or the tool
+                              configured in the Packit configuration.
+  --pkg-name TEXT             The name of the package in the distro. Defaults
+                              to the directory name of DIST_GIT.
+  --ignore-missing-autosetup  Do not require %autosetup macro to be used in
+                              %prep section of specfile. By default,
+                              %autosetup is required.
+  -h, --help                  Show this message and exit.
+</code></pre>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#tutorial">Tutorial</a></li>
+    <li><a href="#help">Help</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

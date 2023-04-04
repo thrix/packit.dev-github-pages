@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.98.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to do Fedora releases with Packit #  Let&rsquo;s split the release process into single steps:
+ New upstream release Upload archive to lookaside cache Update dist-git content Koji builds Bodhi updates  Doing Fedora releases with Packit means utilising these jobs:
+ propose_downstream or pull_from_upstream koji_build bodhi_update  Every job takes care of a different part of the release process.
+Propose downstream job #  For enabling the propose downstream job, you need to have Packit Service installed and have a propose_downstream job in the configuration file for the given upstream repository (this job is also run by default if there is no jobs section in the configuration, see jobs configuration).">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="How to do Fedora releases with Packit" />
+<meta property="og:description" content="How to do Fedora releases with Packit #  Let&rsquo;s split the release process into single steps:
+ New upstream release Upload archive to lookaside cache Update dist-git content Koji builds Bodhi updates  Doing Fedora releases with Packit means utilising these jobs:
+ propose_downstream or pull_from_upstream koji_build bodhi_update  Every job takes care of a different part of the release process.
+Propose downstream job #  For enabling the propose downstream job, you need to have Packit Service installed and have a propose_downstream job in the configuration file for the given upstream repository (this job is also run by default if there is no jobs section in the configuration, see jobs configuration)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://packit.dev/docs/fedora-releases-guide/" /><meta property="article:section" content="docs" />
+
+
+
+<title>How to do Fedora releases with Packit | Packit</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.ece3f56fc3f716f87ccd4e6f3ea44ba1fa6757114261dadfbf861fde7d4e6203.css" integrity="sha256-7OP1b8P3Fvh8zU5vPqRLofpnVxFCYdrfv4Yf3n1OYgM=">
+<script defer src="/en.search.min.2d116d6280cc21c4d2dcffda82bc8e64969fd4aaddf4d7a55afd4e980c891d79.js" integrity="sha256-LRFtYoDMIcTS3P/agryOZJaf1Krd9NelWv1OmAyJHXk="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/packit_logo.png" alt="Logo" /><span>Packit</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://dashboard.packit.dev" target="_blank" rel="noopener">
+        Dashboard
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2f67fdc9a362fd86f1cfd4450ed56551" class="toggle" checked />
+    <label for="section-2f67fdc9a362fd86f1cfd4450ed56551" class="flex justify-between">
+      <a href="https://packit.dev/docs/" class="">User Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/about/" class="">About Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/guide/" class="">Packit Onboarding Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/testing-farm/" class="">Testing Farm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/faq/" class="">FAQ</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/" class="">Configuration</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/examples/" class="">Examples</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-17ea62a3fa80e270b55a640146bc89e1" class="toggle"  />
+    <label for="section-17ea62a3fa80e270b55a640146bc89e1" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/" class="">Packit CLI</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/create-update/" class="">create-update</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/propose-downstream/" class="">propose-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/srpm/" class="">srpm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/prepare-sources/" class="">prepare-sources</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/sync-from-downstream/" class="">sync-from-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/push-updates/" class="">push-updates</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/validate-config/" class="">validate-config</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="toggle"  />
+    <label for="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/build/" class="">build</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/koji/" class="">in-koji</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/in-image-builder/" class="">in-image-builder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/mock/" class="">in-mock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/local/" class="">locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/copr/" class="">in-copr</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a024048a4317a88a547d3a91b2359da1" class="toggle"  />
+    <label for="section-a024048a4317a88a547d3a91b2359da1" class="flex justify-between">
+      <a  class="">source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-dist-git/" class="">update-dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-source-git/" class="">update-source-git</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/actions/" class="">Actions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/fedora-releases-guide/" class=" active">How to do Fedora releases with Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/service-level-objectives/" class="">Service Level Objectives</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/reproduce-locally/" class="">Reproduce CI environment locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/archive-not-matching-git/" class="">Generated code in upstream archives</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de9f4fbe058a823cefbf9e39a42e3770" class="toggle"  />
+    <label for="section-de9f4fbe058a823cefbf9e39a42e3770" class="flex justify-between">
+      <a href="https://packit.dev/source-git/" class="">Source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/design/" class="">Source-git design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="toggle"  />
+    <label for="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="flex justify-between">
+      <a href="https://packit.dev/source-git/work-with-source-git/" class="">Working with source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/create-source-git/" class="">Create a source-git repo</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/update-spec/" class="">Update a spec file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/pull-upstream-fixes/" class="">Pull fixes from the upstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/control-patch-generation/" class="">Controlling patch generation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/build-locally/" class="">Build current checkout locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/propose-to-dist-git/" class="">Propose your source-git content to dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/sync-from-dist-git/" class="">Sync back changes made in dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/fix-diverged-history/" class="">Diverged history</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a07783f405300745807d39eacf150420" class="toggle"  />
+    <label for="section-a07783f405300745807d39eacf150420" class="flex justify-between">
+      <a  class="">Blog Posts</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="toggle"  />
+    <label for="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="flex justify-between">
+      <a  class="">Weekly Status</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/march-2023/" class="">Packit March 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/february-2023/" class="">Packit February 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/january-2023/" class="">Packit January 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2022/" class="">2022</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2021/" class="">2021</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2020/" class="">2020</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2019/" class="">2019</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2022-features/" class="">2022 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/pull-from-upstream/" class="">Automatic pulling of upstream releases to Fedora</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/testing-farm-triggering/" class="">Running tests with builds from another PR</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fas-verification-automation/" class="">Automation of FAS verification in Packit Service</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/downstream-automation/" class="">Downstream automation is here</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/copr-srpms/" class="">Building SRPMs in Copr</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-features/" class="">2021 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-in-numbers/" class="">2021 in Numbers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fedora-eln/" class="">Working on the next major RHEL release, in your upstream repo</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03ded75136420a051aef84f84237f006" class="toggle"  />
+    <label for="section-03ded75136420a051aef84f84237f006" class="flex justify-between">
+      <a href="https://packit.dev/development-docs/" class="">Development Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/creating-stream-9-repos/" class="">Creating CentOS Stream 9 source-git repositories</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/patch-metadata/" class="">Source-git patch metadata</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://status.packit.dev" target="_blank" rel="noopener">
+        Status page
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>How to do Fedora releases with Packit</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#propose-downstream-job">Propose downstream job</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#pull-from-upstream-job">Pull from upstream job</a></li>
+    <li><a href="#koji-build-job">Koji build job</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#bodhi-update-job">Bodhi update job</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="how-to-do-fedora-releases-with-packit">
+  How to do Fedora releases with Packit
+  <a class="anchor" href="#how-to-do-fedora-releases-with-packit">#</a>
+</h1>
+<p>Let&rsquo;s split the release process into single steps:</p>
+<ol>
+<li><a href="#new-upstream-release">New upstream release</a></li>
+<li><a href="#upload-archive-to-lookaside-cache">Upload archive to lookaside cache</a></li>
+<li><a href="#update-dist-git-content">Update dist-git content</a></li>
+<li><a href="#koji-build-job">Koji builds</a></li>
+<li><a href="#bodhi-update-job">Bodhi updates</a></li>
+</ol>
+<p>Doing Fedora releases with Packit means utilising these jobs:</p>
+<ol>
+<li><a href="#propose-downstream-job"><code>propose_downstream</code></a> or <a href="#pull-from-upstream-job"><code>pull_from_upstream</code></a></li>
+<li><a href="#koji-build-job"><code>koji_build</code></a></li>
+<li><a href="#bodhi-update-job"><code>bodhi_update</code></a></li>
+</ol>
+<p>Every job takes care of a different part of the release process.</p>
+<h2 id="propose-downstream-job">
+  Propose downstream job
+  <a class="anchor" href="#propose-downstream-job">#</a>
+</h2>
+<p>For enabling the propose downstream job, you need to have
+<a href="/docs/guide/#1-set-up-packit-integration">Packit Service installed</a>
+and have a <code>propose_downstream</code> job in the configuration file for the given upstream repository
+(this job is also run by default if there is no <code>jobs</code> section
+in the configuration, see <a href="/docs/configuration/#packit-service-jobs">jobs configuration</a>).
+The <a href="/docs/configuration/#propose_downstream">propose_downstream job</a> should be then configured like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">propose_downstream</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">release</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dist_git_branches</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">main</span>
+</span></span></code></pre></div><p>You can adjust the <code>dist_git_branches</code> field to include the
+dist-git branches you want to update and also utilise <a href="/docs/configuration/#aliases">aliases</a>
+instead of using hardcoded versions.</p>
+<h4 id="new-upstream-release">
+  New upstream release
+  <a class="anchor" href="#new-upstream-release">#</a>
+</h4>
+<p>The process of releasing a new version starts in the upstream repository by creating a
+new upstream release. Packit gets the information about the newly created release (not a git tag) from GitHub,
+loads the config from the release commit and if there is a <code>propose_downstream</code> job
+defined, the workflow begins.</p>
+<h4 id="upload-archive-to-lookaside-cache">
+  Upload archive to lookaside cache
+  <a class="anchor" href="#upload-archive-to-lookaside-cache">#</a>
+</h4>
+<p>The upstream archive needs to be downloaded by Packit first and then uploaded to the lookaside cache.
+By default, Packit downloads sources defined in the specfile that contain URLs.
+You can override these URLs via <a href="/docs/configuration#sources"><code>sources</code></a> configuration key.</p>
+<p>For Python packages, you can use a
+<a href="https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows">GitHub action</a>
+(<a href="https://github.com/packit/packit/blob/main/.github/workflows/pypi-publish.yml">example setup of Packit itself</a>)
+that automatically builds and uploads the archive to PyPI
+on each new release. Then during propose downstream, Packit tries to download the archive from the provided URL.
+If the download fails because the upstream archive is not available at the time of running the job,
+the job is scheduled to be retried later.</p>
+<h4 id="update-dist-git-content">
+  Update dist-git content
+  <a class="anchor" href="#update-dist-git-content">#</a>
+</h4>
+<p>After saving the archive in the lookaside cache,
+Packit updates the dist-git content (mainly <code>sources</code> file and spec file) via pull requests for the specified branches.
+You can configure which files in the upstream repo should be copied to dist-git during an update
+via <a href="/docs/configuration/#files_to_sync"><code>files_to_sync</code></a> configuration key.</p>
+<p>The version in the spec file is set to the version that Packit gets from the upstream tag
+corresponding to the release that triggered the job. If the version and tag differ,
+you can specify the <a href="/docs/configuration/#upstream_tag_template"><code>upstream_tag_template</code></a>
+configuration option so that Packit can extract the correct version.</p>
+<p>If you use <a href="/docs/configuration/#copy_upstream_release_description"><code>copy_upstream_release_description: true</code></a>,
+the changelog entry will use the GitHub release description field.
+(Just make sure the formatting is compatible with spec file.
+E.g. use <code>-</code> instead of <code>*</code> for lists to not create multiple changelog entries.)
+There is also <a href="/docs/configuration/#sync_changelog"><code>sync_changelog</code></a> configuration option to enable syncing
+the whole changelog.</p>
+<p>During proposing a new update, you will get updates of the job status via commit statuses/checks
+on the release commit. These will provide links to our dashboard where you can find all the information about
+the job including the logs. You can also check all propose downstream runs in
+<a href="https://dashboard.packit.dev/jobs/propose-downstreams">this view</a>.</p>
+<p><img src="/images/propose-downstream-dashboard.png" alt="Dashboard view for propose downstreams" /></p>
+<p>After Packit successfully creates the dist-git pull requests,
+it&rsquo;s on downstream CI systems and maintainer(s) to check the changes and merge
+the pull requests.</p>
+<h4 id="retriggering">
+  Retriggering
+  <a class="anchor" href="#retriggering">#</a>
+</h4>
+<p>Users with write or admin permissions to the repository can retrigger an
+update via a comment in any open issue in the upstream repository:</p>
+<pre><code>/packit propose-downstream
+</code></pre>
+<h2 id="pull-from-upstream-job">
+  Pull from upstream job
+  <a class="anchor" href="#pull-from-upstream-job">#</a>
+</h2>
+<p>[<strong>NEW</strong>] Starting January 2023, we have provided a new way to get fresh
+upstream releases in Fedora Linux.</p>
+<p>The <a href="/docs/configuration/#pull_from_upstream"><code>pull_from_upstream</code> job</a> is
+defined in dist-git only and provides the <code>propose_downstream</code>
+functionality. This means that Packit doesn&rsquo;t need to be set up in the
+upstream project: everything is configured in Fedora dist-git. So when a new
+upstream release happens and
+<a href="https://release-monitoring.org/">release-monitoring.org</a> detects it, you&rsquo;ll
+get dist-git pull requests with it automatically.</p>
+<p>For customization of the job, you may need to define additional configuration options, most commonly:</p>
+<ul>
+<li>If the version from release monitoring and Git tag differ,
+you should specify the <a href="/docs/configuration/#upstream_tag_template"><code>upstream_tag_template</code></a>.</li>
+<li>You can configure which files (if any) in the upstream repo should be copied to dist-git during an update
+via <a href="/docs/configuration/#files_to_sync"><code>files_to_sync</code></a> configuration key.</li>
+<li>By default, Packit downloads sources defined in the spec file that contain URLs.
+You can override these URLs via <a href="/docs/configuration#sources"><code>sources</code></a> configuration key.</li>
+<li>You may utilise some of the <a href="/docs/actions/#syncing-the-release">actions</a>
+for overriding the Packit default behaviour, for example:
+<ul>
+<li>
+<p>for the changelog entry generation, if you do not want the default <code>git log</code> output, you can use your own command(s):</p>
+<pre><code>changelog-entry:
+    echo &quot;New release ${PACKIT_PROJECT_VERSION}&quot;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p>You can check all the job runs with details and logs in <a href="https://dashboard.packit.dev/jobs/pull-from-upstreams">this view</a>.
+You can also configure a repository where we should
+open issues in case of errors during the job via <a href="/docs/configuration#issue_repository"><code>issue_repository</code></a>
+configuration key.</p>
+<p><img src="/images/pull-from-upstream-dashboard.png" alt="Dashboard view for pull_from_upstream" /></p>
+<h2 id="koji-build-job">
+  Koji build job
+  <a class="anchor" href="#koji-build-job">#</a>
+</h2>
+<p>After having the dist-git content updated, you can easily automate also building in Koji.
+You can simply configure Packit to react to the new commits in your dist-git repository and create
+Koji builds by having
+a Packit configuration (when using <code>propose_downstream</code> job, you can configure Packit to sync the file) in your
+dist-git repository that includes a <code>koji_build</code> job.
+Then, if Packit is informed (via fedora-messaging bus) about a new commit in the configured dist-git branch, it submits a new build in Koji
+like maintainers usually do. (The commits without any spec file change are skipped.)</p>
+<p>By default, only merged pull requests created by Packit are being acted upon, but
+you can override this behaviour by specifying
+<code>allowed_pr_authors</code> and/or <code>allowed_committers</code> in the <a href="/docs/configuration/#koji_build">job configuration</a>.</p>
+<p>The <a href="/docs/configuration/#koji_build">koji_build job</a> can be configured like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">koji_build</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">commit</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dist_git_branches</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-all</span>
+</span></span></code></pre></div><p>There is no UI provided by Packit for the job,
+but it is visible across Fedora systems (as you can see in the following image).
+The koji build behaves as it was created manually, and you can utilise
+<a href="https://apps.fedoraproject.org/notifications/about">Fedora Notifications</a>
+to be informed about the builds. Also, you can configure a repository where should we
+open issues in case of errors during the job via <a href="/docs/configuration#issue_repository"><code>issue_repository</code></a> configuration key.</p>
+<h4 id="retriggering-1">
+  Retriggering
+  <a class="anchor" href="#retriggering-1">#</a>
+</h4>
+<p>You can retrigger a build by a comment in a dist-git pull request:</p>
+<pre><code>/packit koji-build
+</code></pre>
+<p>The build will be triggered for the target branch of the pull request. The user who
+posts this comment needs to be a packager.</p>
+<p>If Packit created an issue in the configured <code>issue_repository</code>, you can place the same comment in that
+issue to retrigger the builds (see <a href="/docs/configuration#issue_repository"><code>issue_repository</code></a> for details).</p>
+<h2 id="bodhi-update-job">
+  Bodhi update job
+  <a class="anchor" href="#bodhi-update-job">#</a>
+</h2>
+<p>Lastly, you can again similarly to Koji builds, configure Packit to react to successful Koji builds and create
+Bodhi updates by having a Packit configuration in your dist-git repository that includes a <code>bodhi_update</code> job.
+Once Packit is informed (via fedora-messaging bus) about the successful Koji build for the configured branch,
+it creates a new update for that branch in Bodhi for you.</p>
+<p>The <a href="/docs/configuration/#bodhi_update">bodhi_update job</a> can be configured like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">bodhi_update</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">commit</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dist_git_branches</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-branched</span> <span style="color:#75715e"># rawhide updates are created automatically</span>
+</span></span></code></pre></div><p>The packit config is loaded from the commit the build is triggered from.
+The <code>issue_repository</code> configuration key mentioned in the Koji build job applies here as well.</p>
+<h4 id="retriggering-2">
+  Retriggering
+  <a class="anchor" href="#retriggering-2">#</a>
+</h4>
+<p>You can retrigger an update by a comment in a dist-git pull request:</p>
+<pre><code>/packit create-update
+</code></pre>
+<p>The update will be triggered for the target branch of the pull request. The user who
+posts this comment needs to be a packager and have write access to the dist-git repository.</p>
+<p>If Packit created an issue in the configured <code>issue_repository</code>, you can place the same comment in that
+issue to retrigger the updates (see <a href="/docs/configuration#issue_repository"><code>issue_repository</code></a> for details).</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#propose-downstream-job">Propose downstream job</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#pull-from-upstream-job">Pull from upstream job</a></li>
+    <li><a href="#koji-build-job">Koji build job</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#bodhi-update-job">Bodhi update job</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.98.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to create a source-git repository? #  This guide walks through the steps to create a source-git repository from an upstream project.
+ We have a dedicated command which automates most of the steps described below: packit source-git init
+ Consider joining the Fedora Source-git SIG if you are interested in the development of the source-git workflow.
+The process to construct a source-git repository and a branch to track downstream (distribution) work, which then can be synced to dist-git has the following steps:">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Create a source-git repo" />
+<meta property="og:description" content="How to create a source-git repository? #  This guide walks through the steps to create a source-git repository from an upstream project.
+ We have a dedicated command which automates most of the steps described below: packit source-git init
+ Consider joining the Fedora Source-git SIG if you are interested in the development of the source-git workflow.
+The process to construct a source-git repository and a branch to track downstream (distribution) work, which then can be synced to dist-git has the following steps:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://packit.dev/source-git/work-with-source-git/create-source-git/" /><meta property="article:section" content="source-git" />
+<meta property="article:published_time" content="2020-02-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-20T00:00:00+00:00" />
+
+<title>Create a source-git repo | Packit</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.ece3f56fc3f716f87ccd4e6f3ea44ba1fa6757114261dadfbf861fde7d4e6203.css" integrity="sha256-7OP1b8P3Fvh8zU5vPqRLofpnVxFCYdrfv4Yf3n1OYgM=">
+<script defer src="/en.search.min.2d116d6280cc21c4d2dcffda82bc8e64969fd4aaddf4d7a55afd4e980c891d79.js" integrity="sha256-LRFtYoDMIcTS3P/agryOZJaf1Krd9NelWv1OmAyJHXk="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/packit_logo.png" alt="Logo" /><span>Packit</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://dashboard.packit.dev" target="_blank" rel="noopener">
+        Dashboard
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2f67fdc9a362fd86f1cfd4450ed56551" class="toggle"  />
+    <label for="section-2f67fdc9a362fd86f1cfd4450ed56551" class="flex justify-between">
+      <a href="https://packit.dev/docs/" class="">User Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/about/" class="">About Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/guide/" class="">Packit Onboarding Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/testing-farm/" class="">Testing Farm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/faq/" class="">FAQ</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/" class="">Configuration</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/examples/" class="">Examples</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-17ea62a3fa80e270b55a640146bc89e1" class="toggle"  />
+    <label for="section-17ea62a3fa80e270b55a640146bc89e1" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/" class="">Packit CLI</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/create-update/" class="">create-update</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/propose-downstream/" class="">propose-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/srpm/" class="">srpm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/prepare-sources/" class="">prepare-sources</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/sync-from-downstream/" class="">sync-from-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/push-updates/" class="">push-updates</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/validate-config/" class="">validate-config</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="toggle"  />
+    <label for="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/build/" class="">build</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/koji/" class="">in-koji</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/in-image-builder/" class="">in-image-builder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/mock/" class="">in-mock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/local/" class="">locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/copr/" class="">in-copr</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a024048a4317a88a547d3a91b2359da1" class="toggle"  />
+    <label for="section-a024048a4317a88a547d3a91b2359da1" class="flex justify-between">
+      <a  class="">source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-dist-git/" class="">update-dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-source-git/" class="">update-source-git</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/actions/" class="">Actions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/fedora-releases-guide/" class="">How to do Fedora releases with Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/service-level-objectives/" class="">Service Level Objectives</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/reproduce-locally/" class="">Reproduce CI environment locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/archive-not-matching-git/" class="">Generated code in upstream archives</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de9f4fbe058a823cefbf9e39a42e3770" class="toggle" checked />
+    <label for="section-de9f4fbe058a823cefbf9e39a42e3770" class="flex justify-between">
+      <a href="https://packit.dev/source-git/" class="">Source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/design/" class="">Source-git design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="toggle" checked />
+    <label for="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="flex justify-between">
+      <a href="https://packit.dev/source-git/work-with-source-git/" class="">Working with source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/create-source-git/" class=" active">Create a source-git repo</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/update-spec/" class="">Update a spec file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/pull-upstream-fixes/" class="">Pull fixes from the upstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/control-patch-generation/" class="">Controlling patch generation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/build-locally/" class="">Build current checkout locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/propose-to-dist-git/" class="">Propose your source-git content to dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/sync-from-dist-git/" class="">Sync back changes made in dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/fix-diverged-history/" class="">Diverged history</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a07783f405300745807d39eacf150420" class="toggle"  />
+    <label for="section-a07783f405300745807d39eacf150420" class="flex justify-between">
+      <a  class="">Blog Posts</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="toggle"  />
+    <label for="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="flex justify-between">
+      <a  class="">Weekly Status</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/march-2023/" class="">Packit March 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/february-2023/" class="">Packit February 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/january-2023/" class="">Packit January 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2022/" class="">2022</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2021/" class="">2021</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2020/" class="">2020</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2019/" class="">2019</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2022-features/" class="">2022 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/pull-from-upstream/" class="">Automatic pulling of upstream releases to Fedora</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/testing-farm-triggering/" class="">Running tests with builds from another PR</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fas-verification-automation/" class="">Automation of FAS verification in Packit Service</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/downstream-automation/" class="">Downstream automation is here</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/copr-srpms/" class="">Building SRPMs in Copr</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-features/" class="">2021 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-in-numbers/" class="">2021 in Numbers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fedora-eln/" class="">Working on the next major RHEL release, in your upstream repo</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03ded75136420a051aef84f84237f006" class="toggle"  />
+    <label for="section-03ded75136420a051aef84f84237f006" class="flex justify-between">
+      <a href="https://packit.dev/development-docs/" class="">Development Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/creating-stream-9-repos/" class="">Creating CentOS Stream 9 source-git repositories</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/patch-metadata/" class="">Source-git patch metadata</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://status.packit.dev" target="_blank" rel="noopener">
+        Status page
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Create a source-git repo</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#identify-the-upstream-git-repository-and-version">Identify the upstream Git repository and version</a></li>
+    <li><a href="#create-and-populate-the-distro-subdirectory">Create and populate the <code>.distro</code> subdirectory</a></li>
+    <li><a href="#configure-syncing-to-dist-git">Configure syncing to dist-git</a></li>
+    <li><a href="#update-the-spec-file-and-apply-the-downstream-patches">Update the spec-file and apply the downstream patches</a></li>
+    <li><a href="#test-the-source-git-repository">Test the source-git repository</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="how-to-create-a-source-git-repository">
+  How to create a source-git repository?
+  <a class="anchor" href="#how-to-create-a-source-git-repository">#</a>
+</h1>
+<p>This guide walks through the steps to create a source-git repository from an
+upstream project.</p>
+<blockquote>
+<p>We have a dedicated command which automates most of the steps described
+below: <a href="https://packit.dev/docs/cli/source-git/init/"><code>packit source-git init</code></a></p>
+</blockquote>
+<p>Consider joining the <a href="https://fedoraproject.org/wiki/SIGs/Source-git">Fedora Source-git SIG</a> if you are interested in the
+development of the source-git workflow.</p>
+<p>The process to construct a source-git repository and a branch to track
+downstream (distribution) work, which then can be synced to dist-git has the
+following steps:</p>
+<ol>
+<li>Identify the upstream Git repository and Git commit corresponding to the
+current version of the software, as available in the distribution.</li>
+<li>Create and populate a <code>.distro</code> subdirectory in the upstream working tree
+to hold the files needed to package and test the software in the
+distribution.</li>
+<li>Configure syncing to dist-git in <code>.distro/source-git.yaml</code>.</li>
+<li>Remove the references to the downstream (distribution) patches from the
+spec-file and apply these patches as Git-commits.</li>
+<li>Test the source-git repository by trying to sync the content to the
+corresponding dist-git repository.</li>
+</ol>
+<p>As an example, let&rsquo;s see the steps one would need to take to create a
+source-git repository for <a href="https://savannah.nongnu.org/projects/acl">acl</a> and a branch to track distribution work in
+Fedora Rawhide.</p>
+<h2 id="identify-the-upstream-git-repository-and-version">
+  Identify the upstream Git repository and version
+  <a class="anchor" href="#identify-the-upstream-git-repository-and-version">#</a>
+</h2>
+<p>Let&rsquo;s search for an official project URL for <em>acl</em> <a href="https://src.fedoraproject.org/rpms/acl/blob/rawhide/f/acl.spec">in the spec-file for
+Fedora Rawhide</a>. This could be done by using the web interface for
+<a href="https://src.fedoraproject.org/">src.fedoraproject.org</a>, too, but as the dist-git repository is needed later
+on, it makes sense to clone it using <code>fedpkg</code>:</p>
+<pre><code>$ mkdir rpms
+$ fedpkg clone -a acl rpms/acl
+Cloning into 'rpms/acl'...
+remote: Enumerating objects: 699, done.
+remote: Counting objects: 100% (699/699), done.
+remote: Compressing objects: 100% (473/473), done.
+remote: Total 699 (delta 359), reused 442 (delta 207), pack-reused 0
+Receiving objects: 100% (699/699), 129.66 KiB | 316.00 KiB/s, done.
+Resolving deltas: 100% (359/359), done.
+$ git -C rpms/acl status
+On branch rawhide
+Your branch is up to date with 'origin/rawhide'.
+
+nothing to commit, working tree clean
+</code></pre>
+<p>The dist-git repo is cloned in an <code>rpms</code> directory, and the corresponding
+source-git repository will be created in a <code>src</code> directory later on. This
+directory structure helps to keep multiple dist-git and source-git
+repositories separate and nicely organized.</p>
+<p>The <code>URL</code> tag in the spec-file tells, that <a href="https://savannah.nongnu.org/projects/acl">acl</a> is hosted at
+<a href="https://savannah.nongnu.org/projects/acl">https://savannah.nongnu.org/projects/acl</a>. Following the links from that page
+we can look up the URL of the project&rsquo;s Git repository, and use the <code>https</code>
+one to clone it:</p>
+<pre><code>$ mkdir src
+$ git clone https://git.savannah.gnu.org/git/acl.git src/acl
+Cloning into 'src/acl'...
+remote: Counting objects: 3687, done.
+remote: Compressing objects: 100% (962/962), done.
+remote: Total 3687 (delta 2705), reused 3687 (delta 2705)
+Receiving objects: 100% (3687/3687), 707.18 KiB | 1.22 MiB/s, done.
+Resolving deltas: 100% (2705/2705), done.
+$ git -C src/acl status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+</code></pre>
+<p>From the version field of the spec-file we can tell that Fedora Rawhide has
+<em>acl</em> version 2.3.1. We search the upstream Git repository for the tag which
+points to the commit corresponding to this version. This commit is going to be
+the starting point of the <code>rawhide</code> branch on which the distribution work in
+Fedora Rawhide is going to be tracked.</p>
+<pre><code>$ cd src/acl
+$ git tag --list | grep 2.3.1
+v2.3.1
+$ git checkout -B rawhide v2.3.1
+Switched to a new branch 'rawhide'
+</code></pre>
+<h2 id="create-and-populate-the-distro-subdirectory">
+  Create and populate the <code>.distro</code> subdirectory
+  <a class="anchor" href="#create-and-populate-the-distro-subdirectory">#</a>
+</h2>
+<p>In source-git, files required to package and test the software in a
+distribution are stored in a <code>.distro</code> subdirectory. This allows keeping these
+files separate from the source code. The distribution agnostic name was chosen
+in order to enable the easy sharing of the packaging work between different
+distributions.</p>
+<p>Let&rsquo;s create and populate this directory:</p>
+<pre><code>$ mkdir .distro
+$ rsync --archive --delete \
+        --filter 'exclude *.patch' \
+        --filter 'exclude sources' \
+        --filter 'exclude .git*' \
+        ../../rpms/acl/ .distro/
+$ tree -a .distro/
+.distro/
+├── acl-2.3.1.tar.gz.sig
+├── acl.spec
+└── tests
+    ├── cmd-line-options
+    │   ├── Makefile
+    │   ├── PURPOSE
+    │   ├── runtest.sh
+    │   └── test-core.sh
+    └── tests.yml
+
+2 directories, 7 files
+</code></pre>
+<p>A quick explanation of the filters used in the rsync-command above:</p>
+<ul>
+<li>Patch-files are not copied from dist-git. They will become part of the
+source-git repository as Git commits at a later step.</li>
+<li>The <code>sources</code> file, used in dist-git to reference the source-archives in the
+lookaside-cache is excluded. Upstream sources are part of the working tree
+in source-git.</li>
+<li>The <code>.git</code> directory of the dist-git repo, and other <code>.git*</code> files are
+excluded. These are specific to the dist-git repository. They are re-created
+later on, as needed, using a content specific to source-git.</li>
+</ul>
+<p>As gitignore rules in the upstream repo and dist-git might be different, we
+need to reset these for the <code>.distro</code> directory. In the case of <em>acl</em> for
+example the top-level <code>.gitignore</code> has a rule to exclude <code>Makefile</code>s, but the
+tests in dist-git have a <code>Makefile</code>, which need to become part of the
+source-git repo.</p>
+<p>Because the <code>.gitignore</code> file in dist-git has no other ignore rules than the
+one for the source-code archives, there are no other rules to be added to
+<code>.distro/.gitignore</code>.</p>
+<pre><code>$ cat &gt; .distro/.gitignore
+# Reset gitignore rules
+!*
+</code></pre>
+<h2 id="configure-syncing-to-dist-git">
+  Configure syncing to dist-git
+  <a class="anchor" href="#configure-syncing-to-dist-git">#</a>
+</h2>
+<p>Now, let&rsquo;s create the configuration which is going to be used when syncing
+content to dist-git. This is used to control certain aspects of syncing
+content to dist-git when using <code>packit source-git update-dist-git</code>.</p>
+<p>Create a file called <code>.distro/source-git.yaml</code> with the following content:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">upstream_project_url</span>: <span style="color:#ae81ff">https://git.savannah.nongnu.org/git/acl.git</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">upstream_ref</span>: <span style="color:#ae81ff">v2.3.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">downstream_package_name</span>: <span style="color:#ae81ff">acl</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">specfile_path</span>: <span style="color:#ae81ff">.distro/acl.spec</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">patch_generation_ignore_paths</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">.distro/</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">patch_generation_patch_id_digits</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">sync_changelog</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">files_to_sync</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">src</span>: <span style="color:#ae81ff">.distro/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">dest</span>: <span style="color:#ae81ff">.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">delete</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">filters</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;protect .git*&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;protect sources&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;exclude source-git.yaml&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;exclude .gitignore&#34;</span>
+</span></span></code></pre></div><p><code>upstream_project_url</code> is the URL of the upstream repository. This is saved to
+be used by future operations.</p>
+<p><code>upstream_ref</code> is the Git ref to be used to tell where upstream history ends
+and downstream history starts. Packit uses this value to tell which version of
+the source-archive to download from the URL specified in <code>Source</code>, in order to
+be uploaded to dist-git&rsquo;s lookaside-cache.</p>
+<p><code>downstream_package_name</code> tells <code>packit</code> the name of the package.</p>
+<p><code>specfile_path</code> specifies where the specfile is to be found.</p>
+<p><code>patch_generation_ignore_paths</code> lists the paths which should be ignored when
+generating downstream patches, to be added in dist-git. As <code>.distro</code> is the
+place where the files related to packaging are stored, set the configuration
+to ignore this path, so that there are no patch files generated for it.</p>
+<p><code>patch_generation_patch_id_digits</code> tells Packit how many digits are used, at
+minimum, when adding <code>PatchN</code> tags to the spec-file. The patch in <code>acl</code> is in
+the form of <code>Patch1</code>, doesn&rsquo;t have a minimum width, so set this value to 0.</p>
+<p>Setting <code>sync_changelog</code> to <code>true</code> tells Packit to sync the changelog in the
+spec-file as is. This disables Packit&rsquo;s functionality to automatically update
+the changelog when syncing to dist-git.</p>
+<p><code>files_to_sync</code> controls the way files are synced when updating dist-git. In
+the context of the current source-git structure this means to syncing the
+content of <code>.distro</code> with the root of the dist-git repo. This is what the
+<code>src</code> and <code>dest</code> fields configure.</p>
+<p><code>delete: true</code> causes files not in <code>src</code> to be deleted from <code>dest</code>.</p>
+<p><code>filters</code> is a list of <code>rsync</code> filters to be used to protect paths in <code>dest</code>
+and exclude paths in <code>src</code> from the sync operation.</p>
+<p>You can think about the <code>files_to_sync</code> section as describing the reverse of
+the rsync-command used to copy content from dist-git to <code>.distro</code>.</p>
+<p>We plan to make most of this configuration implicit, so most of it might not
+be required in the future.</p>
+<h2 id="update-the-spec-file-and-apply-the-downstream-patches">
+  Update the spec-file and apply the downstream patches
+  <a class="anchor" href="#update-the-spec-file-and-apply-the-downstream-patches">#</a>
+</h2>
+<p>In dist-git downstream changes are stored as patch-files, which then are
+referenced in the spec-file and applied during <code>%prep</code> when building the
+package. In source-git we want the same changes to become Git commits in the
+repository. This also means, that it would be semantically weird to reference
+the patch-files in the spec-file. As there are no patch-files in the
+source-git repo.</p>
+<p>So let&rsquo;s remove the following lines from <code>.distro/acl.spec</code>:</p>
+<pre tabindex="0"><code># avoid permission denied problem with LD_PRELOAD in the test-suite
+Patch1: 0001-acl-2.2.53-test-runwrapper.patch
+</code></pre><p>Pay attention not to modify any other part of the spec-file, except deleting
+these lines. Saving <code>.distro/acl.spec</code> with an editor which is configured to
+strip white-space from the end of lines will result in unnecessary diff-chunks
+when syncing content back to dist-git.</p>
+<p>Note, that <em>acl</em> is using <code>%autosetup</code> to apply the patches in <code>%prep</code>, this
+is why the <code>%prep</code> section doesn&rsquo;t need an update. Because <code>packit source-git update-dist-git</code> doesn&rsquo;t support adding the <code>%patch</code> macros when adding
+patches to the spec-file during syncing, currently only packages using
+<code>%autosetup</code> are supported. At the time of writing, adding support for
+<code>%setup</code> is still not decided.</p>
+<p>At this point, the <code>.distro</code> directory is ready, and can be commited as the
+first commit on the <code>rawhide</code> branch.</p>
+<pre><code>$ git add .distro/
+$ git commit -m'Initialize as a source-git repository'
+[rawhide c333206] Initialize as a source-git repository
+ 9 files changed, 736 insertions(+)
+ create mode 100644 .distro/.gitignore
+ create mode 100644 .distro/acl-2.3.1.tar.gz.sig
+ create mode 100644 .distro/acl.spec
+ create mode 100644 .distro/source-git.yaml
+ create mode 100644 .distro/tests/cmd-line-options/Makefile
+ create mode 100644 .distro/tests/cmd-line-options/PURPOSE
+ create mode 100755 .distro/tests/cmd-line-options/runtest.sh
+ create mode 100755 .distro/tests/cmd-line-options/test-core.sh
+ create mode 100644 .distro/tests/tests.yml
+</code></pre>
+<p>The <code>rawhide</code> branch in the source-git repo has its first downstream commit
+now:</p>
+<pre><code>$ git log --oneline v2.3.1..
+c333206 (HEAD -&gt; rawhide) Initialize as a source-git repository
+</code></pre>
+<p>Now, apply the only downstream patch from dist-git. We&rsquo;re using <code>git am</code> in
+this case, but depending on the type of the patch-files in dist-git, you might
+need to use <code>git apply</code>:</p>
+<pre><code>$ git am ../../rpms/acl/0001-acl-2.2.53-test-runwrapper.patch
+</code></pre>
+<p>The <code>rawhide</code> branch now also has the downstream change in the source-code as
+a commit:</p>
+<pre><code>$ git log --oneline v2.3.1..
+7054794 (HEAD -&gt; rawhide) test/runwrapper: copy the preloaded library
+c333206 Initialize as a source-git repository
+</code></pre>
+<p>The only thing left to do is to make sure that the patch-file generated from
+this commit is going to keep its name (and not use the default name generated
+by <code>git format-patch</code>), and that the <a href="https://docs.fedoraproject.org/en-US/packaging-guidelines/PatchUpstreamStatus/">patch status</a> line is going to be
+included above the patch when it&rsquo;s added back to the spec-file while syncing
+to dist-git.</p>
+<p>Packit understands <a href="https://packit.dev/source-git/work-with-source-git/control-patch-generation/">Git-trailers</a> which can be included in the commit message,
+and used to tweak how patch-files are generated and included in the spec-file.
+You can include the patch status with the help of the <code>Patch-status</code> field,
+and specify the patch-file name with <code>Patch-name</code>.</p>
+<p>One more Git-trailer that should be added in this step is
+<code>From-dist-git-commit</code>, which can be used later on to tell which dist-git
+commit was used to create this source-git repository.</p>
+<p>Amend the last commit&hellip;</p>
+<pre><code>$ git commit --amend
+</code></pre>
+<p>&hellip;and edit the commit message to include this field at the end of it.</p>
+<pre tabindex="0"><code>test/runwrapper: copy the preloaded library
+
+... to a temporary directory because the original location might
+not be accessible by other users.
+
+Patch-name: 0001-acl-2.2.53-test-runwrapper.patch
+Patch-status: |-
+    avoid permission denied problem with LD_PRELOAD in the test-suite
+From-dist-git-commit: 08c7e74d0a58c9483d2f4f55a3fba2baffb09c3a
+
+# Please enter the commit message for your changes. Lines starting
+# with &#39;#&#39; will be ignored, and an empty message aborts the commit.
+#
+# Author:    Kamil Dudka &lt;kdudka@redhat.com&gt;
+# Date:      Tue Jul 3 10:46:58 2018 +0200
+#
+# On branch rawhide
+# Changes to be committed:
+#	modified:   test/runwrapper
+#
+</code></pre><p>Save and exit.</p>
+<h2 id="test-the-source-git-repository">
+  Test the source-git repository
+  <a class="anchor" href="#test-the-source-git-repository">#</a>
+</h2>
+<p>Try creating an update in the dist-git repository from the source-git
+repository you&rsquo;ve just created. All the changes below are local.</p>
+<pre><code>$ cd ../../
+$ packit --config src/acl/.distro/source-git.yaml source-git update-dist-git --pkg-tool fedpkg src/acl rpms/acl
+2021-05-21 17:19:49.158 api.py            INFO   Won't be doing kinit, no credentials provided.
+2021-05-21 15:19:50.103 distgit.py        INFO   Archive 'acl-2.3.1.tar.gz' found in lookaside cache (skipping upload).
+</code></pre>
+<p>Now check the dist-git repo to see if there are any changes:</p>
+<pre><code>$ git -C rpms/acl status
+On branch rawhide
+Your branch is up to date with 'origin/rawhide'.
+
+nothing to commit, working tree clean
+</code></pre>
+<p>A clean working tree in this case means, that the transformation of source-git
+to dist-git resulted in the same content. Which is good.</p>
+<p>Try adding a new, dummy, change in source-git and update dist-git again, to
+see a new patch being added:</p>
+<pre><code>$ cd src/acl
+$ echo 'A dummy change' &gt;&gt; README
+$ git diff
+diff --git a/README b/README
+index abcfdc6..05c4af6 100644
+--- a/README
++++ b/README
+@@ -11,3 +11,4 @@ information and references to other related manual
+pages.
+
+ For more information on the build process, please refer to
+  doc/PORTING.
+  +A dummy change
+$ git commit -aF-
+(reading log message from standard input)
+Add a dummy change
+
+description: a patch to try things out
+[rawhide fb34af6] Add a dummy change
+ 1 file changed, 1 insertion(+)
+
+$ cd ../../
+$ packit --config src/acl/.distro/source-git.yaml source-git update-dist-git --pkg-tool fedpkg src/acl rpms/acl
+2021-05-27 16:46:38.574 api.py            INFO   Won't be doing kinit, no credentials provided.
+2021-05-27 14:46:39.747 distgit.py        INFO   Archive 'acl-2.3.1.tar.gz' found in lookaside cache (skipping upload).
+</code></pre>
+<p>Check the diff in dist-git and the new patch generated from source-git:</p>
+<pre><code>$ git -C rpms/acl diff
+diff --git a/acl.spec b/acl.spec
+index 2bf7182..ac7bc75 100644
+--- a/acl.spec
++++ b/acl.spec
+@@ -15,6 +15,9 @@ Source: https://download-mirror.savannah.gnu.org/releases/acl/acl-%{version}.tar
+ # avoid permission denied problem with LD_PRELOAD in the test-suite
+ Patch1: 0001-acl-2.2.53-test-runwrapper.patch
+
++# a patch to try things out
++Patch2: 0002-Add-a-dummy-change.patch
++
+ License: GPLv2+
+ URL: https://savannah.nongnu.org/projects/acl
+
+$ cat rpms/acl/0002-Add-a-dummy-change.patch
+From fb34af687e2b650920775647a7c8d149c60403eb Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Hunor=20Csomort=C3=A1ni?= &lt;csomh@redhat.com&gt;
+Date: Thu, 27 May 2021 16:42:19 +0200
+Subject: [PATCH 2/2] Add a dummy change
+
+description: a patch to try things out
+---
+ README | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/README b/README
+index abcfdc6..05c4af6 100644
+--- a/README
++++ b/README
+@@ -11,3 +11,4 @@ information and references to other related manual pages.
+
+ For more information on the build process, please refer to
+ doc/PORTING.
++A dummy change
+--
+2.31.1
+</code></pre>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#identify-the-upstream-git-repository-and-version">Identify the upstream Git repository and version</a></li>
+    <li><a href="#create-and-populate-the-distro-subdirectory">Create and populate the <code>.distro</code> subdirectory</a></li>
+    <li><a href="#configure-syncing-to-dist-git">Configure syncing to dist-git</a></li>
+    <li><a href="#update-the-spec-file-and-apply-the-downstream-patches">Update the spec-file and apply the downstream patches</a></li>
+    <li><a href="#test-the-source-git-repository">Test the source-git repository</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

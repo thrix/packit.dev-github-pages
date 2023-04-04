@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.98.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Reproduce CI environment locally #  This used to be a question in our FAQ and now we have a dedicated document to cover this.
+SRPM builds locally #  $ packit srpm Packit will create a SRPM out of the current checkout. Simple and clear.
+SRPM builds in Copr #  When your SRPM is being built in Copr (because srpm_build_deps is set in your packit config, or you installed Packit GitHub application after September 6, 2022), this section describes how you can reproduce the build procedure locally.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Reproduce CI environment locally" />
+<meta property="og:description" content="Reproduce CI environment locally #  This used to be a question in our FAQ and now we have a dedicated document to cover this.
+SRPM builds locally #  $ packit srpm Packit will create a SRPM out of the current checkout. Simple and clear.
+SRPM builds in Copr #  When your SRPM is being built in Copr (because srpm_build_deps is set in your packit config, or you installed Packit GitHub application after September 6, 2022), this section describes how you can reproduce the build procedure locally." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://packit.dev/docs/reproduce-locally/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-03-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-03-01T00:00:00+00:00" />
+
+<title>Reproduce CI environment locally | Packit</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.ece3f56fc3f716f87ccd4e6f3ea44ba1fa6757114261dadfbf861fde7d4e6203.css" integrity="sha256-7OP1b8P3Fvh8zU5vPqRLofpnVxFCYdrfv4Yf3n1OYgM=">
+<script defer src="/en.search.min.2d116d6280cc21c4d2dcffda82bc8e64969fd4aaddf4d7a55afd4e980c891d79.js" integrity="sha256-LRFtYoDMIcTS3P/agryOZJaf1Krd9NelWv1OmAyJHXk="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/packit_logo.png" alt="Logo" /><span>Packit</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://dashboard.packit.dev" target="_blank" rel="noopener">
+        Dashboard
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2f67fdc9a362fd86f1cfd4450ed56551" class="toggle" checked />
+    <label for="section-2f67fdc9a362fd86f1cfd4450ed56551" class="flex justify-between">
+      <a href="https://packit.dev/docs/" class="">User Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/about/" class="">About Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/guide/" class="">Packit Onboarding Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/testing-farm/" class="">Testing Farm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/faq/" class="">FAQ</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/" class="">Configuration</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/examples/" class="">Examples</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-17ea62a3fa80e270b55a640146bc89e1" class="toggle"  />
+    <label for="section-17ea62a3fa80e270b55a640146bc89e1" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/" class="">Packit CLI</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/create-update/" class="">create-update</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/propose-downstream/" class="">propose-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/srpm/" class="">srpm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/prepare-sources/" class="">prepare-sources</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/sync-from-downstream/" class="">sync-from-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/push-updates/" class="">push-updates</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/validate-config/" class="">validate-config</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="toggle"  />
+    <label for="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/build/" class="">build</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/koji/" class="">in-koji</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/in-image-builder/" class="">in-image-builder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/mock/" class="">in-mock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/local/" class="">locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/copr/" class="">in-copr</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a024048a4317a88a547d3a91b2359da1" class="toggle"  />
+    <label for="section-a024048a4317a88a547d3a91b2359da1" class="flex justify-between">
+      <a  class="">source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-dist-git/" class="">update-dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-source-git/" class="">update-source-git</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/actions/" class="">Actions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/fedora-releases-guide/" class="">How to do Fedora releases with Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/service-level-objectives/" class="">Service Level Objectives</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/reproduce-locally/" class=" active">Reproduce CI environment locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/archive-not-matching-git/" class="">Generated code in upstream archives</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de9f4fbe058a823cefbf9e39a42e3770" class="toggle"  />
+    <label for="section-de9f4fbe058a823cefbf9e39a42e3770" class="flex justify-between">
+      <a href="https://packit.dev/source-git/" class="">Source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/design/" class="">Source-git design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="toggle"  />
+    <label for="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="flex justify-between">
+      <a href="https://packit.dev/source-git/work-with-source-git/" class="">Working with source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/create-source-git/" class="">Create a source-git repo</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/update-spec/" class="">Update a spec file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/pull-upstream-fixes/" class="">Pull fixes from the upstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/control-patch-generation/" class="">Controlling patch generation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/build-locally/" class="">Build current checkout locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/propose-to-dist-git/" class="">Propose your source-git content to dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/sync-from-dist-git/" class="">Sync back changes made in dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/fix-diverged-history/" class="">Diverged history</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a07783f405300745807d39eacf150420" class="toggle"  />
+    <label for="section-a07783f405300745807d39eacf150420" class="flex justify-between">
+      <a  class="">Blog Posts</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="toggle"  />
+    <label for="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="flex justify-between">
+      <a  class="">Weekly Status</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/march-2023/" class="">Packit March 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/february-2023/" class="">Packit February 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/january-2023/" class="">Packit January 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2022/" class="">2022</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2021/" class="">2021</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2020/" class="">2020</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2019/" class="">2019</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2022-features/" class="">2022 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/pull-from-upstream/" class="">Automatic pulling of upstream releases to Fedora</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/testing-farm-triggering/" class="">Running tests with builds from another PR</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fas-verification-automation/" class="">Automation of FAS verification in Packit Service</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/downstream-automation/" class="">Downstream automation is here</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/copr-srpms/" class="">Building SRPMs in Copr</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-features/" class="">2021 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-in-numbers/" class="">2021 in Numbers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fedora-eln/" class="">Working on the next major RHEL release, in your upstream repo</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03ded75136420a051aef84f84237f006" class="toggle"  />
+    <label for="section-03ded75136420a051aef84f84237f006" class="flex justify-between">
+      <a href="https://packit.dev/development-docs/" class="">Development Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/creating-stream-9-repos/" class="">Creating CentOS Stream 9 source-git repositories</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/patch-metadata/" class="">Source-git patch metadata</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://status.packit.dev" target="_blank" rel="noopener">
+        Status page
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Reproduce CI environment locally</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#srpm-builds-locally">SRPM builds locally</a></li>
+    <li><a href="#srpm-builds-in-copr">SRPM builds in Copr</a></li>
+    <li><a href="#srpm-builds-in-our-sandbox">SRPM builds in our sandbox</a></li>
+    <li><a href="#testing-farm">Testing Farm</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="reproduce-ci-environment-locally">
+  Reproduce CI environment locally
+  <a class="anchor" href="#reproduce-ci-environment-locally">#</a>
+</h1>
+<p>This used to be a question <a href="https://packit.dev/docs/faq/#a-command-failed-in-packit-service-how-do-i-reproduce-it-locally">in our FAQ</a> and
+now we have a dedicated document to cover this.</p>
+<h2 id="srpm-builds-locally">
+  SRPM builds locally
+  <a class="anchor" href="#srpm-builds-locally">#</a>
+</h2>
+<pre tabindex="0"><code>$ packit srpm
+</code></pre><p>Packit will create a SRPM out of the current checkout. Simple and clear.</p>
+<h2 id="srpm-builds-in-copr">
+  SRPM builds in Copr
+  <a class="anchor" href="#srpm-builds-in-copr">#</a>
+</h2>
+<p>When your SRPM is being built in Copr (because <a href="https://packit.dev/docs/configuration/#srpm_build_deps"><code>srpm_build_deps</code></a> is set in your packit config, or
+you installed Packit GitHub application after September 6, 2022), this
+section describes how you can reproduce the build procedure locally.</p>
+<p>We invoke our CLI command <code>packit prepare-sources</code> in the Copr environment,
+the command may look like this for a job triggered by a pull request change:</p>
+<pre tabindex="0"><code>$ packit prepare-sources --result-dir directory-to-place-sources --pr-id 150 
+--merge-pr --target-branch main --job-config-index 2 https://github.com/packit/packit
+</code></pre><p>As a first step, you can run this command
+locally on your computer (if you have installed the needed dependencies for your actions)
+and see whether the sources are correctly prepared.</p>
+<p>Thankfully, Copr is very transparent how it performs builds. When you open a
+build log (e.g. builder-live.log.gz), you&rsquo;ll see a command at the top which
+Copr invokes to perform a build. Let&rsquo;s do that in a container.</p>
+<pre tabindex="0"><code>$ podman run --privileged -ti fedora:36 bash
+</code></pre><p>(the reason for running root privileged container is that
+<a href="https://github.com/rpm-software-management/mock">mock</a> will be used inside and
+needs capabilities to perform
+<a href="https://man7.org/linux/man-pages/man1/unshare.1.html">unshare</a>)</p>
+<p>But first we need to install the package which contains the <code>copr-rpmbuild</code> command:</p>
+<pre tabindex="0"><code>[root@f26be2947a15 /]# dnf install -y copr-rpmbuild
+</code></pre><p>Now let&rsquo;s rerun locally a build for build-id 3580313:</p>
+<pre tabindex="0"><code>[root@f26be2947a15 /]# /usr/bin/copr-rpmbuild --verbose --drop-resultdir --srpm --build-id 3580313
+</code></pre><p>Your changes need to be pushed and a PR needs to be created for this to work.
+You are welcome to experiment with <code>copr-rpmbuild</code> to get a more efficient
+workflow (hint <code>--task-file</code>).</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="srpm-builds-in-our-sandbox">
+  SRPM builds in our sandbox
+  <a class="anchor" href="#srpm-builds-in-our-sandbox">#</a>
+</h2>
+<p>Packit by default runs all commands you defined in a
+<a href="https://github.com/packit/sandcastle">sandbox</a> which is a kubernetes pod in a
+new project. If you need additional packages or binaries present in the
+sandbox, you should migrate your SRPM builds to be done in Copr using
+<a href="https://packit.dev/docs/configuration/#srpm_build_deps"><code>srpm_build_deps</code></a>.</p>
+<p>You can reproduce our sandbox environment: Firstly, you should pull our
+production sandbox image and run commands of your choice inside the container.
+As an example, this is how we were debugging build problems with anaconda:</p>
+<ol>
+<li>
+<p>Clone your upstream git repo.</p>
+</li>
+<li>
+<p>Launch the container and bind-mount the upstream project inside:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>$ podman run -ti --rm --memory 768MB -v $PWD:/src -w /src quay.io/packit/sandcastle:prod bash
+</code></pre><ol start="3">
+<li>Run commands of your choice:</li>
+</ol>
+<pre tabindex="0"><code>[root@4af5dbd9c828 src]# ./configure
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether UID &#39;0&#39; is supported by ustar format... yes
+checking whether GID &#39;0&#39; is supported by ustar format... yes
+checking how to create a ustar tar archive... gnutar
+checking whether make supports nested variables... (cached) yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+...
+</code></pre><p>Our deployment is running in <a href="https://docs.openshift.com/rosa/welcome/index.html">OpenShift
+ROSA</a>.</p>
+<p>Since OpenShift <a href="https://www.openshift.com/blog/a-guide-to-openshift-and-uids">invokes pods using arbitrary
+UIDs</a> and as you
+can see, the command above is invoked as root, it does not match production
+packit-service. So, if running a local container didn&rsquo;t help you with
+reproducing the issue, you can try running it in openshift.</p>
+<p>Here is a simple python code how packit-service does it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sandcastle <span style="color:#f92672">import</span> Sandcastle
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># this should be the path to your local clone of the upstream project</span>
+</span></span><span style="display:flex;"><span>git_repo_path: str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fill-me&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># kubernetes namespace to use</span>
+</span></span><span style="display:flex;"><span>k8s_namespace: str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;myproject&#34;</span>
+</span></span><span style="display:flex;"><span>command <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;your&#34;</span>, <span style="color:#e6db74">&#34;command&#34;</span>, <span style="color:#e6db74">&#34;of&#34;</span>, <span style="color:#e6db74">&#34;choice&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This is how your code gets copied (via rsync) into the openshift pod</span>
+</span></span><span style="display:flex;"><span>m_dir <span style="color:#f92672">=</span> MappedDir(git_repo_path, <span style="color:#e6db74">&#34;/sandcastle&#34;</span>, with_interim_pvc<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>o <span style="color:#f92672">=</span> Sandcastle(
+</span></span><span style="display:flex;"><span>    image_reference<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker.io/usercont/sandcastle:prod&#34;</span>,
+</span></span><span style="display:flex;"><span>    k8s_namespace_name<span style="color:#f92672">=</span>k8s_namespace,
+</span></span><span style="display:flex;"><span>    mapped_dir<span style="color:#f92672">=</span>m_dir
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>o<span style="color:#f92672">.</span>run()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    output <span style="color:#f92672">=</span> o<span style="color:#f92672">.</span>exec(command<span style="color:#f92672">=</span>command)
+</span></span><span style="display:flex;"><span>    print(output)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">finally</span>:
+</span></span><span style="display:flex;"><span>    o<span style="color:#f92672">.</span>delete_pod()
+</span></span></code></pre></div><p>This script requires:</p>
+<ul>
+<li><a href="https://github.com/packit/sandcastle">sandcastle</a> installed</li>
+<li>being logged in an openshift cluster (<code>oc whoami</code> to confirm)</li>
+<li>rsync binary available</li>
+</ul>
+<p>If none of these helped you, please <a href="#how-can-i-contact-you">reach out</a> to us and we&rsquo;ll try to help you.</p>
+<h2 id="testing-farm">
+  Testing Farm
+  <a class="anchor" href="#testing-farm">#</a>
+</h2>
+<p>When you open test results, you can see commands which Testing Farm performed
+to run your test. You can run those locally.</p>
+<p><img src="/tf-log-output.png" alt="Testing Farm Log Output" /></p>
+<p>The team is also planning to have a solution to fully reproduce the CI testing
+process locally:
+<a href="https://github.com/teemtee/tmt/issues/1075">teemtee/tmt#1075</a>.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#srpm-builds-locally">SRPM builds locally</a></li>
+    <li><a href="#srpm-builds-in-copr">SRPM builds in Copr</a></li>
+    <li><a href="#srpm-builds-in-our-sandbox">SRPM builds in our sandbox</a></li>
+    <li><a href="#testing-farm">Testing Farm</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

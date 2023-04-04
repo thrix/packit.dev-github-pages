@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.98.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Packit project in 2022 #  As you will see in the following paragraphs, the year 2022 was really fruitful for the Packit project. Without further ado, let’s take a look at what the Packit team accomplished last year:
+Fedora automation #  We have made a huge improvement in downstream automation. At the beginning of the year, we finished the workflow and you are now able to use Packit to get your release from upstream via dist-git and Koji to Bodhi.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2022 for Packit" />
+<meta property="og:description" content="Packit project in 2022 #  As you will see in the following paragraphs, the year 2022 was really fruitful for the Packit project. Without further ado, let’s take a look at what the Packit team accomplished last year:
+Fedora automation #  We have made a huge improvement in downstream automation. At the beginning of the year, we finished the workflow and you are now able to use Packit to get your release from upstream via dist-git and Koji to Bodhi." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://packit.dev/posts/2022-features/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-28T11:58:50+01:00" />
+<meta property="article:modified_time" content="2023-01-28T11:58:50+01:00" />
+
+<title>2022 for Packit | Packit</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.ece3f56fc3f716f87ccd4e6f3ea44ba1fa6757114261dadfbf861fde7d4e6203.css" integrity="sha256-7OP1b8P3Fvh8zU5vPqRLofpnVxFCYdrfv4Yf3n1OYgM=">
+<script defer src="/en.search.min.2d116d6280cc21c4d2dcffda82bc8e64969fd4aaddf4d7a55afd4e980c891d79.js" integrity="sha256-LRFtYoDMIcTS3P/agryOZJaf1Krd9NelWv1OmAyJHXk="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/packit_logo.png" alt="Logo" /><span>Packit</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://dashboard.packit.dev" target="_blank" rel="noopener">
+        Dashboard
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2f67fdc9a362fd86f1cfd4450ed56551" class="toggle"  />
+    <label for="section-2f67fdc9a362fd86f1cfd4450ed56551" class="flex justify-between">
+      <a href="https://packit.dev/docs/" class="">User Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/about/" class="">About Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/guide/" class="">Packit Onboarding Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/testing-farm/" class="">Testing Farm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/faq/" class="">FAQ</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/" class="">Configuration</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/examples/" class="">Examples</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-17ea62a3fa80e270b55a640146bc89e1" class="toggle"  />
+    <label for="section-17ea62a3fa80e270b55a640146bc89e1" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/" class="">Packit CLI</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/create-update/" class="">create-update</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/propose-downstream/" class="">propose-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/srpm/" class="">srpm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/prepare-sources/" class="">prepare-sources</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/sync-from-downstream/" class="">sync-from-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/push-updates/" class="">push-updates</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/validate-config/" class="">validate-config</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="toggle"  />
+    <label for="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/build/" class="">build</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/koji/" class="">in-koji</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/in-image-builder/" class="">in-image-builder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/mock/" class="">in-mock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/local/" class="">locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/copr/" class="">in-copr</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a024048a4317a88a547d3a91b2359da1" class="toggle"  />
+    <label for="section-a024048a4317a88a547d3a91b2359da1" class="flex justify-between">
+      <a  class="">source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-dist-git/" class="">update-dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-source-git/" class="">update-source-git</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/actions/" class="">Actions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/fedora-releases-guide/" class="">How to do Fedora releases with Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/service-level-objectives/" class="">Service Level Objectives</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/reproduce-locally/" class="">Reproduce CI environment locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/archive-not-matching-git/" class="">Generated code in upstream archives</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de9f4fbe058a823cefbf9e39a42e3770" class="toggle"  />
+    <label for="section-de9f4fbe058a823cefbf9e39a42e3770" class="flex justify-between">
+      <a href="https://packit.dev/source-git/" class="">Source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/design/" class="">Source-git design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="toggle"  />
+    <label for="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="flex justify-between">
+      <a href="https://packit.dev/source-git/work-with-source-git/" class="">Working with source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/create-source-git/" class="">Create a source-git repo</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/update-spec/" class="">Update a spec file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/pull-upstream-fixes/" class="">Pull fixes from the upstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/control-patch-generation/" class="">Controlling patch generation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/build-locally/" class="">Build current checkout locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/propose-to-dist-git/" class="">Propose your source-git content to dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/sync-from-dist-git/" class="">Sync back changes made in dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/fix-diverged-history/" class="">Diverged history</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a07783f405300745807d39eacf150420" class="toggle" checked />
+    <label for="section-a07783f405300745807d39eacf150420" class="flex justify-between">
+      <a  class="">Blog Posts</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="toggle"  />
+    <label for="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="flex justify-between">
+      <a  class="">Weekly Status</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/march-2023/" class="">Packit March 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/february-2023/" class="">Packit February 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/january-2023/" class="">Packit January 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2022/" class="">2022</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2021/" class="">2021</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2020/" class="">2020</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2019/" class="">2019</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2022-features/" class=" active">2022 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/pull-from-upstream/" class="">Automatic pulling of upstream releases to Fedora</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/testing-farm-triggering/" class="">Running tests with builds from another PR</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fas-verification-automation/" class="">Automation of FAS verification in Packit Service</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/downstream-automation/" class="">Downstream automation is here</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/copr-srpms/" class="">Building SRPMs in Copr</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-features/" class="">2021 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-in-numbers/" class="">2021 in Numbers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fedora-eln/" class="">Working on the next major RHEL release, in your upstream repo</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03ded75136420a051aef84f84237f006" class="toggle"  />
+    <label for="section-03ded75136420a051aef84f84237f006" class="flex justify-between">
+      <a href="https://packit.dev/development-docs/" class="">Development Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/creating-stream-9-repos/" class="">Creating CentOS Stream 9 source-git repositories</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/patch-metadata/" class="">Source-git patch metadata</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://status.packit.dev" target="_blank" rel="noopener">
+        Status page
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>2022 for Packit</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#packit-project-in-2022">Packit project in 2022</a></li>
+    <li><a href="#fedora-automation">Fedora automation</a></li>
+    <li><a href="#srpm-in-copr">SRPM in Copr</a></li>
+    <li><a href="#self-mapping-of-fas-account">Self-mapping of FAS account</a></li>
+    <li><a href="#multiple-project-test-runs">Multiple-project test runs</a></li>
+    <li><a href="#specfile-library">Specfile library</a></li>
+    <li><a href="#vm-image-builds">VM Image Builds</a></li>
+    <li><a href="#plans-for-the-next-year">Plans for the next year</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/2022-features/">2022 for Packit</a>
+  </h1>
+  
+  <h5>January 28, 2023</h5>
+
+
+
+  
+
+  
+
+
+
+<h2 id="packit-project-in-2022">
+  Packit project in 2022
+  <a class="anchor" href="#packit-project-in-2022">#</a>
+</h2>
+<p>As you will see in the following paragraphs, the year 2022 was really fruitful for the Packit project. Without further ado, let’s take a look at what the Packit team accomplished last year:</p>
+<h2 id="fedora-automation">
+  Fedora automation
+  <a class="anchor" href="#fedora-automation">#</a>
+</h2>
+<p>We have made a huge improvement in downstream automation. At the beginning of the year, we <a href="https://packit.dev/posts/downstream-automation/">finished the workflow</a> and you are now able to use Packit to get your release from upstream via dist-git and Koji to Bodhi. As usual, you can pick just what you need. This workflow consists of three jobs:</p>
+<ul>
+<li><code>propose-downstream</code>: as a reaction to an upstream release, the source archive is saved to a lookaside cache, specfile is updated and sent as a pull request to Fedora dist-git.</li>
+<li><code>koji-build</code>: as a reaction to a new dist-git commit, a new Koji build is triggered (you can specify allowed authors of a commit or merged pull request).</li>
+<li><code>bodhi-update</code>: as a reaction to a successfully finished Koji build, a new Bodhi update is created</li>
+</ul>
+<p><img src="/images/2022-blog/bodhi-update.png" alt="Detail of a Bodhi update created by Packit" /></p>
+<p>But that wasn’t all. At the very end of the year, the Packit team implemented an alternative to the <code>propose-downstream</code> job that we call <code>pull-from-upstream</code>. The logic of the job is the very same: the source archive is saved to a lookaside cache, specfile is updated and sent as a pull request to Fedora dist-git. The only – and main – difference is that the job is defined downstream (in the default dist-git branch, <code>rawhide</code> or its <code>main</code> alias) so you don’t need to install Packit in the upstream repository. The information about a new release is received from the <a href="https://docs.fedoraproject.org/en-US/package-maintainers/Upstream_Release_Monitoring">Upstream Release Monitoring</a>. The <code>pull-from-upstream</code> job is mainly targeted to the Fedora maintainers without upstream access or with upstream not being supported by Packit. (This job works with any upstream using git.) The setup is nicely described in <a href="https://packit.dev/posts/pull-from-upstream">this blog post</a>. And if you want a dedicated documentation page for the Fedora downstream automation, look at <a href="https://packit.dev/docs/fedora-releases-guide/">https://packit.dev/docs/fedora-releases-guide/</a>.</p>
+<p><img src="/images/2022-blog/pull-from-upstream.png" alt="Pull request created by a pull-from-upstream workflow" /></p>
+<p>And that’s still not all, we’ve also added <code>propose-downstream</code> to <a href="https://dashboard.packit.dev">our dashboard</a>. You can now the jobs in <a href="https://dashboard.packit.dev/pipelines">the Pipelines view</a>. Also, logs can be checked on a detail page (that can be accessed from a status of a release commit).</p>
+<p><img src="/images/2022-blog/propose-downstream-result-page.png" alt="Propose downstream result page" /></p>
+<p>Still not convinced we’ve done a lot? When using various downstream jobs, you can still hit an issue now and then. (Messages from Fedora infrastructure can get lost or some intermittent error can occur.) Packit automatically retries to overcome temporary issues, but sometimes it’s not enough or there is a real problem that needs to be fixed elsewhere. We can’t resolve the real problems for you, but we can help let you retry the job when needed. And you have two places where to do that.</p>
+<p>As you might be used to with the <code>propose-downstream</code> job, you can use comments in an upstream issue to retrigger Bodhi updates and Koji builds as well. Just configure <a href="https://packit.dev/docs/configuration/#issue_repository"><code>issue_repository</code></a> so Packit knows where to create issues in case of problems. (This does not need to be an upstream issue and this repository can be used for multiple projects.) Alternatively, if you use dist-git pull requests (either made by Packit or other maintainers), you can use a pull request comment to retrigger Koji Build or Bodhi update.</p>
+<p><img src="/images/2022-blog/dist-git-pull-request-comment.png" alt="Comment to recreate a Bodhi update" /></p>
+<p>If you are interested in what Packit has done for its users, you can take a look at the activity of the <code>packit</code> (or <code>packit-stg</code>) FAS user in <a href="https://src.fedoraproject.org/user/packit">dist-git</a>, <a href="https://koji.fedoraproject.org/koji/userinfo?userID=4641">Koji</a> or <a href="https://bodhi.fedoraproject.org/users/packit">Bodhi</a>.</p>
+<p><img src="/images/2022-blog/packit-dist-git-activity.png" alt="Dist-git activity of Packit user" />
+<img src="/images/2022-blog/packit-koji-builds.png" alt="Koji builds triggered by Packit user" />
+<img src="/images/2022-blog/packit-bodhi-updates-all.png" alt="Bodhi updates created by Packit user" /></p>
+<h2 id="srpm-in-copr">
+  SRPM in Copr
+  <a class="anchor" href="#srpm-in-copr">#</a>
+</h2>
+<p>Throughout the 2022 we have implemented support for building SRPMs in the Copr and slowly started introducing newly-onboarded projects to use Copr right from the start. The definitive switch to Copr has been done at the beginning of 2023. For more details, take a look at the <a href="https://packit.dev/posts/copr-srpms/">relevant blog post</a>, but let’s shortly describe the benefits:
+Most importantly, you can now use <a href="https://packit.dev/docs/configuration/#srpm_build_deps"><code>srpm_build_deps</code></a> config option to specify the dependencies needed for the build. With the <a href="https://github.com/packit/sandcastle">old solution</a>, this process was manual, global and had to be done by Packit maintainers. Another advantage of being able to use Copr for SRPM builds is access to the SRPM artifacts.</p>
+<h2 id="self-mapping-of-fas-account">
+  Self-mapping of FAS account
+  <a class="anchor" href="#self-mapping-of-fas-account">#</a>
+</h2>
+<p>From the beginning of the Packit project, for every Packit GitHub installation, we have required a Fedora account so we can be sure, that we are safe to use Fedora systems (like Copr or dist-git) on behalf of that user. Since we automate various tasks for you, we’ve made it possible for you to perform this yourself. (Thanks to the user config field in the Fedora Account System.)
+If you are interested in how this works, take a look at the blog post we’ve prepared for you: <a href="https://packit.dev/posts/fas-verification-automation/">https://packit.dev/posts/fas-verification-automation/</a></p>
+<p>If you wonder why we check permissions for the installation, we have good news for you. This year, we plan to improve the permission schema, do the checks for each job, and require only what is needed. But more about the plans for 2023 later.</p>
+<p><img src="/images/verify-fas.png" alt="Self-mapping process in an issue" /></p>
+<h2 id="multiple-project-test-runs">
+  Multiple-project test runs
+  <a class="anchor" href="#multiple-project-test-runs">#</a>
+</h2>
+<p>If you have multiple connected projects (as we do) and work on a feature spanning more of them, the following feature might come in handy. You can use a commit command with a reference to the other pull request and Packit will use Copr builds from both pull requests during the tests. Want to know more? Check this blog post: <a href="https://packit.dev/posts/testing-farm-triggering/">https://packit.dev/posts/testing-farm-triggering/</a></p>
+<p><img src="/images/2022-blog/test-for-external-build.png" alt="Test with external build" /></p>
+<h2 id="specfile-library">
+  Specfile library
+  <a class="anchor" href="#specfile-library">#</a>
+</h2>
+<p>This one might not be relevant to most of our users, but we would still like to announce, that we’ve created <a href="https://github.com/packit/specfile">a Python library</a> for specfile manipulation. It can not only parse various weird spec files but also can edit them with as little diff as possible. Also, the code is really interesting so check it out. Now, it’s used by Packit and <a href="https://github.com/rebase-helper/rebase-helper">rebase-helper</a> and you can watch <a href="https://www.youtube.com/watch?v=yzMfBPdFXZY&amp;t=17s">this demo</a> if you want to know more.
+In case you’ve missed that, this is not the first time we’ve extracted a part of our codebase for wider usage – another nice example is a <a href="https://github.com/packit/ogr/">forge-independent Python library for GitHub/GitLab/Pagure API called OGR</a>.</p>
+<h2 id="vm-image-builds">
+  VM Image Builds
+  <a class="anchor" href="#vm-image-builds">#</a>
+</h2>
+<p>Having Copr builds available for your pull-requests is really nice, but you can now have VM image builds as well. It would be really wasteful to do this for each and every commit so we decided to trigger this by a <code>/packit vm-image-build </code> comment. Similarly to other jobs, Packit uses an external system to do the hard work. This feature is possible thanks to the <a href="https://console.redhat.com/insights/image-builder">Red Hat Image Builder</a>. This feature is a fresh start on this journey and we are investigating the possibilities of Packit in this field. Check <a href="https://packit.dev/docs/configuration/#vm_image_build">our documentation</a> and let us know what you think.</p>
+<p><img src="/images/2022-blog/vm-image-build.png" alt="VM image build as a result of the comment" /></p>
+<h2 id="plans-for-the-next-year">
+  Plans for the next year
+  <a class="anchor" href="#plans-for-the-next-year">#</a>
+</h2>
+<p>Do you wonder what we plan for you for the year 2023? That is not a secret. For some time, we have been opening our planning and since the last year, you can check our <a href="https://github.com/orgs/packit/projects/7/">Kanban board</a> since it has become the primary place we use on daily bases. (It used to be half-manually and half-automatically synced.)
+Every quarter, our team sits down and discusses our plans for the next three months. We use MOSCOW (=MUST x SHOULD x COULD x WON’T) prioritisation method to group and compare all of our epics. The result of this time’s planning can be seen <a href="https://github.com/orgs/packit/projects/7/views/25">here</a>.</p>
+<p>Do you want to know how we decide and how you can influence us? It’s pretty easy. Firstly, we need to know about a bug or feature request. Secondly, the task needs to be worth the work. (And should be related to our mission.) We can’t work on everything so we need to pick the work with a bigger impact (a lot of projects will benefit from that or a significant benefit for a smaller group). So shortly, if you want something to be done: create an issue, provide a clear reasoning why we should do that and find other projects that can benefit from that.</p>
+<p>And also, our project is open source. We are more than happy to help anyone contribute to our code base!</p>
+<hr>
+<p>With that, I, personally, would like to thank all of the Packit team members for their outstanding work during the year. And I also would like to thank you, our users, for using our project, being kind, helpful and patient! I wish you all a happy new year and less mundane work as possible!</p>
+<p>On behalf of the Packit team,
+František</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#packit-project-in-2022">Packit project in 2022</a></li>
+    <li><a href="#fedora-automation">Fedora automation</a></li>
+    <li><a href="#srpm-in-copr">SRPM in Copr</a></li>
+    <li><a href="#self-mapping-of-fas-account">Self-mapping of FAS account</a></li>
+    <li><a href="#multiple-project-test-runs">Multiple-project test runs</a></li>
+    <li><a href="#specfile-library">Specfile library</a></li>
+    <li><a href="#vm-image-builds">VM Image Builds</a></li>
+    <li><a href="#plans-for-the-next-year">Plans for the next year</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

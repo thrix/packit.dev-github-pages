@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Packit CLI on Packit</title>
+    <link>https://packit.dev/docs/cli/</link>
+    <description>Recent content in Packit CLI on Packit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Jul 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://packit.dev/docs/cli/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>init</title>
+      <link>https://packit.dev/docs/cli/init/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/init/</guid>
+      <description>packit init #  Initiate a repository to start using packit. By default this command adds .packit.yaml config file to the git repository in the current working directory.
+If a spec file is found in the git repository, init will set specfile_path to point to it in .packit.yaml. Otherwise, specfile_path is set to &amp;lt;the name of the repository&amp;gt;.spec.
+See source-git init if you want to initialize a source-git repo.
+Help #  $ packit init --help Usage: packit init [OPTIONS] [PATH_OR_URL] Create the initial Packit configuration in a repository See &#39;packit source-git init&#39;, if you want to initialize a repository as a source-git repo.</description>
+    </item>
+    
+    <item>
+      <title>create-update</title>
+      <link>https://packit.dev/docs/cli/create-update/</link>
+      <pubDate>Fri, 28 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/create-update/</guid>
+      <description>packit create-update #  Create a new bodhi update for the latest Fedora build of the upstream project.
+Requirements #   Upstream git repository on GitHub. Packit config file placed in the upstream repository.  Tutorial #    Place a config file for packit in the root of your upstream repository..
+  Once the builds are done, you can run the create-update command. If you don&amp;rsquo;t specify the koji builds packit takes latest build.</description>
+    </item>
+    
+    <item>
+      <title>propose-downstream</title>
+      <link>https://packit.dev/docs/cli/propose-downstream/</link>
+      <pubDate>Fri, 28 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/propose-downstream/</guid>
+      <description>packit propose-downstream #  This is a detailed documentation for the update functionality of packit. The command creates a new pull request in Fedora using a selected or latest upstream release.
+Requirements #   Upstream git repository on GitHub. Upstream release (read, git tag) where version in spec file is equivalent to the name of the git tag. Packit config file placed in the upstream repository. Spec file present in the upstream repository and is correct in a given release.</description>
+    </item>
+    
+    <item>
+      <title>srpm</title>
+      <link>https://packit.dev/docs/cli/srpm/</link>
+      <pubDate>Fri, 28 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/srpm/</guid>
+      <description>packit srpm #  Create a SRPM of the present content in the upstream repository.
+By default, packit uses git describe --tags --match &#39;*.*&#39; to create a unique version of the snapshot and git archive -o &amp;quot;{package_name}-{version}.tar.gz&amp;quot; --prefix &amp;quot;{package_name}-{version}/&amp;quot; HEAD to create a tarball with upstream sources.
+You can override the archive and version commands in packit.yaml, e.g. this is what we use in ogr, a library which packit is using:</description>
+    </item>
+    
+    <item>
+      <title>prepare-sources</title>
+      <link>https://packit.dev/docs/cli/prepare-sources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/prepare-sources/</guid>
+      <description>packit prepare-sources #  Prepares sources for a new SRPM build using the content of the upstream repository. Applies the same as for packit srpm, but instead of building a SRPM in the end, prepared sources are moved to the result-dir.
+Requirements #   Upstream project is using git. Packit config file placed in the upstream repository.  Help #  Usage: packit prepare-sources [OPTIONS] [PATH_OR_URL] Prepare sources for a new SRPM build using content of the upstream repository.</description>
+    </item>
+    
+    <item>
+      <title>sync-from-downstream</title>
+      <link>https://packit.dev/docs/cli/sync-from-downstream/</link>
+      <pubDate>Fri, 28 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/sync-from-downstream/</guid>
+      <description>packit sync-from-downstream #  This is a detailed documentation for the downstream sync functionality of packit. The command creates a new pull request in upstream repository using a selected branch (main by default) from Fedora dist-git repository.
+Requirements #   Fedora dist-git repository. Packit config file placed in the upstream repository. Pagure API tokens for Fedora Dist-git. GitHub API token.  Tutorial #   Starting with packit 0.5.2 and later, you only need to set a single token to interact with dist-git.</description>
+    </item>
+    
+    <item>
+      <title>status</title>
+      <link>https://packit.dev/docs/cli/status/</link>
+      <pubDate>Thu, 18 Mar 2021 08:53:12 +0100</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/status/</guid>
+      <description>packit status #  This command displays latest information related to the project - downstream pull requests, upstream releases, builds in Koji and Copr and updates in Bodhi.
+Help #  Usage: packit status [OPTIONS] [PATH_OR_URL] Display status. - latest downstream pull requests - versions from all downstream branches - latest upstream releases - latest builds in Koji - latest builds in Copr - latest updates in Bodhi Options: -h, --help Show this message and exit.</description>
+    </item>
+    
+    <item>
+      <title>push-updates</title>
+      <link>https://packit.dev/docs/cli/push-updates/</link>
+      <pubDate>Thu, 18 Mar 2021 08:52:56 +0100</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/push-updates/</guid>
+      <description>packit push-updates #  Push the Bodhi updates that have been in testing for more than &amp;lsquo;Stable days&amp;rsquo; (7 by default) to the stable.
+If you are not authenticated with the bodhi server, please make sure that you navigate in your browser to the URL provided by the bodhi-client and then paste the code=XX... to the terminal when prompted.
+If you set fas_user and kerberos_realm in your &amp;ldquo;~/.config/packit.yaml&amp;rdquo; and have an active Kerberos TGT, you will be automatically authenticated.</description>
+    </item>
+    
+    <item>
+      <title>validate-config</title>
+      <link>https://packit.dev/docs/cli/validate-config/</link>
+      <pubDate>Thu, 18 Mar 2021 08:48:36 +0100</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/validate-config/</guid>
+      <description>packit validate-config #  Validate the Packit configuration file.
+Help #  Usage: packit validate-config [OPTIONS] [PATH_OR_URL] Validate PackageConfig validation. - checks missing values - checks incorrect types PATH_OR_URL argument is a local path or a URL to a git repository with packit configuration file Options: -h, --help Show this message and exit.  </description>
+    </item>
+    
+  </channel>
+</rss>

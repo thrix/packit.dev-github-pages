@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.98.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Week 1 (January 4th - January 8th) #   Name of the job/command/comment to propose update of downstream package has been synced between CLI and service to propose-downstream. propose-update is now deprecated. (packit#1065, packit-service#913)  Week 2 (January 11th - January 15th) #   Branch deletions are now correctly ignored. (packit-service#919) Multiple internal improvements have been done. (packit#1072, packit-service#922, packit-service#923)  Week 3 (January 18th - January 22th) #   We have temporarily disabled the testing-farm support because the cluster with old runner has died and the new runner is not ready.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="2021" />
+<meta property="og:description" content="Week 1 (January 4th - January 8th) #   Name of the job/command/comment to propose update of downstream package has been synced between CLI and service to propose-downstream. propose-update is now deprecated. (packit#1065, packit-service#913)  Week 2 (January 11th - January 15th) #   Branch deletions are now correctly ignored. (packit-service#919) Multiple internal improvements have been done. (packit#1072, packit-service#922, packit-service#923)  Week 3 (January 18th - January 22th) #   We have temporarily disabled the testing-farm support because the cluster with old runner has died and the new runner is not ready." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://packit.dev/posts/weekly/2021/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-05-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-16T00:00:00+00:00" />
+
+<title>2021 | Packit</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.ece3f56fc3f716f87ccd4e6f3ea44ba1fa6757114261dadfbf861fde7d4e6203.css" integrity="sha256-7OP1b8P3Fvh8zU5vPqRLofpnVxFCYdrfv4Yf3n1OYgM=">
+<script defer src="/en.search.min.2d116d6280cc21c4d2dcffda82bc8e64969fd4aaddf4d7a55afd4e980c891d79.js" integrity="sha256-LRFtYoDMIcTS3P/agryOZJaf1Krd9NelWv1OmAyJHXk="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/packit_logo.png" alt="Logo" /><span>Packit</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://dashboard.packit.dev" target="_blank" rel="noopener">
+        Dashboard
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2f67fdc9a362fd86f1cfd4450ed56551" class="toggle"  />
+    <label for="section-2f67fdc9a362fd86f1cfd4450ed56551" class="flex justify-between">
+      <a href="https://packit.dev/docs/" class="">User Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/about/" class="">About Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/guide/" class="">Packit Onboarding Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/testing-farm/" class="">Testing Farm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/faq/" class="">FAQ</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/" class="">Configuration</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/examples/" class="">Examples</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-17ea62a3fa80e270b55a640146bc89e1" class="toggle"  />
+    <label for="section-17ea62a3fa80e270b55a640146bc89e1" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/" class="">Packit CLI</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/create-update/" class="">create-update</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/propose-downstream/" class="">propose-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/srpm/" class="">srpm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/prepare-sources/" class="">prepare-sources</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/sync-from-downstream/" class="">sync-from-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/push-updates/" class="">push-updates</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/validate-config/" class="">validate-config</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="toggle"  />
+    <label for="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/build/" class="">build</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/koji/" class="">in-koji</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/in-image-builder/" class="">in-image-builder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/mock/" class="">in-mock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/local/" class="">locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/copr/" class="">in-copr</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a024048a4317a88a547d3a91b2359da1" class="toggle"  />
+    <label for="section-a024048a4317a88a547d3a91b2359da1" class="flex justify-between">
+      <a  class="">source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-dist-git/" class="">update-dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-source-git/" class="">update-source-git</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/actions/" class="">Actions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/fedora-releases-guide/" class="">How to do Fedora releases with Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/service-level-objectives/" class="">Service Level Objectives</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/reproduce-locally/" class="">Reproduce CI environment locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/archive-not-matching-git/" class="">Generated code in upstream archives</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de9f4fbe058a823cefbf9e39a42e3770" class="toggle"  />
+    <label for="section-de9f4fbe058a823cefbf9e39a42e3770" class="flex justify-between">
+      <a href="https://packit.dev/source-git/" class="">Source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/design/" class="">Source-git design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="toggle"  />
+    <label for="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="flex justify-between">
+      <a href="https://packit.dev/source-git/work-with-source-git/" class="">Working with source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/create-source-git/" class="">Create a source-git repo</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/update-spec/" class="">Update a spec file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/pull-upstream-fixes/" class="">Pull fixes from the upstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/control-patch-generation/" class="">Controlling patch generation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/build-locally/" class="">Build current checkout locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/propose-to-dist-git/" class="">Propose your source-git content to dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/sync-from-dist-git/" class="">Sync back changes made in dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/fix-diverged-history/" class="">Diverged history</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a07783f405300745807d39eacf150420" class="toggle" checked />
+    <label for="section-a07783f405300745807d39eacf150420" class="flex justify-between">
+      <a  class="">Blog Posts</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="toggle" checked />
+    <label for="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="flex justify-between">
+      <a  class="">Weekly Status</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/march-2023/" class="">Packit March 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/february-2023/" class="">Packit February 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/january-2023/" class="">Packit January 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2022/" class="">2022</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2021/" class=" active">2021</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2020/" class="">2020</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2019/" class="">2019</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2022-features/" class="">2022 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/pull-from-upstream/" class="">Automatic pulling of upstream releases to Fedora</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/testing-farm-triggering/" class="">Running tests with builds from another PR</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fas-verification-automation/" class="">Automation of FAS verification in Packit Service</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/downstream-automation/" class="">Downstream automation is here</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/copr-srpms/" class="">Building SRPMs in Copr</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-features/" class="">2021 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-in-numbers/" class="">2021 in Numbers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fedora-eln/" class="">Working on the next major RHEL release, in your upstream repo</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03ded75136420a051aef84f84237f006" class="toggle"  />
+    <label for="section-03ded75136420a051aef84f84237f006" class="flex justify-between">
+      <a href="https://packit.dev/development-docs/" class="">Development Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/creating-stream-9-repos/" class="">Creating CentOS Stream 9 source-git repositories</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/patch-metadata/" class="">Source-git patch metadata</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://status.packit.dev" target="_blank" rel="noopener">
+        Status page
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>2021</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#week-1-january-4th---january-8th">Week 1 (January 4th - January 8th)</a></li>
+    <li><a href="#week-2-january-11th---january-15th">Week 2 (January 11th - January 15th)</a></li>
+    <li><a href="#week-3-january-18th---january-22th">Week 3 (January 18th - January 22th)</a></li>
+    <li><a href="#week-4-january-25th---january-29th">Week 4 (January 25th - January 29th)</a></li>
+    <li><a href="#week-5-february-1st---february-5th">Week 5 (February 1st - February 5th)</a></li>
+    <li><a href="#week-6-february-8th---february-12th">Week 6 (February 8th - February 12th)</a></li>
+    <li><a href="#week-7-february-15th---february-19th">Week 7 (February 15th - February 19th)</a></li>
+    <li><a href="#week-8-february-22th---february-25th">Week 8 (February 22th - February 25th)</a></li>
+    <li><a href="#week-9-march-1st---march-5th">Week 9 (March 1st - March 5th)</a></li>
+    <li><a href="#week-10-march-8th---march-12th">Week 10 (March 8th - March 12th)</a></li>
+    <li><a href="#week-11-march-15th---march-19th">Week 11 (March 15th - March 19th)</a></li>
+    <li><a href="#week-12-march-22th---march-26th">Week 12 (March 22th - March 26th)</a></li>
+    <li><a href="#week-13-march-29th---april-1st">Week 13 (March 29th - April 1st)</a></li>
+    <li><a href="#week-14-april-4th---april-9th">Week 14 (April 4th - April 9th)</a></li>
+    <li><a href="#week-15-april-12th---april-16th">Week 15 (April 12th - April 16th)</a></li>
+    <li><a href="#week-16-april-19th---april-23th">Week 16 (April 19th - April 23th)</a></li>
+    <li><a href="#week-17-april-26th---april-30th">Week 17 (April 26th - April 30th)</a></li>
+    <li><a href="#week-18-may-3rd---may-7th">Week 18 (May 3rd - May 7th)</a></li>
+    <li><a href="#week-19-may-10th---may-14th">Week 19 (May 10th - May 14th)</a></li>
+    <li><a href="#week-20-may-17th---may-21st">Week 20 (May 17th - May 21st)</a></li>
+    <li><a href="#week-21-may-24th---may-28th">Week 21 (May 24th - May 28th)</a></li>
+    <li><a href="#week-22-may-31st---june-4th">Week 22 (May 31st - June 4th)</a></li>
+    <li><a href="#week-23-june-7th---june-11th">Week 23 (June 7th - June 11th)</a></li>
+    <li><a href="#week-24-june-14th---june-19th">Week 24 (June 14th - June 19th)</a></li>
+    <li><a href="#week-25-june-21st---june-26th">Week 25 (June 21st - June 26th)</a></li>
+    <li><a href="#week-2627-june-28th---july-9th">Week 26+27 (June 28th - July 9th)</a></li>
+    <li><a href="#week-28-july-12th---july-16th">Week 28 (July 12th - July 16th)</a></li>
+    <li><a href="#week-29-july-19th---july-23th">Week 29 (July 19th - July 23th)</a></li>
+    <li><a href="#week-30-july-26th---july-30th">Week 30 (July 26th - July 30th)</a></li>
+    <li><a href="#week-31-august-2nd---august-6th">Week 31 (August 2nd - August 6th)</a></li>
+    <li><a href="#week-32-august-9th---august-13th">Week 32 (August 9th - August 13th)</a></li>
+    <li><a href="#week-33-august-16th---august-20th">Week 33 (August 16th - August 20th)</a></li>
+    <li><a href="#week-34-august-23rd---august-27th">Week 34 (August 23rd - August 27th)</a></li>
+    <li><a href="#week-35-august-30th---september-3rd">Week 35 (August 30th - September 3rd)</a></li>
+    <li><a href="#week-36-september-6th---september-10th">Week 36 (September 6th - September 10th)</a></li>
+    <li><a href="#week-37-september-13th---september-17th">Week 37 (September 13th - September 17th)</a></li>
+    <li><a href="#week-38-september-20th---september-24th">Week 38 (September 20th - September 24th)</a></li>
+    <li><a href="#week-39-september-27th---october-1st">Week 39 (September 27th - October 1st)</a></li>
+    <li><a href="#week-40-october-4th---october-8th">Week 40 (October 4th - October 8th)</a></li>
+    <li><a href="#week-41-october-11th---october-15th">Week 41 (October 11th - October 15th)</a></li>
+    <li><a href="#week-42-october-18th---october-22th">Week 42 (October 18th - October 22th)</a></li>
+    <li><a href="#week-43-october-25th---november-1st">Week 43 (October 25th - November 1st)</a></li>
+    <li><a href="#week-44-november-1st---november-5th">Week 44 (November 1st - November 5th)</a></li>
+    <li><a href="#week-45-november-8th---november-12th">Week 45 (November 8th - November 12th)</a></li>
+    <li><a href="#week-46-november-15th---november-19th">Week 46 (November 15th - November 19th)</a></li>
+    <li><a href="#week-47-november-22th---november-26th">Week 47 (November 22th - November 26th)</a></li>
+    <li><a href="#week-48-november-29th---december-3rd">Week 48 (November 29th - December 3rd)</a></li>
+    <li><a href="#week-49-december-6th---december-12th">Week 49 (December 6th - December 12th)</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/weekly/2021/">2021</a>
+  </h1>
+  
+  <h5>May 16, 2022</h5>
+
+
+
+  
+
+  
+
+
+
+<h2 id="week-1-january-4th---january-8th">
+  Week 1 (January 4th - January 8th)
+  <a class="anchor" href="#week-1-january-4th---january-8th">#</a>
+</h2>
+<ul>
+<li>Name of the job/command/comment to propose update of downstream package has been synced
+between CLI and service to <code>propose-downstream</code>.
+<code>propose-update</code> is now deprecated. (<a href="https://github.com/packit-service/packit/pull/1065">packit#1065</a>, <a href="https://github.com/packit/packit-service/pull/913">packit-service#913</a>)</li>
+</ul>
+<h2 id="week-2-january-11th---january-15th">
+  Week 2 (January 11th - January 15th)
+  <a class="anchor" href="#week-2-january-11th---january-15th">#</a>
+</h2>
+<ul>
+<li>Branch deletions are now correctly ignored. (<a href="https://github.com/packit/packit-service/pull/919">packit-service#919</a>)</li>
+<li>Multiple internal improvements have been done.
+(<a href="https://github.com/packit/packit/pull/1072">packit#1072</a>,
+<a href="https://github.com/packit/packit-service/pull/922">packit-service#922</a>,
+<a href="https://github.com/packit/packit-service/pull/923">packit-service#923</a>)</li>
+</ul>
+<h2 id="week-3-january-18th---january-22th">
+  Week 3 (January 18th - January 22th)
+  <a class="anchor" href="#week-3-january-18th---january-22th">#</a>
+</h2>
+<ul>
+<li>We have temporarily disabled the testing-farm support because the cluster with old runner has died and the new runner is not ready.
+The tests are now skipped and you get <code>Testing farm is temporarily disabled.</code> status until we have the new runner available.
+(<a href="https://github.com/packit/packit-service/pull/929">packit-service#929</a>)</li>
+</ul>
+<h2 id="week-4-january-25th---january-29th">
+  Week 4 (January 25th - January 29th)
+  <a class="anchor" href="#week-4-january-25th---january-29th">#</a>
+</h2>
+<ul>
+<li>The CLI and the service now detect name of the default branch of a repository
+instead of assuming it to be called <code>master</code>.
+(<a href="https://github.com/packit/packit/pull/1074">packit#1074</a>,
+<a href="https://github.com/packit/packit-service/pull/924">packit-service#924</a>)</li>
+<li>Build status page now points to the built SRPM uploaded to COPR.
+(<a href="https://github.com/packit/packit-service/pull/889">packit-service#889</a>)</li>
+<li><code>propose-downstream</code> on source-git repositories now always uses <code>--local-content</code>.
+(<a href="https://github.com/packit/packit/pull/1093">packit#1093</a>)</li>
+<li>Hunor fixed bug <a href="https://github.com/packit/packit/pull/1089">packit#1089</a>
+which caused a wrong revision to be used for certain jobs in Packit Service.</li>
+<li>Tomas improved the reliability of our sandboxing service.
+(<a href="https://github.com/packit/sandcastle/pull/95">sandcastle#95</a>)</li>
+<li>Default branches in all <a href="https://github.com/packit">our repositories</a>
+have been renamed from <code>master</code> to <code>main</code>.</li>
+</ul>
+<h2 id="week-5-february-1st---february-5th">
+  Week 5 (February 1st - February 5th)
+  <a class="anchor" href="#week-5-february-1st---february-5th">#</a>
+</h2>
+<ul>
+<li>The service uses new Testing Farm (<a href="https://testing-farm.gitlab.io/api/">API</a>).
+We are still working on better user experience and fixing bugs.
+(<a href="https://github.com/packit/packit-service/pull/875">packit-service#875</a>)</li>
+<li>MatejF refactored permission system on pull requests and issues comments and
+renamed whitelist to allowlist. (<a href="https://github.com/packit/packit-service/pull/936">packit-service#936</a>)</li>
+<li>The service now retries failed tasks.
+(<a href="https://github.com/packit/packit-service/pull/931">packit-service#931</a>)</li>
+<li><code>--koji-target</code> option of the CLI&rsquo;s <code>build</code> command now accepts aliases.
+(<a href="https://github.com/packit/packit/pull/1052">packit#1052</a>)</li>
+<li>The service runs on Fedora 33 now.</li>
+</ul>
+<h2 id="week-6-february-8th---february-12th">
+  Week 6 (February 8th - February 12th)
+  <a class="anchor" href="#week-6-february-8th---february-12th">#</a>
+</h2>
+<ul>
+<li><code>--dist-git-branches</code> option in the CLI&rsquo;s <code>propose-downstream</code> command was
+fixed, it now respects set branches.
+(<a href="https://github.com/packit/packit/pull/1094">packit#1094</a>)</li>
+<li>The way Packit adds patches to spec-file in source-git repo was improved, now
+it shouldn&rsquo;t fail if patches are sparsely numbered.
+(<a href="https://github.com/packit/packit/pull/1100">packit#1100</a>)</li>
+</ul>
+<h2 id="week-7-february-15th---february-19th">
+  Week 7 (February 15th - February 19th)
+  <a class="anchor" href="#week-7-february-15th---february-19th">#</a>
+</h2>
+<ul>
+<li>The service now handles issue/MR comments on Gitlab.
+(<a href="https://github.com/packit/packit-service/pull/985">packit-service#985</a>)</li>
+<li><code>packit init</code> command now works with CentOS packages.
+(<a href="https://github.com/packit/packit/pull/1106">packit#1106</a>)</li>
+</ul>
+<h2 id="week-8-february-22th---february-25th">
+  Week 8 (February 22th - February 25th)
+  <a class="anchor" href="#week-8-february-22th---february-25th">#</a>
+</h2>
+<ul>
+<li>Sandcastle can run multiple commands in one sandbox, kudos to Tomas.
+(<a href="https://github.com/packit/sandcastle/pull/93">sandcastle#93</a>)</li>
+<li>MatejF &amp; MatejM improved CLI&rsquo;s <code>create-update</code> to work with EPEL and add password prompt.
+(<a href="https://github.com/packit/packit/pull/1122">packit#1122</a>,
+<a href="https://github.com/packit/packit/pull/1127">packit#1127</a>)</li>
+<li>Service runs builds for targets from <code>build</code> + <code>test</code> jobs, kudos to Laura.
+(<a href="https://github.com/packit/packit-service/pull/996">packit-service#996</a>)</li>
+<li>MatejF did a lot of small fixes and improvements of packit-service.
+(<a href="https://github.com/packit/packit-service/pull/989">packit-service#989</a>,
+<a href="https://github.com/packit/packit-service/pull/993">packit-service#993</a>,
+<a href="https://github.com/packit/packit-service/pull/994">packit-service#994</a>)</li>
+</ul>
+<h2 id="week-9-march-1st---march-5th">
+  Week 9 (March 1st - March 5th)
+  <a class="anchor" href="#week-9-march-1st---march-5th">#</a>
+</h2>
+<ul>
+<li>Tomas improved the performance of sandcastle, all the user-defined actions now run in one sandbox.
+This should also speed up the SRPM builds. (<a href="https://github.com/packit/packit/pull/1129">packit#1129</a>)</li>
+<li>You can view the results of jobs directly in our dashboard, kudos to Anchit. (<a href="https://github.com/packit/dashboard/pull/73">dashboard#73</a>)</li>
+<li>Jirka implemented setting of the <a href="https://tmt.readthedocs.io/en/latest/spec/context.html">environment context</a>
+when running the Testing farm tests. (<a href="https://github.com/packit/packit-service/pull/1008">packit-service#1008</a>)</li>
+<li>In Packit there is a new configuration option <code>sources</code> which overrides the URLs defined in specfiles.
+(<a href="https://github.com/packit/packit/pull/1131">packit#1131</a>, <a href="https://github.com/packit/packit/pull/1143">packit#1143</a>)</li>
+</ul>
+<h2 id="week-10-march-8th---march-12th">
+  Week 10 (March 8th - March 12th)
+  <a class="anchor" href="#week-10-march-8th---march-12th">#</a>
+</h2>
+<ul>
+<li>Jirka worked on setting up GitHub Workflows across all of the Packit
+repositories to build the container images for Packit Service and push them
+to Quay.io.</li>
+<li>Tomáš fixed a bug in the linearization mechanism used when generating patch
+files from a series of Git commits. (<a href="https://github.com/packit/packit/pull/1144">packit#1144</a>)</li>
+<li>Hunor implemented a way for <code>packit</code> to detect if patch-files generated from
+Git are identical with the ones already in dist-git. This should help
+avoiding superfluous changes done by <code>propose-downstream</code>. (<a href="https://github.com/packit/packit/pull/1133">packit#1133</a>)</li>
+<li>Jirka increased the delay (to 3 minutes in total) for Packit Service when
+retrying downloading the sources during a <code>propose-downstream</code> job. This
+should give more time for the sources to become available after a release is
+created. (<a href="https://github.com/packit/packit-service/pull/1019">packit-service#1019</a>)</li>
+<li>Matěj fixed an ugly bug which caused Packit Service not to react to
+installation events. (<a href="https://github.com/packit/packit-service/pull/1018">packit-service#1018</a>)</li>
+</ul>
+<h2 id="week-11-march-15th---march-19th">
+  Week 11 (March 15th - March 19th)
+  <a class="anchor" href="#week-11-march-15th---march-19th">#</a>
+</h2>
+<ul>
+<li>Laura fixed a bug in the processing of GitHub App installations.
+(<a href="https://github.com/packit/packit-service/pull/1020">packit-service#1020</a>)</li>
+<li>Jirka fixed a bug that caused improper numbering of patches for source-git.
+(<a href="https://github.com/packit/packit/pull/1164">packit#1164</a>)</li>
+</ul>
+<h2 id="week-12-march-22th---march-26th">
+  Week 12 (March 22th - March 26th)
+  <a class="anchor" href="#week-12-march-22th---march-26th">#</a>
+</h2>
+<ul>
+<li>Franta improved database schema. It will help us match builds and tests together more easily and solve some UX problems.
+(<a href="https://github.com/packit/packit-service/pull/954">packit-service#954</a>)</li>
+<li><code>packit init</code> CLI command has been updated to
+<ul>
+<li>place downstream packaging files in a subdirectory <code>.distro</code> instead of <code>fedora</code>.
+(<a href="https://github.com/packit/packit/pull/1165">packit#1165</a>)</li>
+<li>enable using Stream 9 dist-git as a source.
+(<a href="https://github.com/packit/packit/pull/1177">packit#1177</a>)</li>
+</ul>
+</li>
+<li>Laura reworked how specfiles are being synced from downstream dist-git repositories and we are running a PoC for packit&rsquo;s projects to test the new approach.
+(<a href="https://github.com/packit/packit-service/pull/1023">packit-service#1023</a>)</li>
+<li>It&rsquo;s possible to specify a distinct test repository for tests in a test job.
+(<a href="https://github.com/packit/packit/pull/1155">packit#1155</a>)
+(<a href="https://github.com/packit/packit-service/pull/1021">packit-service#1021</a>)</li>
+<li><code>centos-stream</code> target is temporarily resolved to <code>centos-stream-8</code> to reflect a change in Copr.
+(<a href="https://github.com/packit/packit/pull/1167">packit#1167</a>)</li>
+</ul>
+<h2 id="week-13-march-29th---april-1st">
+  Week 13 (March 29th - April 1st)
+  <a class="anchor" href="#week-13-march-29th---april-1st">#</a>
+</h2>
+<ul>
+<li>Jirka fixed a bug in <code>packit push-update</code>
+(<a href="https://github.com/packit/packit/pull/1191">packit#1191</a>).</li>
+<li>Matěj introduced the <code>fedora-latest</code> alias for build and test targets, which
+resolves to the latest <em>branched</em> Fedora Linux
+(<a href="https://github.com/packit/packit/pull/1187">packit#1187</a>).</li>
+<li>A custom path for the package config (aka <code>packit.yaml</code>) can be specified
+using a new, top-level <code>-c, --config</code> option
+(<a href="https://github.com/packit/packit/pull/1184">packit#1184</a>).</li>
+</ul>
+<h2 id="week-14-april-4th---april-9th">
+  Week 14 (April 4th - April 9th)
+  <a class="anchor" href="#week-14-april-4th---april-9th">#</a>
+</h2>
+<ul>
+<li>Honza converted packit&rsquo;s test suite from STI to FMF and configured packit to
+synchronize the suite to Fedora dist-git
+(<a href="https://github.com/packit/packit/pull/1192">packit#1192</a>).</li>
+<li>Franta fixed a bug in packit which kept only appending targets to an existing
+COPR project which is no longer a case - dropped targets are now being
+removed
+(<a href="https://github.com/packit/packit/pull/1197">packit#1197</a>).</li>
+</ul>
+<h2 id="week-15-april-12th---april-16th">
+  Week 15 (April 12th - April 16th)
+  <a class="anchor" href="#week-15-april-12th---april-16th">#</a>
+</h2>
+<ul>
+<li>Tomáš fixed an issue in chaining variable definitions in the RPM macros used
+to set up source-git repositories with <code>packit init</code>
+(<a href="https://github.com/packit/packit/pull/1206">packit#1206</a>).</li>
+<li>Jirka improved the error message Packit Service emits when the request to
+start a test in Testing Farm fails
+(<a href="https://github.com/packit/packit-service/pull/1055">packit-service#1055</a>).</li>
+<li>Laura made Packit Service to set a status for jobs as soon as the requests
+are received, and before starting any of the jobs
+(<a href="https://github.com/packit/packit-service/pull/1046">packit-service#1046</a>).
+This way users will receive a more immediate feedback about the Service
+handling their requests.</li>
+</ul>
+<h2 id="week-16-april-19th---april-23th">
+  Week 16 (April 19th - April 23th)
+  <a class="anchor" href="#week-16-april-19th---april-23th">#</a>
+</h2>
+<ul>
+<li>The <code>current_version_command</code> and <code>create_tarball_command</code> config options are being deprecated
+in favour of <a href="https://packit.dev/docs/actions/">actions</a>.
+An issue will be created in the affected repositories if we find those options in use.
+(<a href="https://github.com/packit/packit-service/pull/1064">packit-service#1064</a>)</li>
+<li>The result pages have been replaced by the views on our dashboard.
+Let us know what do you think about that and what information do you want to see there.
+You can expect more changes on this field.
+<ul>
+<li>The result views have been implemented by <a href="https://github.com/IceWreck">@IceWreck</a>
+(<a href="https://github.com/packit/dashboard/pull/73">dashboard#73</a>).</li>
+<li>The integration on packit-service side has been done by <a href="https://github.com/mfocko">Maťo</a>
+(<a href="https://github.com/packit/packit-service/pull/1056">packit-service#1056</a>,
+<a href="https://github.com/packit/dashboard/pull/95">dashboard#95</a>).</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-17-april-26th---april-30th">
+  Week 17 (April 26th - April 30th)
+  <a class="anchor" href="#week-17-april-26th---april-30th">#</a>
+</h2>
+<ul>
+<li>When initiating a new source-git repo, packit adds info about sources to packit.yaml.
+Also dist-git sources from the lookaside cache are not commited.
+(<a href="https://github.com/packit/packit/pull/1208">packit#1208</a>,
+<a href="https://github.com/packit/packit/pull/1216">packit#1216</a>).</li>
+<li>Franta added support for git repository cache into packit. The service part is yet to be done
+(<a href="https://github.com/packit/packit/pull/1214">packit#1214</a>).</li>
+<li>Service reacts to <code>/packit</code> commands only when they appear alone on a line
+(<a href="https://github.com/packit/packit-service/pull/1065">packit-service#1065</a>,
+<a href="https://github.com/packit/packit-service/pull/1083">packit-service#1083</a>).</li>
+<li>Service doesn&rsquo;t create duplicate issues when configuration is invalid
+(<a href="https://github.com/packit/packit-service/pull/1075">packit-service#1075</a>).</li>
+<li>We deprecated <code>current_version_command</code> and <code>create_tarball_command</code> in packit config
+(<a href="https://github.com/packit/packit/pull/1212">packit#1212</a>).</li>
+</ul>
+<h2 id="week-18-may-3rd---may-7th">
+  Week 18 (May 3rd - May 7th)
+  <a class="anchor" href="#week-18-may-3rd---may-7th">#</a>
+</h2>
+<ul>
+<li>Laura fixed the problem with <code>fedora-latest</code> alias
+(<a href="https://github.com/packit/packit/pull/1222">packit#1222</a>).</li>
+<li>We now have separate workers for short and long running tasks. This should
+lead to better responsiveness
+(<a href="https://github.com/packit/packit-service/pull/1059">packit-service#1059</a>,
+<a href="https://github.com/packit/deployment/pull/202">deployment#202</a>).</li>
+</ul>
+<h2 id="week-19-may-10th---may-14th">
+  Week 19 (May 10th - May 14th)
+  <a class="anchor" href="#week-19-may-10th---may-14th">#</a>
+</h2>
+<ul>
+<li>Jirka added support for creating Bugzilla bugs for newly created MRs on GitLab
+(<a href="https://github.com/packit/packit-service/pull/1087">packit-service#1087</a>).</li>
+<li>The installation instructions for failed or unfinished COPR builds are not
+displayed on the results page (<a href="https://github.com/packit/dashboard/pull/104">dashboard#104</a>).</li>
+</ul>
+<h2 id="week-20-may-17th---may-21st">
+  Week 20 (May 17th - May 21st)
+  <a class="anchor" href="#week-20-may-17th---may-21st">#</a>
+</h2>
+<ul>
+<li>Hunor created an update-dist-git command
+(<a href="https://github.com/packit/packit/pull/1228">packit#1228</a>).</li>
+<li>Jan: use packit config as a place to create reference to tests
+(<a href="https://github.com/packit/packit/pull/1245">packit#1245</a>).</li>
+</ul>
+<h2 id="week-21-may-24th---may-28th">
+  Week 21 (May 24th - May 28th)
+  <a class="anchor" href="#week-21-may-24th---may-28th">#</a>
+</h2>
+<ul>
+<li>Jirka added attribute for <code>update-dist-git</code> command to specify the packaging tool (e.g. <code>centpkg</code>).
+By default, <code>fedpkg</code> is used.
+(<a href="https://github.com/packit/packit/pull/1257">packit#1257</a>,
+<a href="https://github.com/packit/packit-service/pull/1105">packit-service#1105</a>).</li>
+<li>Tomáš added support for <code>patch_id</code> in the metadata of source-git commits.
+(<a href="https://github.com/packit/packit/pull/1252">packit#1252</a>)</li>
+<li>Hunor improved the strategy of checking Copr results
+when we don&rsquo;t receive that information over message-bus.
+(<a href="https://github.com/packit/packit-service/pull/1104">packit-service#1104</a>)</li>
+</ul>
+<h2 id="week-22-may-31st---june-4th">
+  Week 22 (May 31st - June 4th)
+  <a class="anchor" href="#week-22-may-31st---june-4th">#</a>
+</h2>
+<ul>
+<li>We have a new <a href="https://status.packit.dev">status page</a>, kudos to Jirka!</li>
+<li>Franta fixed a bug that if some action during <code>propose-downstream</code> caused an upstream git repository to be dirty,
+the sync for other branches failed. (<a href="https://github.com/packit/packit-service/pull/1111">packit-service#1111</a>)</li>
+<li><code>packit generate</code> is not supported anymore. (<a href="https://github.com/packit/packit/pull/1269">packit#1269</a>)</li>
+<li>Tomáš improved the patch ordering. (<a href="https://github.com/packit/packit/pull/1263">packit#1263</a>)</li>
+</ul>
+<h2 id="week-23-june-7th---june-11th">
+  Week 23 (June 7th - June 11th)
+  <a class="anchor" href="#week-23-june-7th---june-11th">#</a>
+</h2>
+<ul>
+<li>Tomáš improved the way changelog is passed from source-git repo to dist-git.
+(<a href="https://github.com/packit/packit/pull/1265">packit#1265</a>)</li>
+<li>Hunor created a new subcommand <code>source-git</code> to group source-git related commands
+<code>init</code> and <code>update-dist-git</code>. (<a href="https://github.com/packit/packit/pull/1273">packit#1273</a>)</li>
+<li>František improved API by adding <code>submitted_time</code> to the test result.
+(<a href="https://github.com/packit/packit-service/pull/1113">packit-service#1113</a>)</li>
+</ul>
+<h2 id="week-24-june-14th---june-19th">
+  Week 24 (June 14th - June 19th)
+  <a class="anchor" href="#week-24-june-14th---june-19th">#</a>
+</h2>
+<ul>
+<li>Franta started working on packit-service being able to submit test jobs to
+internal testing farm so teams can test upstream changes against RHEL.
+(<a href="https://github.com/packit/packit-service/pull/1124">packit-service#1124</a>
+<a href="https://github.com/packit/packit/pull/1280">packit#1280</a>)</li>
+<li>Hunor continues working on <code>packit source-git init</code>: CLI is now more
+streamlined and simplified, and the command produces source-git repos
+matching <a href="https://packit.dev/source-git/work-with-source-git/create-source-git/">our documentation</a>.
+(<a href="https://github.com/packit/packit/pull/1277">packit#1277</a>)</li>
+<li>Maťo Focko finished his refactoring of the <code>Upstream</code> class - should not have
+impact on our users, but make the code easier to work with.
+(<a href="https://github.com/packit/packit/pull/1157">packit#1157</a>)</li>
+</ul>
+<h2 id="week-25-june-21st---june-26th">
+  Week 25 (June 21st - June 26th)
+  <a class="anchor" href="#week-25-june-21st---june-26th">#</a>
+</h2>
+<ul>
+<li>Hunor made several improvements to <code>source-git init</code>&rsquo;s CLI.
+(<a href="https://github.com/packit/packit/pull/1284">packit#1284</a>)</li>
+<li>Thanks to Frantisek there is now one COPR project/repo used for all releases.
+(<a href="https://github.com/packit/packit-service/pull/1128">packit-service#1128</a>)</li>
+<li>Laura fixed a bug in syncing downstream to upstream.
+(<a href="https://github.com/packit/packit/pull/1285">packit#1285</a>)</li>
+</ul>
+<h2 id="week-2627-june-28th---july-9th">
+  Week 26+27 (June 28th - July 9th)
+  <a class="anchor" href="#week-2627-june-28th---july-9th">#</a>
+</h2>
+<p>Summer is here and vacations with it. Most of the work done in this sprint
+is either internal (not user facing) or not finished yet.</p>
+<ul>
+<li>Thanks to MaťejM Packit Service now triggers a new Copr build if no
+suitable build has been found. That fixes an issue that the service sometimes
+did not react to <code>/packit test</code>.
+(<a href="https://github.com/packit/packit-service/pull/1132">packit-service#1132</a>)</li>
+</ul>
+<h2 id="week-28-july-12th---july-16th">
+  Week 28 (July 12th - July 16th)
+  <a class="anchor" href="#week-28-july-12th---july-16th">#</a>
+</h2>
+<ul>
+<li>We have a new API endpoint for obtaining projects of a given forge.
+(<a href="https://github.com/packit/packit-service/pull/1159">packit-service#1159</a>)</li>
+<li>The bug causing that some projects couldn&rsquo;t be loaded in our dashboard was fixed.
+(<a href="https://github.com/packit/packit-service/pull/1161">packit-service#1161</a>)</li>
+</ul>
+<h2 id="week-29-july-19th---july-23th">
+  Week 29 (July 19th - July 23th)
+  <a class="anchor" href="#week-29-july-19th---july-23th">#</a>
+</h2>
+<ul>
+<li>Various improvements on our dashboard were done; mainly:
+<ul>
+<li>Projects can be filtered by a forge.
+(<a href="https://github.com/packit/dashboard/pull/124">dashboard#124</a>)</li>
+<li>Table with jobs was unified and cleaned.
+(<a href="https://github.com/packit/dashboard/pull/121">dashboard#121</a>)</li>
+</ul>
+</li>
+<li>Newly, we use the <a href="https://docs.github.com/en/rest/reference/checks">Checks API</a> to show results on GitHub.
+You can still see the results on the bottom of the pull-request page,
+but also in the <code>Checks</code> tab.
+This gives us more options like status with a neutral state
+(e.g. currently, for permission errors) or a place for showing more details.
+Don&rsquo;t forget to give our GitHub application permissions to use it.
+You can expect more improvements in this field.
+(<a href="https://github.com/packit/packit-service/pull/1167">packit-service#1167</a>)</li>
+</ul>
+<h2 id="week-30-july-26th---july-30th">
+  Week 30 (July 26th - July 30th)
+  <a class="anchor" href="#week-30-july-26th---july-30th">#</a>
+</h2>
+<ul>
+<li>Source-git patch metadata: the <code>squash_commits</code> key is deprecated. Instead of using this,
+set the same <a href="/development-docs/patch-metadata/#patch_name"><code>patch_name</code></a> in the commit
+message of adjacent commits, which should end up in the same patch file.
+(<a href="https://github.com/packit/packit/pull/1309">packit#1309</a>)</li>
+<li><code>packit init</code> can now find a spec file inside of a git repository and set
+it in <code>.packit.yaml</code>. (<a href="https://github.com/packit/packit/pull/1313">packit#1313</a>)</li>
+<li>A lot of work has been done on our dashboard:
+<ul>
+<li>Status labels on dashboard have been reworked.</li>
+<li>New pipelines view for dashboard has been released, where you can see all builds and
+tests that were recently run for your pull request, release or branch push. Each row
+represents one pipeline of builds and tests from SRPM all the way to the Testing Farm.<br>
+(<a href="https://github.com/packit/dashboard/pull/128">dashboard#128</a>)</li>
+</ul>
+</li>
+</ul>
+<h2 id="week-31-august-2nd---august-6th">
+  Week 31 (August 2nd - August 6th)
+  <a class="anchor" href="#week-31-august-2nd---august-6th">#</a>
+</h2>
+<ul>
+<li><code>sync_release</code> in API allows specifying a suffix for the newly created branch in a dist-git repo fork,
+so that there can be more open update PRs for the same dist-git branch at the same time.
+(<a href="https://github.com/packit/packit/pull/1326">packit#1326</a>)</li>
+<li>The behaviour of running tests triggered by <code>/packit test</code> comment was improved.
+If there is no existing Copr build when the tests are triggered,
+Packit service should now react and create a new build.
+Also when the last Copr build status is failed,
+tests are not submitted and users are informed about this.
+(<a href="https://github.com/packit/packit-service/pull/1188">packit-service#1188</a>)</li>
+<li>You can use <code>oraclelinux-7</code>/<code>oraclelinux-8</code> chroots for build and test of your package on Oracle Linux.
+(<a href="https://github.com/packit/packit-service/pull/1186">packit-service#1186</a>)</li>
+</ul>
+<h2 id="week-32-august-9th---august-13th">
+  Week 32 (August 9th - August 13th)
+  <a class="anchor" href="#week-32-august-9th---august-13th">#</a>
+</h2>
+<ul>
+<li><code>status</code> command of Packit&rsquo;s CLI has been refactored and now provides much cleaner output. (<a href="https://github.com/packit/packit/pull/1329">packit#1329</a>)</li>
+</ul>
+<h2 id="week-33-august-16th---august-20th">
+  Week 33 (August 16th - August 20th)
+  <a class="anchor" href="#week-33-august-16th---august-20th">#</a>
+</h2>
+<ul>
+<li>When reacting to <code>/packit test</code>, Packit service sets a status before starting the job
+to unify the behaviour with reacting to triggering builds. (<a href="https://github.com/packit/packit-service/pull/1187">packit-service#1187</a>)</li>
+<li><code>packit validate-config</code> now checks also the value of the <code>specfile_path</code> configuration option
+and shows warning if the specified file is not present in the repository. (<a href="https://github.com/packit/packit/pull/1342">packit#1342</a>)</li>
+</ul>
+<h2 id="week-34-august-23rd---august-27th">
+  Week 34 (August 23rd - August 27th)
+  <a class="anchor" href="#week-34-august-23rd---august-27th">#</a>
+</h2>
+<ul>
+<li>Packit by default locally merges checked out pull requests into target branch.
+Logging for checking out pull requests was improved to contain hashes and
+summaries of last commit on both source and target branches.
+(<a href="https://github.com/packit/packit/pull/1344">packit#1344</a>)</li>
+<li>Packit Service now runs Copr and Koji builds and following tests on Testing Farm
+for pull requests on the code that would be a result of merging into the target branch.
+In case merge conflicts occur during preparation of SRPM,
+you can find more info in the SRPM logs.
+(<a href="https://github.com/packit/packit-service/pull/1206">packit-service#1206</a>)</li>
+<li>Packit&rsquo;s CLI <code>source-git update-dist-git</code> now supports using Git trailers to define patch metadata,
+which will control how patches are generated and added to the spec-file.
+<code>source-git init</code> uses this format to capture patch metadata when setting up
+a source-git repo, instead of the YAML one.
+To maintain backwards compatibility, the YAML format is still parsed,
+but only if none of the patches defines metadata using Git trailers.
+(<a href="https://github.com/packit/packit/pull/1336">packit#1336</a>)</li>
+<li>These changes will be applied next week (not this week as usual).</li>
+</ul>
+<h2 id="week-35-august-30th---september-3rd">
+  Week 35 (August 30th - September 3rd)
+  <a class="anchor" href="#week-35-august-30th---september-3rd">#</a>
+</h2>
+<ul>
+<li>A bug in Packit that caused purging or syncing upstream changelog
+(when not configured) from specfile when running <code>propose-downstream</code> was fixed.
+New behavior preserves downstream changelog and in case there are either
+no entries or no %changelog section present, it is created with a new entry.
+(<a href="https://github.com/packit/packit/pull/1349">packit#1349</a>)</li>
+</ul>
+<h2 id="week-36-september-6th---september-10th">
+  Week 36 (September 6th - September 10th)
+  <a class="anchor" href="#week-36-september-6th---september-10th">#</a>
+</h2>
+<ul>
+<li><code>packit source-git init</code> was updated to try to apply patches with <code>git am</code> first, and use <code>patch</code> only when this fails, in order to keep the commit message of Git-formatted (mbox) patch files in the source-git history. (<a href="https://github.com/packit/packit/pull/1358">packit#1358</a>)</li>
+</ul>
+<h2 id="week-37-september-13th---september-17th">
+  Week 37 (September 13th - September 17th)
+  <a class="anchor" href="#week-37-september-13th---september-17th">#</a>
+</h2>
+<ul>
+<li>Now you can find URL pointing directly to testing farm results on GitHub Checks page. (<a href="https://github.com/packit/packit-service/pull/1215">packit-service#1215</a>)</li>
+<li>Ogr now supports reacting to the comment with a given reaction, getting them in list and deleting them (only when reaction is added by using ogr API). (<a href="https://github.com/packit/ogr/pull/636">ogr#636</a>)</li>
+<li>Packit now provides <code>PACKIT_RPMSPEC_RELEASE</code> environment variable in actions. (<a href="https://github.com/packit/packit/pull/1363">packit#1363</a>)</li>
+<li>Dashboard no longer shrinks Copr/Koji icons when being open in narrow view. (<a href="https://github.com/packit/dashboard/pull/140">dashboard#140</a>)</li>
+</ul>
+<h2 id="week-38-september-20th---september-24th">
+  Week 38 (September 20th - September 24th)
+  <a class="anchor" href="#week-38-september-20th---september-24th">#</a>
+</h2>
+<ul>
+<li><a href="https://dashboard.packit.dev">Dashboard</a> now shows more readable format of time,
+e.g. &ldquo;just now&rdquo;, &ldquo;a minute ago&rdquo;, etc. If you wish to see exact date-time of
+the run, you can either hover over the time and tooltip with details appear.
+In case of result pages more readable format is present in the tooltip rather
+than by default. Also times are now shown in your local time zone. (<a href="https://github.com/packit/dashboard/pull/142">dashboard#142</a>)</li>
+<li>Packit can now read commit messages from a patch to support characters which cannot be encoded with UTF-8. (<a href="https://github.com/packit/packit/pull/1372">packit#1372</a>)</li>
+<li>EPEL targets are now being mapped to CentOS Linux inside the internal Testing Farm runs. (<a href="https://github.com/packit/packit-service/pull/1225">packit-service#1225</a>)</li>
+</ul>
+<h2 id="week-39-september-27th---october-1st">
+  Week 39 (September 27th - October 1st)
+  <a class="anchor" href="#week-39-september-27th---october-1st">#</a>
+</h2>
+<ul>
+<li>Clicking on logo on <a href="https://dashboard.packit.dev/">dashboard</a> no longer
+opens a new page, but rather reloads the current one.</li>
+<li>We consider <a href="https://dashboard.packit.dev/pipelines">Pipelines view</a> on
+dashboard to be ready for production use. We&rsquo;re planning to improve the user
+experience when using pipelines with easier navigation and filtering
+options.</li>
+<li>Building the latest development versions of
+<a href="https://github.com/packit/packit">packit</a> and
+<a href="https://github.com/packit/ogr">ogr</a> was moved to the
+<a href="https://copr.fedorainfracloud.org/coprs/packit/packit-dev/">packit/packit-dev</a>
+Copr repo.</li>
+</ul>
+<h2 id="week-40-october-4th---october-8th">
+  Week 40 (October 4th - October 8th)
+  <a class="anchor" href="#week-40-october-4th---october-8th">#</a>
+</h2>
+<ul>
+<li><a href="https://github.com/packit/packit/issues/1255">A bug</a> in Packit causing
+issues with local build when the branch was named with prefix <code>rpm</code> has been
+fixed.</li>
+<li>To fulfill requests regarding updating targets on Copr repositories, Packit
+Service will sync targets for the projects created by Packit Service (e.g.
+pull requests, or non-set Copr repository for releases and branch builds)
+and for Copr repositories <strong>not owned by Packit</strong> will try to extend the
+list if necessary.</li>
+<li>If you trigger packit jobs with one of <code>/packit _</code> commands, our bot gives
+you a 👍 reaction to let you know that we are working on it.</li>
+<li>Rerunning of failed tasks via GitHub Checks interface is now supported. You are now free to click those &ldquo;Re-run&rdquo; links.</li>
+<li><a href="https://packit.github.io/ogr/">ogr documentation</a> is converted to
+Google-style docstrings. In case there are any discrepancies, missing docs
+or docstrings in different format, please open an issue.</li>
+</ul>
+<h2 id="week-41-october-11th---october-15th">
+  Week 41 (October 11th - October 15th)
+  <a class="anchor" href="#week-41-october-11th---october-15th">#</a>
+</h2>
+<ul>
+<li>We have added a new option to Packit CLI when creating Bodhi updates, you can
+use <code>-b</code> or <code>--resolve- bugzillas</code> and specify IDs (separated by comma, e.g.
+<code>-b 1</code> or <code>-b 1,2,3</code>) of bugzillas that are being closed by the update.
+(<a href="https://github.com/packit/packit/pull/1383">packit#1383</a>)</li>
+<li>Packit will deduce the version for SRPM from the spec file, if there are no
+git tags or action for acquiring current version defined.
+(<a href="https://github.com/packit/packit/pull/1388">packit#1388</a>)</li>
+<li>It is possible to use <code>aarch64</code> architecture in the Testing Farm.
+(<a href="https://github.com/packit/packit-service/pull/1247">packit-service#1247</a>)</li>
+<li>Running tests via Testing Farm now supports <code>centos-6</code> target.
+(<a href="https://github.com/packit/packit-service/pull/1244">packit-service#1244</a>)</li>
+</ul>
+<h2 id="week-42-october-18th---october-22th">
+  Week 42 (October 18th - October 22th)
+  <a class="anchor" href="#week-42-october-18th---october-22th">#</a>
+</h2>
+<ul>
+<li>We have introduced new options for generating SRPM packages:
+(<a href="https://github.com/packit/packit/pull/1396">packit#1396</a>)
+<ul>
+<li><code>--no-bump</code> that prevents changing of the release in the SRPM,
+which can be used for creating SRPMs on checked out tags/releases.</li>
+<li><code>--release-suffix</code> that allows you to customize the suffix after the release number,
+e.g. reference bugzilla or specific branch of the build.</li>
+</ul>
+</li>
+<li>Copr build installation instructions now contain detailed info about
+the built packages, so you can install the precise build from your pull request.
+(<a href="https://github.com/packit/dashboard/pull/149">dashboard#149</a>)</li>
+</ul>
+<h2 id="week-43-october-25th---november-1st">
+  Week 43 (October 25th - November 1st)
+  <a class="anchor" href="#week-43-october-25th---november-1st">#</a>
+</h2>
+<ul>
+<li>We have introduced a new configuration option <code>merge_pr_in_ci</code> that allows you to disable merging of PR into the base branch before creating SRPM in service. (<a href="https://github.com/packit/packit/pull/1395">packit#1395</a>, <a href="https://github.com/packit/packit-service/pull/1261">packit-service#1261</a>)</li>
+<li>If the upstream spec file is located in a subdirectory (such as
+<code>packaging/fedora/pkg.spec</code>), it is now correctly synced to the root of
+the downstream repository, since that&rsquo;s where rpmbuild will look
+for it. (<a href="https://github.com/packit/packit/pull/1402">packit#1402</a>)</li>
+<li>The &ldquo;Congratulations!&rdquo; comment no longer has a disclaimer about our intentions to stop posting it by default. We have already made that move earlier this year, so the disclaimer is no longer relevant. (<a href="https://github.com/packit/packit-service/pull/1260">packit-service#1260</a>)</li>
+<li>Deprecated configuration options <code>current_version_command</code> and <code>create_tarball_command</code> have been removed and are no longer supported. They are superseded by actions <code>get-current-version</code> and <code>create-archive</code>. (<a href="https://github.com/packit/packit/pull/1397">packit#1397</a>)</li>
+</ul>
+<h2 id="week-44-november-1st---november-5th">
+  Week 44 (November 1st - November 5th)
+  <a class="anchor" href="#week-44-november-1st---november-5th">#</a>
+</h2>
+<ul>
+<li>We have fixed several issues in packit when it&rsquo;s periodically checking
+statuses of jobs. You should now reliably see up to date check statuses for
+Copr RPM builds and Testing Farm runs.
+(<a href="https://github.com/packit/packit-service/pull/1267">packit-service#1267</a>),
+(<a href="https://github.com/packit/packit-service/pull/1265">packit-service#1265</a>)</li>
+<li>Fixed an issue, which raised a <code>UnicodeEncodingError</code>, when working with
+dist-git patch files with an encoding other than UTF-8.
+(<a href="https://github.com/packit/packit/pull/1406">packit#1406</a>)</li>
+<li>Backup alias definitions now reflect the official release of Fedora 35.
+(<a href="https://github.com/packit/packit/pull/1405">packit#1405</a>)</li>
+</ul>
+<h2 id="week-45-november-8th---november-12th">
+  Week 45 (November 8th - November 12th)
+  <a class="anchor" href="#week-45-november-8th---november-12th">#</a>
+</h2>
+<ul>
+<li>You can now specify <code>skip_build</code> option in the test job metadata in the
+Packit configuration file. This will cause no Copr build to be built and
+installed into the testing environment, but only trigger the tests in
+Testing Farm (the selected components to be installed should be part of the
+TMT definitions).
+(<a href="https://github.com/packit/packit-service/pull/1256">packit-service#1256</a>)</li>
+<li>Packit supports <code>changelog-entry</code> action that is used when creating SRPM.
+The action is supposed to generate whole changelog entry (including <code>- </code> at
+the start of the lines) and has a priority over any other way we modify the
+changelog with. (<a href="https://github.com/packit/packit/pull/1367">packit#1367</a>)</li>
+</ul>
+<h2 id="week-46-november-15th---november-19th">
+  Week 46 (November 15th - November 19th)
+  <a class="anchor" href="#week-46-november-15th---november-19th">#</a>
+</h2>
+<ul>
+<li>A new <code>env</code> config option has been added for specifying environment variables,
+which are then passed to Testing Farm along with some more pre-defined
+variables (e.g. name of the project, URL, etc).
+(<a href="https://github.com/packit/packit/pull/1411">packit#1411</a>)
+(<a href="https://github.com/packit/packit-service/pull/1275">packit-service#1275</a>)</li>
+<li>The GitHub check run names are now shorter and easier to read.
+(<a href="https://github.com/packit/packit-service/pull/1281">packit-service#1281</a>)</li>
+</ul>
+<h2 id="week-47-november-22th---november-26th">
+  Week 47 (November 22th - November 26th)
+  <a class="anchor" href="#week-47-november-22th---november-26th">#</a>
+</h2>
+<ul>
+<li>You can set up a new <code>koji_build</code> job using the commit trigger to submit a
+Koji build for a new commit in a dist-git branch. The configuration file
+needs to be present in the dist-git for now
+(the state for the new commit is used).
+(<a href="https://github.com/packit/packit-service/pull/1278">packit-service#1278</a>)</li>
+</ul>
+<h2 id="week-48-november-29th---december-3rd">
+  Week 48 (November 29th - December 3rd)
+  <a class="anchor" href="#week-48-november-29th---december-3rd">#</a>
+</h2>
+<ul>
+<li>External contributors can&rsquo;t trigger internal tests initially. Project
+maintainers need to trigger the action via <code>/packit test</code> comment to run
+the job.
+(<a href="https://github.com/packit/packit-service/pull/1302">packit-service#1302</a>)
+(<a href="https://github.com/packit/packit-service/pull/1305">packit-service#1305</a>)</li>
+<li>A new <code>packit prepare-sources</code> command has been implemented for preparing
+sources for an SRPM build using the content of an upstream repository.
+(<a href="https://github.com/packit/packit/pull/1424">packit#1424</a>)</li>
+<li>Packit now visibly informs about an ongoing cloning process to remove
+potential confusion.
+(<a href="https://github.com/packit/packit/pull/1431">packit#1431</a>)</li>
+<li>The <code>upstream_package_name</code> config option is now checked for illegal
+characters and an error is thrown if it contains them.
+(<a href="https://github.com/packit/packit/pull/1434">packit#1434</a>)</li>
+</ul>
+<h2 id="week-49-december-6th---december-12th">
+  Week 49 (December 6th - December 12th)
+  <a class="anchor" href="#week-49-december-6th---december-12th">#</a>
+</h2>
+<ul>
+<li>Packit now correctly finds the release event if you don&rsquo;t use the version as a release title.
+(<a href="https://github.com/packit/packit/pull/1437">packit#1437</a>)</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#week-1-january-4th---january-8th">Week 1 (January 4th - January 8th)</a></li>
+    <li><a href="#week-2-january-11th---january-15th">Week 2 (January 11th - January 15th)</a></li>
+    <li><a href="#week-3-january-18th---january-22th">Week 3 (January 18th - January 22th)</a></li>
+    <li><a href="#week-4-january-25th---january-29th">Week 4 (January 25th - January 29th)</a></li>
+    <li><a href="#week-5-february-1st---february-5th">Week 5 (February 1st - February 5th)</a></li>
+    <li><a href="#week-6-february-8th---february-12th">Week 6 (February 8th - February 12th)</a></li>
+    <li><a href="#week-7-february-15th---february-19th">Week 7 (February 15th - February 19th)</a></li>
+    <li><a href="#week-8-february-22th---february-25th">Week 8 (February 22th - February 25th)</a></li>
+    <li><a href="#week-9-march-1st---march-5th">Week 9 (March 1st - March 5th)</a></li>
+    <li><a href="#week-10-march-8th---march-12th">Week 10 (March 8th - March 12th)</a></li>
+    <li><a href="#week-11-march-15th---march-19th">Week 11 (March 15th - March 19th)</a></li>
+    <li><a href="#week-12-march-22th---march-26th">Week 12 (March 22th - March 26th)</a></li>
+    <li><a href="#week-13-march-29th---april-1st">Week 13 (March 29th - April 1st)</a></li>
+    <li><a href="#week-14-april-4th---april-9th">Week 14 (April 4th - April 9th)</a></li>
+    <li><a href="#week-15-april-12th---april-16th">Week 15 (April 12th - April 16th)</a></li>
+    <li><a href="#week-16-april-19th---april-23th">Week 16 (April 19th - April 23th)</a></li>
+    <li><a href="#week-17-april-26th---april-30th">Week 17 (April 26th - April 30th)</a></li>
+    <li><a href="#week-18-may-3rd---may-7th">Week 18 (May 3rd - May 7th)</a></li>
+    <li><a href="#week-19-may-10th---may-14th">Week 19 (May 10th - May 14th)</a></li>
+    <li><a href="#week-20-may-17th---may-21st">Week 20 (May 17th - May 21st)</a></li>
+    <li><a href="#week-21-may-24th---may-28th">Week 21 (May 24th - May 28th)</a></li>
+    <li><a href="#week-22-may-31st---june-4th">Week 22 (May 31st - June 4th)</a></li>
+    <li><a href="#week-23-june-7th---june-11th">Week 23 (June 7th - June 11th)</a></li>
+    <li><a href="#week-24-june-14th---june-19th">Week 24 (June 14th - June 19th)</a></li>
+    <li><a href="#week-25-june-21st---june-26th">Week 25 (June 21st - June 26th)</a></li>
+    <li><a href="#week-2627-june-28th---july-9th">Week 26+27 (June 28th - July 9th)</a></li>
+    <li><a href="#week-28-july-12th---july-16th">Week 28 (July 12th - July 16th)</a></li>
+    <li><a href="#week-29-july-19th---july-23th">Week 29 (July 19th - July 23th)</a></li>
+    <li><a href="#week-30-july-26th---july-30th">Week 30 (July 26th - July 30th)</a></li>
+    <li><a href="#week-31-august-2nd---august-6th">Week 31 (August 2nd - August 6th)</a></li>
+    <li><a href="#week-32-august-9th---august-13th">Week 32 (August 9th - August 13th)</a></li>
+    <li><a href="#week-33-august-16th---august-20th">Week 33 (August 16th - August 20th)</a></li>
+    <li><a href="#week-34-august-23rd---august-27th">Week 34 (August 23rd - August 27th)</a></li>
+    <li><a href="#week-35-august-30th---september-3rd">Week 35 (August 30th - September 3rd)</a></li>
+    <li><a href="#week-36-september-6th---september-10th">Week 36 (September 6th - September 10th)</a></li>
+    <li><a href="#week-37-september-13th---september-17th">Week 37 (September 13th - September 17th)</a></li>
+    <li><a href="#week-38-september-20th---september-24th">Week 38 (September 20th - September 24th)</a></li>
+    <li><a href="#week-39-september-27th---october-1st">Week 39 (September 27th - October 1st)</a></li>
+    <li><a href="#week-40-october-4th---october-8th">Week 40 (October 4th - October 8th)</a></li>
+    <li><a href="#week-41-october-11th---october-15th">Week 41 (October 11th - October 15th)</a></li>
+    <li><a href="#week-42-october-18th---october-22th">Week 42 (October 18th - October 22th)</a></li>
+    <li><a href="#week-43-october-25th---november-1st">Week 43 (October 25th - November 1st)</a></li>
+    <li><a href="#week-44-november-1st---november-5th">Week 44 (November 1st - November 5th)</a></li>
+    <li><a href="#week-45-november-8th---november-12th">Week 45 (November 8th - November 12th)</a></li>
+    <li><a href="#week-46-november-15th---november-19th">Week 46 (November 15th - November 19th)</a></li>
+    <li><a href="#week-47-november-22th---november-26th">Week 47 (November 22th - November 26th)</a></li>
+    <li><a href="#week-48-november-29th---december-3rd">Week 48 (November 29th - December 3rd)</a></li>
+    <li><a href="#week-49-december-6th---december-12th">Week 49 (December 6th - December 12th)</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

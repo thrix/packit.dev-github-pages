@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.98.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Configuration examples #  Examples for actions #  You can find detailed documentation for actions here.
+Getting version #  Getting version from specfile get-current-version:  - grep -oP &#39;^Version:\s&#43;\K\S&#43;&#39; my-package.spec or with a command from rpm-build package that will honor the macros:
+get-current-version:  - rpmspec -q --queryformat &#34;%{VERSION}\n&#34; *spec |head -n1    Getting version for Python packages with setup.py get-current-version:  - python3 setup.py --version    Getting version for Ruby packages from the gemspec get-current-version:  - ruby -rrubygems -e &#39;puts Gem::Specification::load(Dir.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Examples" />
+<meta property="og:description" content="Configuration examples #  Examples for actions #  You can find detailed documentation for actions here.
+Getting version #  Getting version from specfile get-current-version:  - grep -oP &#39;^Version:\s&#43;\K\S&#43;&#39; my-package.spec or with a command from rpm-build package that will honor the macros:
+get-current-version:  - rpmspec -q --queryformat &#34;%{VERSION}\n&#34; *spec |head -n1    Getting version for Python packages with setup.py get-current-version:  - python3 setup.py --version    Getting version for Ruby packages from the gemspec get-current-version:  - ruby -rrubygems -e &#39;puts Gem::Specification::load(Dir." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://packit.dev/docs/configuration/examples/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-09-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-09-22T00:00:00+00:00" />
+
+<title>Examples | Packit</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.ece3f56fc3f716f87ccd4e6f3ea44ba1fa6757114261dadfbf861fde7d4e6203.css" integrity="sha256-7OP1b8P3Fvh8zU5vPqRLofpnVxFCYdrfv4Yf3n1OYgM=">
+<script defer src="/en.search.min.2d116d6280cc21c4d2dcffda82bc8e64969fd4aaddf4d7a55afd4e980c891d79.js" integrity="sha256-LRFtYoDMIcTS3P/agryOZJaf1Krd9NelWv1OmAyJHXk="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/packit_logo.png" alt="Logo" /><span>Packit</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://dashboard.packit.dev" target="_blank" rel="noopener">
+        Dashboard
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2f67fdc9a362fd86f1cfd4450ed56551" class="toggle" checked />
+    <label for="section-2f67fdc9a362fd86f1cfd4450ed56551" class="flex justify-between">
+      <a href="https://packit.dev/docs/" class="">User Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/about/" class="">About Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/guide/" class="">Packit Onboarding Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/testing-farm/" class="">Testing Farm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/faq/" class="">FAQ</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/" class="">Configuration</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/examples/" class=" active">Examples</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-17ea62a3fa80e270b55a640146bc89e1" class="toggle"  />
+    <label for="section-17ea62a3fa80e270b55a640146bc89e1" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/" class="">Packit CLI</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/create-update/" class="">create-update</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/propose-downstream/" class="">propose-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/srpm/" class="">srpm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/prepare-sources/" class="">prepare-sources</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/sync-from-downstream/" class="">sync-from-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/push-updates/" class="">push-updates</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/validate-config/" class="">validate-config</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="toggle"  />
+    <label for="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/build/" class="">build</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/koji/" class="">in-koji</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/in-image-builder/" class="">in-image-builder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/mock/" class="">in-mock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/local/" class="">locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/copr/" class="">in-copr</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a024048a4317a88a547d3a91b2359da1" class="toggle"  />
+    <label for="section-a024048a4317a88a547d3a91b2359da1" class="flex justify-between">
+      <a  class="">source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-dist-git/" class="">update-dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-source-git/" class="">update-source-git</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/actions/" class="">Actions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/fedora-releases-guide/" class="">How to do Fedora releases with Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/service-level-objectives/" class="">Service Level Objectives</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/reproduce-locally/" class="">Reproduce CI environment locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/archive-not-matching-git/" class="">Generated code in upstream archives</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de9f4fbe058a823cefbf9e39a42e3770" class="toggle"  />
+    <label for="section-de9f4fbe058a823cefbf9e39a42e3770" class="flex justify-between">
+      <a href="https://packit.dev/source-git/" class="">Source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/design/" class="">Source-git design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="toggle"  />
+    <label for="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="flex justify-between">
+      <a href="https://packit.dev/source-git/work-with-source-git/" class="">Working with source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/create-source-git/" class="">Create a source-git repo</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/update-spec/" class="">Update a spec file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/pull-upstream-fixes/" class="">Pull fixes from the upstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/control-patch-generation/" class="">Controlling patch generation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/build-locally/" class="">Build current checkout locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/propose-to-dist-git/" class="">Propose your source-git content to dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/sync-from-dist-git/" class="">Sync back changes made in dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/fix-diverged-history/" class="">Diverged history</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a07783f405300745807d39eacf150420" class="toggle"  />
+    <label for="section-a07783f405300745807d39eacf150420" class="flex justify-between">
+      <a  class="">Blog Posts</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="toggle"  />
+    <label for="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="flex justify-between">
+      <a  class="">Weekly Status</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/march-2023/" class="">Packit March 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/february-2023/" class="">Packit February 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/january-2023/" class="">Packit January 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2022/" class="">2022</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2021/" class="">2021</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2020/" class="">2020</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2019/" class="">2019</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2022-features/" class="">2022 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/pull-from-upstream/" class="">Automatic pulling of upstream releases to Fedora</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/testing-farm-triggering/" class="">Running tests with builds from another PR</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fas-verification-automation/" class="">Automation of FAS verification in Packit Service</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/downstream-automation/" class="">Downstream automation is here</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/copr-srpms/" class="">Building SRPMs in Copr</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-features/" class="">2021 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-in-numbers/" class="">2021 in Numbers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fedora-eln/" class="">Working on the next major RHEL release, in your upstream repo</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03ded75136420a051aef84f84237f006" class="toggle"  />
+    <label for="section-03ded75136420a051aef84f84237f006" class="flex justify-between">
+      <a href="https://packit.dev/development-docs/" class="">Development Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/creating-stream-9-repos/" class="">Creating CentOS Stream 9 source-git repositories</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/patch-metadata/" class="">Source-git patch metadata</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://status.packit.dev" target="_blank" rel="noopener">
+        Status page
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Examples</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#examples-for-actions">Examples for actions</a>
+      <ul>
+        <li><a href="#getting-version">Getting version</a></li>
+        <li><a href="#manipulating-spec-file">Manipulating spec file</a></li>
+        <li><a href="#custom-archive-creation">Custom archive creation</a></li>
+        <li><a href="#custom-changelog-generation">Custom changelog generation</a></li>
+      </ul>
+    </li>
+    <li><a href="#examples-for-jobs">Examples for jobs</a>
+      <ul>
+        <li><a href="#builds">Builds</a></li>
+        <li><a href="#tests">Tests</a></li>
+        <li><a href="#fedora-release-automation">Fedora release automation</a></li>
+      </ul>
+    </li>
+    <li><a href="#get-inspired">Get inspired</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="configuration-examples">
+  Configuration examples
+  <a class="anchor" href="#configuration-examples">#</a>
+</h1>
+<h2 id="examples-for-actions">
+  Examples for actions
+  <a class="anchor" href="#examples-for-actions">#</a>
+</h2>
+<p>You can find detailed documentation for actions <a href="/docs/actions">here</a>.</p>
+<h3 id="getting-version">
+  Getting version
+  <a class="anchor" href="#getting-version">#</a>
+</h3>
+<details >
+  <summary>Getting version from specfile</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">get-current-version</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">grep -oP &#39;^Version:\s+\K\S+&#39; my-package.spec</span>
+</span></span></code></pre></div><p>or with a command from <code>rpm-build</code> package that will honor the macros:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">get-current-version</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">rpmspec -q --queryformat &#34;%{VERSION}\n&#34; *spec |head -n1</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Getting version for Python packages with setup.py</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">get-current-version</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">python3 setup.py --version</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Getting version for Ruby packages from the gemspec</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">get-current-version</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">ruby -rrubygems -e &#39;puts Gem::Specification::load(Dir.glob(&#34;*.gemspec&#34;).first).version&#39;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<h3 id="manipulating-spec-file">
+  Manipulating spec file
+  <a class="anchor" href="#manipulating-spec-file">#</a>
+</h3>
+<details >
+  <summary>Downloading specfile from the dist-git repo</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">post-upstream-clone</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#e6db74">&#34;wget https://src.fedoraproject.org/rpms/my-package/raw/main/f/my-package.spec -O my-package.spec&#34;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Setting the Sources correctly in case of multiple Sources</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">fix-spec-file</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># define one of the Source variables correctly</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">sed -i my_specfile_path -e &#34;s/https.*only-vendor.tar.xz/my_correct_tarball_path/&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># fill in %release as if packit would have done it</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">bash -c &#34;sed -i my_specfile_path -r \&#34;s/Release:(\s*)\S+/Release:\1${PACKIT_RPMSPEC_RELEASE}%{?dist}/\&#34;&#34;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<h3 id="custom-archive-creation">
+  Custom archive creation
+  <a class="anchor" href="#custom-archive-creation">#</a>
+</h3>
+<details >
+  <summary>Creating archive with custom make target</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">create-archive</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">make release</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">bash -c &#34;ls -1t ./my-package-*.tar.gz | head -n 1&#34;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Creating archive for Python packages with setup.py</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">create-archive</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">python3 setup.py sdist --dist-dir .</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">bash -c &#34;ls -1t ./my-package-*.tar.gz | head -n 1&#34;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<h3 id="custom-changelog-generation">
+  Custom changelog generation
+  <a class="anchor" href="#custom-changelog-generation">#</a>
+</h3>
+<details >
+  <summary>Using changelog entry from a file</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">changelog-entry</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">cat .changelog_entry</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<h2 id="examples-for-jobs">
+  Examples for jobs
+  <a class="anchor" href="#examples-for-jobs">#</a>
+</h2>
+<p>You can find detailed documentation for jobs <a href="/docs/configuration#supported-jobs">here</a>.</p>
+<h3 id="builds">
+  Builds
+  <a class="anchor" href="#builds">#</a>
+</h3>
+<details >
+  <summary>Running builds in Copr</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">copr_build</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">pull_request</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-all</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Running builds in custom Copr project</summary>
+  <div class="markdown-inner">
+    <p>Configuring building in Copr project <code>@oamg/convert2rhel</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">copr_build</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">commit</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">branch</span>: <span style="color:#ae81ff">main</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">owner</span>: <span style="color:#e6db74">&#34;@oamg&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">project</span>: <span style="color:#ae81ff">convert2rhel</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">epel-6-x86_64</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">epel-7-x86_64</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">epel-8-x86_64</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Running more types of builds in Copr</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">copr_build</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">pull_request</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">identifier</span>: <span style="color:#ae81ff">fedora</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-all</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">copr_build </span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">pull_request</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">specfile_path</span>: <span style="color:#ae81ff">epel8/python-specfile.spec</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">identifier</span>: <span style="color:#ae81ff">epel8</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">actions</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">create-archive</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">python3 setup.py sdist --dist-dir ./epel8/</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">bash -c &#34;ls -1t ./epel8/*.tar.gz | head -n 1&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">epel-8</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Running builds in Koji</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">upstream_koji_build</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">pull_request</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-all</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<h3 id="tests">
+  Tests
+  <a class="anchor" href="#tests">#</a>
+</h3>
+<details >
+  <summary>Running tests in Testing Farm</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">tests</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">pull_request</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-all</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Running tests in internal Testing Farm instance</summary>
+  <div class="markdown-inner">
+    <p>Please, let us know if you want to use the internal Testing Farm;
+we have to enable it for you.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">tests</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">centos-stream-9-x86_64</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">distros</span>: [<span style="color:#ae81ff">RHEL-9.3.0-Nightly]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">use_internal_tf</span>: <span style="color:#66d9ef">True</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Running only tests (without builds)</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">tests</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-all</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">skip_build</span>: <span style="color:#66d9ef">True</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Defining mapping between build and test targets</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">tests</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">epel-7-x86_64</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">distros</span>: [<span style="color:#ae81ff">centos-7, oraclelinux-7]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">epel-8-x86_64</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">distros</span>: [<span style="color:#ae81ff">centos-8, oraclelinux-8]</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Specifying where the FMF metadata are placed (other than default)</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">tests</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">pull_request</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-all</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">fmf_url</span>: <span style="color:#e6db74">&#34;https://gitlab.cee.redhat.com/baseos-qe/tmt.git&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">fmf_ref</span>: <span style="color:#ae81ff">main</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Running more types of tests</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">tests</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">pull_request</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-all</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">tests</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">pull_request</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">identifier</span>: <span style="color:#e6db74">&#34;internal-tests&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-all</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">use_internal_tf</span>: <span style="color:#66d9ef">True</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Providing custom tmt context</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">tests</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">pull_request</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">targets</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-all</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">tf_extra_params</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environments</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">tmt</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">context</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">how</span>: <span style="color:#e6db74">&#34;full&#34;</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<h3 id="fedora-release-automation">
+  Fedora release automation
+  <a class="anchor" href="#fedora-release-automation">#</a>
+</h3>
+<details >
+  <summary>Creating dist-git pull requests on upstream releases</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">propose_downstream</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">release</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dist_git_branches</span>: 
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-all</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Creating dist-git pull requests on upstream releases defined in the dist-git repository</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">upstream_project_url</span>: <span style="color:#ae81ff">https://github.com/packit/packit</span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">pull_from_upstream</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">release</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dist_git_branches</span>: 
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-all</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Running Koji builds when the Packit pull requests in dist-git are merged</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">koji_build</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">commit</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dist_git_branches</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-all</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Running Koji builds as a reaction to merging PRs or committing in dist-git by specified users</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">koji_build</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">commit</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dist_git_branches</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-all</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">allowed_pr_authors</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">packit</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">the-fas-username-to-allow</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">allowed_committers</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">packit</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">another-fas-username-to-allow</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<details >
+  <summary>Creating Bodhi updates automatically for successful Koji builds</summary>
+  <div class="markdown-inner">
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">job</span>: <span style="color:#ae81ff">bodhi_update</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trigger</span>: <span style="color:#ae81ff">commit</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dist_git_branches</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">fedora-branched</span> <span style="color:#75715e"># rawhide updates are created automatically</span>
+</span></span></code></pre></div>
+  </div>
+</details>
+
+<h2 id="get-inspired">
+  Get inspired
+  <a class="anchor" href="#get-inspired">#</a>
+</h2>
+<p>You can also look directly into configuration files of some other projects using Packit:</p>
+<ul>
+<li><a href="https://github.com/systemd/systemd/blob/main/.packit.yml">Systemd</a></li>
+<li><a href="https://github.com/rhinstaller/anaconda/blob/master/.packit.yml">Anaconda</a></li>
+<li><a href="https://github.com/packit/ogr/blob/main/.packit.yaml">Ogr</a></li>
+<li><a href="https://github.com/oamg/convert2rhel/blob/main/.packit.yaml">Convert2rhel</a></li>
+<li><a href="https://github.com/cockpit-project/cockpit/blob/main/packit.yaml">Cockpit project</a></li>
+<li><a href="https://github.com/teemtee/tmt/blob/main/.packit.yaml">Tmt</a></li>
+<li><a href="https://github.com/osbuild/osbuild-composer/blob/main/.packit.yaml">Osbuild</a></li>
+<li><a href="https://github.com/oamg/leapp-repository/blob/master/.packit.yaml">Leapp repository</a></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#examples-for-actions">Examples for actions</a>
+      <ul>
+        <li><a href="#getting-version">Getting version</a></li>
+        <li><a href="#manipulating-spec-file">Manipulating spec file</a></li>
+        <li><a href="#custom-archive-creation">Custom archive creation</a></li>
+        <li><a href="#custom-changelog-generation">Custom changelog generation</a></li>
+      </ul>
+    </li>
+    <li><a href="#examples-for-jobs">Examples for jobs</a>
+      <ul>
+        <li><a href="#builds">Builds</a></li>
+        <li><a href="#tests">Tests</a></li>
+        <li><a href="#fedora-release-automation">Fedora release automation</a></li>
+      </ul>
+    </li>
+    <li><a href="#get-inspired">Get inspired</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

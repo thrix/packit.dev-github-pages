@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development Documentation on Packit</title>
+    <link>https://packit.dev/development-docs/</link>
+    <description>Recent content in Development Documentation on Packit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://packit.dev/development-docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating CentOS Stream 9 source-git repositories</title>
+      <link>https://packit.dev/development-docs/creating-stream-9-repos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/development-docs/creating-stream-9-repos/</guid>
+      <description>Creating CentOS Stream 9 source-git repositories #  Source-git repos for CentOS Stream 9 are stored as separate repositories in https://gitlab.com/redhat/centos-stream/src in c9s branches.
+Here is how the repositories should be set up:
+  They are open to the public (for contributions).
+  Issues are disabled (BZ is the official bug tracker).
+  Merge requests are enabled.
+  Description is set:
+Source repo for CentOS Stream package $package.</description>
+    </item>
+    
+    <item>
+      <title>Source-git patch metadata</title>
+      <link>https://packit.dev/development-docs/patch-metadata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/development-docs/patch-metadata/</guid>
+      <description>Source-git patch metadata #  Patch metadata have been superseded by Git-native trailers. This old patch metadata format is still supported if none of the Git-trailers are found in any of the commits.
+The metadata are a way for users and creators of source-git repos to be in control of how packit generates patch files from downstream commits. Users are not meant to set most of these - our tooling does that: dist2src and packit source-git init.</description>
+    </item>
+    
+  </channel>
+</rss>

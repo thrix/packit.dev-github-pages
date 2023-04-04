@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Weekly Status on Packit</title>
+    <link>https://packit.dev/posts/weekly/</link>
+    <description>Recent content in Weekly Status on Packit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Mar 2023 15:00:00 +0100</lastBuildDate><atom:link href="https://packit.dev/posts/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Packit March 2023</title>
+      <link>https://packit.dev/posts/weekly/march-2023/</link>
+      <pubDate>Mon, 13 Mar 2023 15:00:00 +0100</pubDate>
+      
+      <guid>https://packit.dev/posts/weekly/march-2023/</guid>
+      <description>Week 10 (March 7th – March 13th) #   Parsing the spec file by RPM is now performed only if really necessary, greatly improving performance in certain scenarios. (specfile#212)  Week 11 (March 14th – March 20th) #   Packit now uses the get_current_version action defined by the user to retrieve version before updating the specfile %setup macro (if any). (packit#1886)  Week 12 (March 21st – March 27th) #   &amp;lsquo;upstream_tag_template&amp;rsquo; is now also used when looking for the latest version tag in Git.</description>
+    </item>
+    
+    <item>
+      <title>Packit February 2023</title>
+      <link>https://packit.dev/posts/weekly/february-2023/</link>
+      <pubDate>Mon, 13 Feb 2023 15:00:00 +0100</pubDate>
+      
+      <guid>https://packit.dev/posts/weekly/february-2023/</guid>
+      <description>Weeks 5–6 (February 1st – February 13th) #   You can now use --srpm option with the packit build locally CLI command. (packit#1810) You will newly see news about Packit as a footer of the GitHub check runs summary. (packit-service#1881) Packit now groups related builds and test runs (e.g. triggered by the same event, just different chroots) together. In the future, this will allow better presentation of the overall pipelines (e.</description>
+    </item>
+    
+    <item>
+      <title>Packit January 2023</title>
+      <link>https://packit.dev/posts/weekly/january-2023/</link>
+      <pubDate>Mon, 02 Jan 2023 15:00:00 +0100</pubDate>
+      
+      <guid>https://packit.dev/posts/weekly/january-2023/</guid>
+      <description>Week 0 🌄 (December 20th 2022 – January 2nd 2023) #   ogr now raises GitForgeInternalError rather than PagureAPIException when getting 50x response from the Pagure API. This should increase usability as those tasks will be retried. (ogr#762) Packit now puts the correct release number into the changelog when the Release tag is reset during propose-downstream. (packit#1816))  Week 1 (January 3rd – January 9th) #   SRPMs for projects that installed the GitHub App before September 6th and don&amp;rsquo;t have srpm_build_deps defined are now built in Copr as well.</description>
+    </item>
+    
+    <item>
+      <title>2022</title>
+      <link>https://packit.dev/posts/weekly/2022/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/weekly/2022/</guid>
+      <description>Week 0 (December 13th - January 2nd) #   Dashboard shows a message when the SRPM build logs are not present instead of an empty page that might suggest logs are being loaded. (packit/dashboard#158)  Week 1 (January 3rd - January 7th) #   Packit service now discards old (currently, this means 3 months) SRPM builds logs. (packit/packit-service#1315) We have added target_branch_head_commit property to the PullRequest class in ogr that allows you to get commit hash of the HEAD of the target branch (i.</description>
+    </item>
+    
+    <item>
+      <title>2021</title>
+      <link>https://packit.dev/posts/weekly/2021/</link>
+      <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/weekly/2021/</guid>
+      <description>Week 1 (January 4th - January 8th) #   Name of the job/command/comment to propose update of downstream package has been synced between CLI and service to propose-downstream. propose-update is now deprecated. (packit#1065, packit-service#913)  Week 2 (January 11th - January 15th) #   Branch deletions are now correctly ignored. (packit-service#919) Multiple internal improvements have been done. (packit#1072, packit-service#922, packit-service#923)  Week 3 (January 18th - January 22th) #   We have temporarily disabled the testing-farm support because the cluster with old runner has died and the new runner is not ready.</description>
+    </item>
+    
+    <item>
+      <title>2020</title>
+      <link>https://packit.dev/posts/weekly/2020/</link>
+      <pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/weekly/2020/</guid>
+      <description>Week 1 #  packit #   Correctly updates version on srpm build. (#642) Downloads all URL sources before srpm build. (#643)  packit service #   Runs on Fedora 31. (#303, #304) Correctly checks list of whitelisted repositories when issue comment is added. (#309)  Week 2 #  packit #   Incorporates lots of SRPM related improvements. (#646, #650, #651, #652, #653) Better handles when Copr owner is not set.</description>
+    </item>
+    
+    <item>
+      <title>2019</title>
+      <link>https://packit.dev/posts/weekly/2019/</link>
+      <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/posts/weekly/2019/</guid>
+      <description>Initial version 0.1.0 of packit is out! (2019-03-08) #  We would like to announce general availability of the initial version of packit, titled &amp;lsquo;0.1.0&amp;rsquo;.
+Since this is our first release, we would like to ask you to be patient if you encounter any issues. We work hard on packit&amp;rsquo;s usability. If you feel like that packit is doing something weird or if anything is unclear, don&amp;rsquo;t hesitate and reach out to us by creating a new GitHub issue.</description>
+    </item>
+    
+  </channel>
+</rss>

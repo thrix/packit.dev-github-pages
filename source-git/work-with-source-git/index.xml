@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Working with source-git on Packit</title>
+    <link>https://packit.dev/source-git/work-with-source-git/</link>
+    <description>Recent content in Working with source-git on Packit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Jun 2020 23:59:59 +0100</lastBuildDate><atom:link href="https://packit.dev/source-git/work-with-source-git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create a source-git repo</title>
+      <link>https://packit.dev/source-git/work-with-source-git/create-source-git/</link>
+      <pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/source-git/work-with-source-git/create-source-git/</guid>
+      <description>How to create a source-git repository? #  This guide walks through the steps to create a source-git repository from an upstream project.
+ We have a dedicated command which automates most of the steps described below: packit source-git init
+ Consider joining the Fedora Source-git SIG if you are interested in the development of the source-git workflow.
+The process to construct a source-git repository and a branch to track downstream (distribution) work, which then can be synced to dist-git has the following steps:</description>
+    </item>
+    
+    <item>
+      <title>Update a spec file</title>
+      <link>https://packit.dev/source-git/work-with-source-git/update-spec/</link>
+      <pubDate>Mon, 25 Jan 2021 23:59:59 +0100</pubDate>
+      
+      <guid>https://packit.dev/source-git/work-with-source-git/update-spec/</guid>
+      <description>Update a spec file #  Changing a spec file is very straightforward:
+ Edit the file. Commit the change locally.   Please make sure that your change complies with Fedora Packaging Guidelines if you intend to bring it to the Fedora ecosystem.
+ Once that&amp;rsquo;s done, it&amp;rsquo;s a great practice to create a SRPM and build the spec file change locally.
+If you are planning to pull an upstream fix, you can read more here.</description>
+    </item>
+    
+    <item>
+      <title>Pull fixes from the upstream</title>
+      <link>https://packit.dev/source-git/work-with-source-git/pull-upstream-fixes/</link>
+      <pubDate>Tue, 26 Jan 2021 23:59:59 +0100</pubDate>
+      
+      <guid>https://packit.dev/source-git/work-with-source-git/pull-upstream-fixes/</guid>
+      <description>Pull fixes from the upstream #  One of the common tasks of being a downstream maintainer is to pull fixes from the upstream codebase. This usually happens when a problem is discovered downstream which is already resolved in the upstream code. There are two scenarios how to obtain the upstream code:
+ The fix is not released yet by the upstream - this implies pulling the fix from the main development upstream branch.</description>
+    </item>
+    
+    <item>
+      <title>Controlling patch generation</title>
+      <link>https://packit.dev/source-git/work-with-source-git/control-patch-generation/</link>
+      <pubDate>Thu, 26 Aug 2021 11:11:11 +0000</pubDate>
+      
+      <guid>https://packit.dev/source-git/work-with-source-git/control-patch-generation/</guid>
+      <description>Controlling patch generation #  When syncing the content of a source-git repo to dist-git, distribution commits from source-git are converted to patch files in dist-git using git format-patch, and the patch files are added to the spec-file with indexing starting from 1.
+This process can be customized with the help of Git-trailers added to the end of commit messages. The value of these Git-trailers is expected to be a valid YAML value.</description>
+    </item>
+    
+    <item>
+      <title>Build current checkout locally</title>
+      <link>https://packit.dev/source-git/work-with-source-git/build-locally/</link>
+      <pubDate>Wed, 27 Jan 2021 23:59:59 +0100</pubDate>
+      
+      <guid>https://packit.dev/source-git/work-with-source-git/build-locally/</guid>
+      <description>Build your current checkout locally #  Once you are comfortable with your local changes, you can build them before pushing them out. Just make sure that all code changes are committed, otherwise Packit won&amp;rsquo;t be able to create patch files out of them.
+We are going to use Packit to achieve such a thing, so please make sure you have it installed locally.
+The command to create source RPMs is called srpm and that&amp;rsquo;s how you can create one:</description>
+    </item>
+    
+    <item>
+      <title>Propose your source-git content to dist-git</title>
+      <link>https://packit.dev/source-git/work-with-source-git/propose-to-dist-git/</link>
+      <pubDate>Wed, 27 Jan 2021 23:59:59 +0100</pubDate>
+      
+      <guid>https://packit.dev/source-git/work-with-source-git/propose-to-dist-git/</guid>
+      <description>Propose your source-git content to dist-git #  Once your changes are merged into a source-git repo, the final step is to propose those changes to dist-git and get a production build. Alternatively, you can open a dist-git merge request just to trigger the dist-git checks or see how the changes would look in dist-git.
+If you want to change something in the spec file, this is the right time to bump release, add a %changelog entry or adjust macros.</description>
+    </item>
+    
+    <item>
+      <title>Sync back changes made in dist-git</title>
+      <link>https://packit.dev/source-git/work-with-source-git/sync-from-dist-git/</link>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/source-git/work-with-source-git/sync-from-dist-git/</guid>
+      <description>Sync back changes made in dist-git #  Although we recommend for all packaging work to be done in source-git once it was decided to adopt the source-git workflow, some changes are going to keep happening in dist-git, like the bumping of release numbers by provenpackagers during re-builds.
+In order to prevent the content of the source-git repository from diverging from dist-git, these changes need to be synced back to source-git.</description>
+    </item>
+    
+    <item>
+      <title>Diverged history</title>
+      <link>https://packit.dev/source-git/work-with-source-git/fix-diverged-history/</link>
+      <pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/source-git/work-with-source-git/fix-diverged-history/</guid>
+      <description>Diverged history #  It can easily happen that the history of the source-git and dist-git repositories get diverged. See this document for more info about how packit checks the sync status.
+Packit considers the histories of those repositories as diverged when both of them have as a HEAD commit one of the following changes:
+ A change which has not been synced to the other repository. The change has been synced but the From-[source|dist]-git-commit git trailer is missing for some reason.</description>
+    </item>
+    
+  </channel>
+</rss>

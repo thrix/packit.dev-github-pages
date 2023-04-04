@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>source-git on Packit</title>
+    <link>https://packit.dev/docs/cli/source-git/</link>
+    <description>Recent content in source-git on Packit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://packit.dev/docs/cli/source-git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>init</title>
+      <link>https://packit.dev/docs/cli/source-git/init/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/source-git/init/</guid>
+      <description>packit source-git init #  Initialize a repository to serve as a source-git repo.
+The biggest advantage of this command is the functionality to create source-git repos. Here&amp;rsquo;s a quick rundown what packit does:
+ Fetches specfile and additional sources from Fedora or CentOS dist-git. Apply downstream patches as commits. Add source-git configuration to control future syncing to dist-git.  We have a guide on how to create source-git repos manually if you want to understand the steps performed.</description>
+    </item>
+    
+    <item>
+      <title>status</title>
+      <link>https://packit.dev/docs/cli/source-git/status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/source-git/status/</guid>
+      <description>packit source-git status #  Examine the sync status of a source-git and a dist-git repository.
+This command informs whether the commits in source-git and dist-git are in sync or about the ranges of commit that need to be synchronized using update-source-git and update-dist-git commands in order to make them synced. If possible, the status command aims to provide instructions on how to sync the repositories.
+Help #  $ packit source-git status --help Usage: packit source-git status [OPTIONS] SOURCE_GIT DIST_GIT Tell the synchronization status of a source-git and a dist-git repo.</description>
+    </item>
+    
+    <item>
+      <title>update-dist-git</title>
+      <link>https://packit.dev/docs/cli/source-git/update-dist-git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/source-git/update-dist-git/</guid>
+      <description>packit source-git update-dist-git #  Transform the content from a source-git repository in a dist-git format, and update the corresponding dist-git repository.
+Help #  $ packit source-git update-dist-git --help Usage: packit source-git update-dist-git [OPTIONS] SOURCE_GIT DIST_GIT Update a dist-git repository using content from a source-git repository Update a dist-git repository with patches created from the commits between &amp;lt;upstream_ref&amp;gt; and the current HEAD of the source-git repo. This command, by default, performs only local operations and uses the content of the source-git and dist-git repository as it is: does not checkout branches or fetches remotes.</description>
+    </item>
+    
+    <item>
+      <title>update-source-git</title>
+      <link>https://packit.dev/docs/cli/source-git/update-source-git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/cli/source-git/update-source-git/</guid>
+      <description>packit source-git update-source-git #  Sync changes made in a dist-git repository back to the corresponding source-git repository.
+This is to enable engineers and bots to capture and sync back changes done in dist-git (by provenpackagers during rebuilds, for example). This is why changes to the source and patches are not supported! If a package has a source-git repository set up, the expectation is that the bulk of the packaging work is going to happen there.</description>
+    </item>
+    
+  </channel>
+</rss>

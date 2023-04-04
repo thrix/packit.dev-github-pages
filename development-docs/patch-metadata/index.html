@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.98.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Source-git patch metadata #  Patch metadata have been superseded by Git-native trailers. This old patch metadata format is still supported if none of the Git-trailers are found in any of the commits.
+The metadata are a way for users and creators of source-git repos to be in control of how packit generates patch files from downstream commits. Users are not meant to set most of these - our tooling does that: dist2src and packit source-git init.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Source-git patch metadata" />
+<meta property="og:description" content="Source-git patch metadata #  Patch metadata have been superseded by Git-native trailers. This old patch metadata format is still supported if none of the Git-trailers are found in any of the commits.
+The metadata are a way for users and creators of source-git repos to be in control of how packit generates patch files from downstream commits. Users are not meant to set most of these - our tooling does that: dist2src and packit source-git init." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://packit.dev/development-docs/patch-metadata/" /><meta property="article:section" content="development-docs" />
+
+
+
+<title>Source-git patch metadata | Packit</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.ece3f56fc3f716f87ccd4e6f3ea44ba1fa6757114261dadfbf861fde7d4e6203.css" integrity="sha256-7OP1b8P3Fvh8zU5vPqRLofpnVxFCYdrfv4Yf3n1OYgM=">
+<script defer src="/en.search.min.2d116d6280cc21c4d2dcffda82bc8e64969fd4aaddf4d7a55afd4e980c891d79.js" integrity="sha256-LRFtYoDMIcTS3P/agryOZJaf1Krd9NelWv1OmAyJHXk="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/packit_logo.png" alt="Logo" /><span>Packit</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://dashboard.packit.dev" target="_blank" rel="noopener">
+        Dashboard
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2f67fdc9a362fd86f1cfd4450ed56551" class="toggle"  />
+    <label for="section-2f67fdc9a362fd86f1cfd4450ed56551" class="flex justify-between">
+      <a href="https://packit.dev/docs/" class="">User Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/about/" class="">About Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/guide/" class="">Packit Onboarding Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/testing-farm/" class="">Testing Farm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/faq/" class="">FAQ</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/" class="">Configuration</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/configuration/examples/" class="">Examples</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-17ea62a3fa80e270b55a640146bc89e1" class="toggle"  />
+    <label for="section-17ea62a3fa80e270b55a640146bc89e1" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/" class="">Packit CLI</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/create-update/" class="">create-update</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/propose-downstream/" class="">propose-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/srpm/" class="">srpm</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/prepare-sources/" class="">prepare-sources</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/sync-from-downstream/" class="">sync-from-downstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/push-updates/" class="">push-updates</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/validate-config/" class="">validate-config</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="toggle"  />
+    <label for="section-0b0c82992a6a45cfdc1765cc6064bbd2" class="flex justify-between">
+      <a href="https://packit.dev/docs/cli/build/" class="">build</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/koji/" class="">in-koji</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/in-image-builder/" class="">in-image-builder</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/mock/" class="">in-mock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/local/" class="">locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/build/copr/" class="">in-copr</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a024048a4317a88a547d3a91b2359da1" class="toggle"  />
+    <label for="section-a024048a4317a88a547d3a91b2359da1" class="flex justify-between">
+      <a  class="">source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/init/" class="">init</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/status/" class="">status</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-dist-git/" class="">update-dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/cli/source-git/update-source-git/" class="">update-source-git</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/actions/" class="">Actions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/fedora-releases-guide/" class="">How to do Fedora releases with Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/service-level-objectives/" class="">Service Level Objectives</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/reproduce-locally/" class="">Reproduce CI environment locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/docs/archive-not-matching-git/" class="">Generated code in upstream archives</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-de9f4fbe058a823cefbf9e39a42e3770" class="toggle"  />
+    <label for="section-de9f4fbe058a823cefbf9e39a42e3770" class="flex justify-between">
+      <a href="https://packit.dev/source-git/" class="">Source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/design/" class="">Source-git design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="toggle"  />
+    <label for="section-cf8eff71d5f50a1f85c94ebde3d5a047" class="flex justify-between">
+      <a href="https://packit.dev/source-git/work-with-source-git/" class="">Working with source-git</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/create-source-git/" class="">Create a source-git repo</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/update-spec/" class="">Update a spec file</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/pull-upstream-fixes/" class="">Pull fixes from the upstream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/control-patch-generation/" class="">Controlling patch generation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/build-locally/" class="">Build current checkout locally</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/propose-to-dist-git/" class="">Propose your source-git content to dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/sync-from-dist-git/" class="">Sync back changes made in dist-git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/source-git/work-with-source-git/fix-diverged-history/" class="">Diverged history</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a07783f405300745807d39eacf150420" class="toggle"  />
+    <label for="section-a07783f405300745807d39eacf150420" class="flex justify-between">
+      <a  class="">Blog Posts</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="toggle"  />
+    <label for="section-dc16c8ecaf6a88aee8b0f6c668b70499" class="flex justify-between">
+      <a  class="">Weekly Status</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/march-2023/" class="">Packit March 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/february-2023/" class="">Packit February 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/january-2023/" class="">Packit January 2023</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2022/" class="">2022</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2021/" class="">2021</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2020/" class="">2020</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/weekly/2019/" class="">2019</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2022-features/" class="">2022 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/pull-from-upstream/" class="">Automatic pulling of upstream releases to Fedora</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/testing-farm-triggering/" class="">Running tests with builds from another PR</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fas-verification-automation/" class="">Automation of FAS verification in Packit Service</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/downstream-automation/" class="">Downstream automation is here</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/copr-srpms/" class="">Building SRPMs in Copr</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-features/" class="">2021 for Packit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/2021-in-numbers/" class="">2021 in Numbers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/posts/fedora-eln/" class="">Working on the next major RHEL release, in your upstream repo</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-03ded75136420a051aef84f84237f006" class="toggle" checked />
+    <label for="section-03ded75136420a051aef84f84237f006" class="flex justify-between">
+      <a href="https://packit.dev/development-docs/" class="">Development Documentation</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/creating-stream-9-repos/" class="">Creating CentOS Stream 9 source-git repositories</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://packit.dev/development-docs/patch-metadata/" class=" active">Source-git patch metadata</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://status.packit.dev" target="_blank" rel="noopener">
+        Status page
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Source-git patch metadata</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#metadata">Metadata</a>
+      <ul>
+        <li><a href="#patch_name"><code>patch_name</code></a></li>
+        <li><a href="#description"><code>description</code></a></li>
+        <li><a href="#present_in_specfile"><code>present_in_specfile</code></a></li>
+        <li><a href="#ignore"><code>ignore</code></a></li>
+        <li><a href="#squash_commits-deprecated"><code>squash_commits</code> (deprecated)</a></li>
+        <li><a href="#no_prefix"><code>no_prefix</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#dropped-metadata">Dropped metadata</a>
+      <ul>
+        <li><a href="#location_in_specfile"><code>location_in_specfile</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="source-git-patch-metadata">
+  Source-git patch metadata
+  <a class="anchor" href="#source-git-patch-metadata">#</a>
+</h1>
+<p>Patch metadata have been superseded by
+<a href="https://packit.dev/source-git/work-with-source-git/control-patch-generation/">Git-native trailers</a>.
+This old patch metadata format is still supported if none of
+the Git-trailers are found in any of the commits.</p>
+<p>The metadata are a way for users and creators of source-git repos to be in
+control of how packit generates patch files from downstream commits. Users are
+not meant to set most of these - our tooling does that:
+<a href="https://github.com/packit/dist-git-to-source-git">dist2src</a> and <code>packit source-git init</code>.</p>
+<p>Ideally maintainers would just commit changes to source-git repos and have
+<code>%autosetup</code> to apply all the patches during <code>%prep</code>.</p>
+<p>Example of patch metadata in one of commits in systemd source-git for CentOS
+Stream 8:</p>
+<pre tabindex="0"><code>$ git log HEAD
+
+commit 38e6b5b3059410530e0d5287de595cbf4574988b (HEAD -&gt; c8s, upstream/c8s)
+Author: Lennart Poettering &lt;lennart@poettering.net&gt;
+Date:   Mon Feb 4 10:23:43 2019 +0100
+
+    pam-systemd: use secure_getenv() rather than getenv()
+
+    And explain why in a comment.
+
+    (cherry picked from commit 83d4ab55336ff8a0643c6aa627b31e351a24040a)
+
+    CVE-2019-3842
+
+    Resolves: #1687514
+
+    patch_name: 0563-pam-systemd-use-secure_getenv-rather-than-getenv.patch
+    present_in_specfile: true
+    location_in_specfile: 563
+
+diff --git a/src/login/pam_systemd.c b/src/login/pam_systemd.c
+...
+</code></pre><p>You can see the patch metadata are stored in the commit message on the last 3
+lines.</p>
+<h2 id="metadata">
+  Metadata
+  <a class="anchor" href="#metadata">#</a>
+</h2>
+<p>The metadata are stored in commit messages and have a key-value format parsed as
+yaml. The list of keys follows.</p>
+<h3 id="patch_name">
+  <code>patch_name</code>
+  <a class="anchor" href="#patch_name">#</a>
+</h3>
+<p><strong>Type</strong>: str</p>
+<p><strong>Default</strong>: the default comes from <code>git-format-patch</code>: &ldquo;By default, each
+output file is numbered sequentially from 1, and uses the first line of the
+commit message&rdquo;</p>
+<p><strong>Content</strong>: file name of the patch</p>
+<p><strong>Example</strong>: &ldquo;my-fancy.patch&rdquo;</p>
+<p>Patch file generated from the commit will have this name. This
+is useful when a patch is already defined in the spec file and we need to make
+the patch file match that <code>Patch</code> spec file entry.</p>
+<p>It is also used to merge multiple adjacent commits to a single patch file, by
+setting the same value for <code>patch_name</code> in their metadata.</p>
+<h3 id="description">
+  <code>description</code>
+  <a class="anchor" href="#description">#</a>
+</h3>
+<p><strong>Type</strong>: str</p>
+<p><strong>Default</strong>: empty string</p>
+<p><strong>Example</strong>: &ldquo;This patch is cherry-picked from upstream commit ea45faaa and
+resolves build failures on arm.&rdquo;</p>
+<p>Human-friendly description of the patch file to be put above the spec file entry.</p>
+<h3 id="present_in_specfile">
+  <code>present_in_specfile</code>
+  <a class="anchor" href="#present_in_specfile">#</a>
+</h3>
+<p><strong>Type</strong>: bool</p>
+<p><strong>Default</strong>: false (the default behaviour does not expect the patch is defined
+in the spec)</p>
+<p><strong>Example</strong>: false</p>
+<p>Is the patch present in spec? If yes, then don&rsquo;t create a new entry in the spec
+file. If no, add it to the spec.</p>
+<h3 id="ignore">
+  <code>ignore</code>
+  <a class="anchor" href="#ignore">#</a>
+</h3>
+<p><strong>Type</strong>: bool</p>
+<p><strong>Default</strong>: false</p>
+<p><strong>Example</strong>: true</p>
+<p>Skip this git commit when processing patches. This is handy for commits which
+change files in source-git repos but are not in an archive or are not meant to
+be utilized in <code>%prep</code>.</p>
+<h3 id="squash_commits-deprecated">
+  <code>squash_commits</code> (deprecated)
+  <a class="anchor" href="#squash_commits-deprecated">#</a>
+</h3>
+<p><strong>Type</strong>: bool</p>
+<p><strong>Default</strong>: false</p>
+<p><strong>Example</strong>: false</p>
+<p>This key is <strong>deprecated</strong> as of <code>packit 0.35.0</code>, and replaced by setting the
+same <a href="#patch_name"><code>patch_name</code></a> in the commit message of adjacent commits, which should end
+up in the same patch file.</p>
+<p>This option is meant to be used to support <code>git-am</code> patch applications.
+<code>git-am</code> enables you to have multiple git commits for a single patch file.
+When creating source-git repos with <code>packit source-git init</code>, only the last
+commit of a patch would be annotated with metadata.</p>
+<p>Example:</p>
+<pre tabindex="0"><code>40c3a04 (HEAD -&gt; main) patch 3, commit 3           ┃  this is a single patch file
+61647c6 patch 3, commit 2                          ┃  consisting of 3 commits
+89e9eff patch 3, commit 1\n\nsquash_commits: true  ┣━ because all leading commits are merged into the first patch
+8afd939 patch 2, commit 1\n\nsquash_commits: true  ┣━ a single commit patch
+3a2cff0 patch 1, commit 2\n\nsquash_commits: true  ┣━ commit 1 and commit 2 are part of the first patch
+b2b8e06 patch 1, commit 1                          ┃
+d689043 downstream packaging\n\nignore: true
+b677988 (tag: 0.1.0) upstream release 0.1.0
+</code></pre><h3 id="no_prefix">
+  <code>no_prefix</code>
+  <a class="anchor" href="#no_prefix">#</a>
+</h3>
+<p><strong>Type</strong>: bool</p>
+<p><strong>Default</strong>: false</p>
+<p><strong>Example</strong>: true</p>
+<p>Do not prepend leading <code>a/</code> or <code>b/</code> in the patch files. Use this when applying
+patches with <code>%patch -p1</code>.</p>
+<h2 id="dropped-metadata">
+  Dropped metadata
+  <a class="anchor" href="#dropped-metadata">#</a>
+</h2>
+<h3 id="location_in_specfile">
+  <code>location_in_specfile</code>
+  <a class="anchor" href="#location_in_specfile">#</a>
+</h3>
+<p>This attribute meant to represent ID of the patch within a spec file but it
+never worked like that so we dropped it completely. The problem was that rpm
+does not provide such information when applying patches: it provides a number
+which is an unrelated internal iterator. We are planning to supersede
+<code>location_in_specfile</code> with <code>patch_id</code>:
+<a href="https://issues.redhat.com/browse/PACKIT-1376">https://issues.redhat.com/browse/PACKIT-1376</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#metadata">Metadata</a>
+      <ul>
+        <li><a href="#patch_name"><code>patch_name</code></a></li>
+        <li><a href="#description"><code>description</code></a></li>
+        <li><a href="#present_in_specfile"><code>present_in_specfile</code></a></li>
+        <li><a href="#ignore"><code>ignore</code></a></li>
+        <li><a href="#squash_commits-deprecated"><code>squash_commits</code> (deprecated)</a></li>
+        <li><a href="#no_prefix"><code>no_prefix</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#dropped-metadata">Dropped metadata</a>
+      <ul>
+        <li><a href="#location_in_specfile"><code>location_in_specfile</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

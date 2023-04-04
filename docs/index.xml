@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>User Documentation on Packit</title>
+    <link>https://packit.dev/docs/</link>
+    <description>Recent content in User Documentation on Packit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 Oct 2022 00:00:00 +0100</lastBuildDate><atom:link href="https://packit.dev/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Packit</title>
+      <link>https://packit.dev/docs/about/</link>
+      <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/about/</guid>
+      <description>About Packit #  The key principles of packit #    Packit aims to make things easy and right. But if the default behavior is not the right for you, there is still a way around, but may not be that simple. For example you can use actions to replace packit&amp;rsquo;s default behavior with a script of yours.
+  Reuse existing tools and services where it makes sense: don&amp;rsquo;t reinvent the wheel.</description>
+    </item>
+    
+    <item>
+      <title>Packit Onboarding Guide</title>
+      <link>https://packit.dev/docs/guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/guide/</guid>
+      <description>Packit Onboarding Guide #  Let&amp;rsquo;s take a look on how to start using Packit and how to get the most out of it.
+This guide is focused on the service use-case, but Packit is also available as a CLI tool, so you can always try things locally on your own. Note that running tests in Testing farm infrastructure is not currently supported with the CLI tool. Unlike the service, CLI uses your own identities when connecting to other service like Copr or Fedora dist-git.</description>
+    </item>
+    
+    <item>
+      <title>Testing Farm</title>
+      <link>https://packit.dev/docs/testing-farm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/testing-farm/</guid>
+      <description>Testing Farm #  Testing Farm is Packit&amp;rsquo;s testing system. Test execution is managed by tmt tool.
+Enable Testing #  In order to enable test execution simply include tests jobs in the .packit.yaml configuration:
+jobs: - job: tests  trigger: pull_request  targets:  - fedora-all The test job by default requires Copr build to be built before running tests, and then it is installed into the testing environment.</description>
+    </item>
+    
+    <item>
+      <title>FAQ</title>
+      <link>https://packit.dev/docs/faq/</link>
+      <pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/faq/</guid>
+      <description>FAQ #  Can I use the packit service as soon as I install it into my repository? #  Thanks for your interest in Packit Service! In order to start using the service, your repository or namespace needs to be allowed. Just be aware that we are now onboarding Fedora contributors who have a valid Fedora Account System account. For more details on how to get allowed for our service, please read about the process here.</description>
+    </item>
+    
+    <item>
+      <title>Actions</title>
+      <link>https://packit.dev/docs/actions/</link>
+      <pubDate>Fri, 28 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/actions/</guid>
+      <description>Actions #  You can probably find yourself in a situation where some part of the packit workflow needs to be tweaked for your package.
+Packit supports actions, which can be used to change the default implementation of some steps in the workflow. Packit is able to execute multiple commands for a single action. Each action accepts a list of commands. By default, the commands are executed using python&amp;rsquo;s subprocess module without shell.</description>
+    </item>
+    
+    <item>
+      <title>How to do Fedora releases with Packit</title>
+      <link>https://packit.dev/docs/fedora-releases-guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/fedora-releases-guide/</guid>
+      <description>How to do Fedora releases with Packit #  Let&amp;rsquo;s split the release process into single steps:
+ New upstream release Upload archive to lookaside cache Update dist-git content Koji builds Bodhi updates  Doing Fedora releases with Packit means utilising these jobs:
+ propose_downstream or pull_from_upstream koji_build bodhi_update  Every job takes care of a different part of the release process.
+Propose downstream job #  For enabling the propose downstream job, you need to have Packit Service installed and have a propose_downstream job in the configuration file for the given upstream repository (this job is also run by default if there is no jobs section in the configuration, see jobs configuration).</description>
+    </item>
+    
+    <item>
+      <title>Service Level Objectives</title>
+      <link>https://packit.dev/docs/service-level-objectives/</link>
+      <pubDate>Thu, 31 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/service-level-objectives/</guid>
+      <description>Service Level Objectives #  Packit is using the concept of Service level objectives defined in Google&amp;rsquo;s SRE book. It means that when we run out of error budget, we stop all the work on new features and start stabilizing the service to get our budget back.
+We have 3 objectives defined for Packit right now.
+Screenshots below are not being updated in real time. They are just a snapshot of the state in time when this document was written so that you can see some actual numbers.</description>
+    </item>
+    
+    <item>
+      <title>Reproduce CI environment locally</title>
+      <link>https://packit.dev/docs/reproduce-locally/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/reproduce-locally/</guid>
+      <description>Reproduce CI environment locally #  This used to be a question in our FAQ and now we have a dedicated document to cover this.
+SRPM builds locally #  $ packit srpm Packit will create a SRPM out of the current checkout. Simple and clear.
+SRPM builds in Copr #  When your SRPM is being built in Copr (because srpm_build_deps is set in your packit config, or you installed Packit GitHub application after September 6, 2022), this section describes how you can reproduce the build procedure locally.</description>
+    </item>
+    
+    <item>
+      <title>Generated code in upstream archives</title>
+      <link>https://packit.dev/docs/archive-not-matching-git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://packit.dev/docs/archive-not-matching-git/</guid>
+      <description>When the release archive does not match the upstream git tag checkout #  This document covers a scenario when an upstream project has a script to create release archives and some of the code in the archive is generated. This means that when a downstream distribution has patches of the generated code those patches can&amp;rsquo;t be applied in the upstream repo.
+The solution #  The provided solution will be performed in a source-git repository.</description>
+    </item>
+    
+  </channel>
+</rss>
